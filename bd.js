@@ -27,14 +27,10 @@ if (!window.D3usN0tamProtect) {
     const currentDomain = window.location.hostname;
 
     // Проверка, есть ли текущий домен в списке
-    console.log("Current Domain:", currentDomain);
-
     const siteInfo = sites.find(site => {
         const siteHostname = new URL(site.url).hostname;
         return currentDomain === siteHostname || currentDomain === "www." + siteHostname || "www." + currentDomain === siteHostname;
     });
-
-    console.log("Site Info:", siteInfo);
 
     if (!siteInfo) {
         // Обработка случая, когда домен не найден в списке
