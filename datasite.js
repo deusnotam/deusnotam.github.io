@@ -16,7 +16,7 @@ var site = [
      date: "09/01/2022",
      note: "Это сайт для демонстрации работы данной модификации.",
         protect: "active",
-           cause: "none",
+           cause: "didnt pay",
            effect: "none",
            redirecturl: "-",
     },
