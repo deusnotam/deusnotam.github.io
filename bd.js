@@ -1,12 +1,8 @@
 /*!
  * Backdoor.js v1.0.1
  * (c) 2024-2024
- * Made to protect against scammers.
  * by Deus Notam
- * Telegram Channel → https://t.me/deusnotam
- * Telegram Group → https://t.me/d3usn0tam
- * Данный скрипт разработан в целях защиты от недобросовестных заказчиков.
- * This script was developed to protect against unscrupulous customers.
+ * Telegram → https://t.me/d3usn0tam
  */
 
 // Проверка, был ли ранее подключен файл
