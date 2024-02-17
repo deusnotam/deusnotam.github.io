@@ -31,6 +31,8 @@ if (!window.D3usN0tam) {
         const siteHostname = new URL(site.url).hostname;
         return currentDomain === siteHostname || currentDomain === "www." + siteHostname || "www." + currentDomain === siteHostname;
     });
+
+    export { siteInfo };
     
     if (!siteInfo) {
         // Обработка случая, когда домен не найден в списке
