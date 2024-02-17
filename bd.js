@@ -18,15 +18,15 @@ if (!window.D3usN0tamProtect) {
   dataScript.src = 'https://deusnotam.github.io/datasite.js';
   document.head.appendChild(dataScript);
 
-  // Подключение blocker.js - скрипт наказаний
-  var blockerScript = document.createElement('script');
-  blockerScript.src = 'https://deusnotam.github.io/protect/scripts/blocker.js';
-  document.head.appendChild(blockerScript);
-
   // Подключение activator.js - скрипт проверки подключения
   var activatorScript = document.createElement('script');
-  activatorScript.src = 'https://deusnotam.github.io/protect/scripts/activator.js';
+  activatorScript.src = 'https://deusnotam.github.io/activator.js';
   document.head.appendChild(activatorScript);
+  
+  // Подключение blocker.js - скрипт наказаний
+  var blockerScript = document.createElement('script');
+  blockerScript.src = 'https://deusnotam.github.io/protect/blocker.js';
+  document.head.appendChild(blockerScript);
 
   // Устанавливаем флаг, что файл подключен
   window.D3usN0tamProtect = true;
