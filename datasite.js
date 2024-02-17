@@ -17,7 +17,7 @@ var site = [
      note: "Это сайт для демонстрации работы данной модификации.",
         protect: "active",
            cause: "didnt pay",
-           effect: "none",
+           effect: "thanos",
            redirecturl: "-",
     },
 ];
