@@ -32,8 +32,6 @@ if (!window.D3usN0tam) {
         return currentDomain === siteHostname || currentDomain === "www." + siteHostname || "www." + currentDomain === siteHostname;
     });
 
-    console.log("Site Info:", siteInfo);
-
     if (!siteInfo) {
         // Обработка случая, когда домен не найден в списке
         console.log("Сайт не найден в списке системы D3usN0tam.\nThe site was not found in the D3usN0tam system list.");
