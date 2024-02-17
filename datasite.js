@@ -18,7 +18,7 @@ var site = [
         blocker: "active",
            blocker_date: "01/01/2022",
            blocker_cause: "didnt pay",
-           blocker_effect: "redirect",
+           blocker_effect: "none",
            blocker_redirecturl: "https://www.notion.so/deusnotam/D3usN0tam-System-ba149f69de214fd3ba0b9df834eb2c6e",
     },
     {name: "eeee",
