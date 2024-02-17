@@ -3,10 +3,10 @@
  * by Deus Notam
  * Telegram → https://t.me/d3usn0tam
  * 
- * Доступные причины:
+ * Доступные причины (cause):
  * didnt pay - не оплата работы
  *
- * Доступные эффекты:
+ * Доступные эффекты (effect):
  * redirect - редирект на redirecturl
  * thanos - поверх сайта чёрный экран с gif щелком таноса
  */
