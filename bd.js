@@ -37,7 +37,7 @@ if (!window.D3usN0tamProtect) {
         if (siteInfo.blocker === "active") {
             // Подключение blocker.js - скрипт наказаний, если домен найден в списке и blocker равен "active"
           var blockerScript = document.createElement('script');
-          blockerScript.src = 'https://deusnotam.github.io/system/blocker/blocker.js';
+          blockerScript.src = 'https://deusnotam.github.io/system/blocker.js';
           document.head.appendChild(blockerScript);
         }
     }
