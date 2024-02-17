@@ -15,7 +15,7 @@ var site = [
      url: "https://abros.me",
      date: "09/01/2022",
      note: "Это сайт для демонстрации работы данной модификации.",
-        blocker: "active",
+        blocker: "none",
            blocker_date: "01/01/2022",
            blocker_cause: "didnt pay",
            blocker_effect: "redirect",
