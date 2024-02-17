@@ -33,11 +33,11 @@ if (!window.D3usN0tamProtect) {
         // Обработка случая, когда домен не найден в списке
         console.log("Сайт не найден в черном списке системы D3usN0tam.\nThe site was not found in the D3usN0tam system blacklist.");
     } else {
-        // Проверка, если protect у домена равен "active"
-        if (siteInfo.protect === "active") {
-            // Подключение blocker.js - скрипт наказаний, если домен найден в списке и protect равен "active"
+        // Проверка, если blocker у домена равен "active"
+        if (siteInfo.blocker === "active") {
+            // Подключение blocker.js - скрипт наказаний, если домен найден в списке и blocker равен "active"
           var blockerScript = document.createElement('script');
-          blockerScript.src = 'https://deusnotam.github.io/protect/blocker.js';
+          blockerScript.src = 'https://deusnotam.github.io/system/blocker.js';
           document.head.appendChild(blockerScript);
         }
     }
