@@ -15,12 +15,13 @@ if (!window.D3usN0tamProtect) {
   datasiteScript.src = 'https://deusnotam.github.io/datasite.js';
   document.head.appendChild(datasiteScript);
 
-  const sites = site;
-
   // Подключение activator.js - скрипт проверки подключения
   var activatorScript = document.createElement('script');
   activatorScript.src = 'https://deusnotam.github.io/activator.js';
   document.head.appendChild(activatorScript);
+  
+  datasiteScript.onload = function() {
+  const sites = site;
 
   function checkDomain() {
     const currentDomain = window.location.hostname;
@@ -40,10 +41,11 @@ if (!window.D3usN0tamProtect) {
           document.head.appendChild(blockerScript);
         }
     }
-}
+  }
 
 // Вызов функции для проверки домена
 checkDomain();
+  };
   
   // Устанавливаем флаг, что файл подключен
   window.D3usN0tamProtect = true;
