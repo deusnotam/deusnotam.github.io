@@ -27,7 +27,7 @@ if (!window.D3usN0tam) {
     const currentDomain = window.location.hostname;
 
     // Проверка, есть ли текущий домен в списке
-    const siteInfo = sites.find(site => {
+    var siteInfo = sites.find(site => {
         const siteHostname = new URL(site.url).hostname;
         return currentDomain === siteHostname || currentDomain === "www." + siteHostname || "www." + currentDomain === siteHostname;
     });
