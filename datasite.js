@@ -10,7 +10,7 @@
  * redirect - редирект на redirecturl
  * thanos - поверх сайта чёрный экран с gif щелком таноса
  */
-var data = [
+var site = [
     {name: "ABROS",
      url: "https://abros.me",
      date: "09/01/2022",
