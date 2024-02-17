@@ -29,7 +29,7 @@ if (!window.D3usN0tamProtect) {
     // Проверка, есть ли текущий домен в списке
     console.log("Current Domain:", currentDomain);
 
-    const siteInfo = sites.find(site => currentDomain === new URL(site.url).hostname);
+    const siteInfo = sites.find(site => currentDomain === new URL(site.url).host);
 
     console.log("Site Info:", siteInfo);
 
