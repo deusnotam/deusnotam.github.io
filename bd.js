@@ -7,6 +7,9 @@
 
 // Проверка, был ли ранее подключен файл
 if (!window.D3usN0tamProtect) {
+
+  const sites = site;
+  
   console.log("D3usN0tam System - Connected!\n\nMade by D3us N0tam\nNotion Site → https://deusnotam.notion.site/D3usN0tam-Protect-ba149f69de214fd3ba0b9df834eb2c6e?pvs=4\nTelegram → https://t.me/d3usn0tam");
 
   // Подключение datasite.js - база данных сайтов
