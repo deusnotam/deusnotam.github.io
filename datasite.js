@@ -16,8 +16,9 @@ var site = [
      date: "09/01/2022",
      note: "Это сайт для демонстрации работы данной модификации.",
         blocker: "active",
-           cause: "didnt pay",
-           effect: "thanos",
-           redirecturl: "-",
+           blocker_date: "01/01/2022",
+           blocker_cause: "didnt pay",
+           blocker_effect: "thanos",
+           blocker_redirecturl: "-",
     },
 ];
