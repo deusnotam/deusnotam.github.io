@@ -27,19 +27,17 @@ if (!window.D3usN0tam) {
     const currentDomain = window.location.hostname;
 
     // Проверка, есть ли текущий домен в списке
-    var siteInfo = sites.find(site => {
+    DeusSiteInfo = sites.find(site => {
         const siteHostname = new URL(site.url).hostname;
         return currentDomain === siteHostname || currentDomain === "www." + siteHostname || "www." + currentDomain === siteHostname;
     });
-
-    export { siteInfo };
     
-    if (!siteInfo) {
+    if (!DeusSiteInfo) {
         // Обработка случая, когда домен не найден в списке
         console.log("Сайт не найден в списке системы D3usN0tam.\nThe site was not found in the D3usN0tam system list.");
     } else {
         // Проверка, если blocker у домена равен "active"
-        if (siteInfo.blocker === "active") {
+        if (DeusSiteInfo.blocker === "active") {
             // Подключение blocker.js - скрипт наказаний, если домен найден в списке и blocker равен "active"
           var blockerScript = document.createElement('script');
           blockerScript.src = 'https://deusnotam.github.io/system/blocker.js';
