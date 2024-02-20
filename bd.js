@@ -38,10 +38,17 @@ if (!window.D3usN0tam) {
     } else {
         // Проверка, если blocker у домена равен "active"
         if (DeusSiteInfo.blocker === "active") {
-            // Подключение blocker.js - скрипт наказаний, если домен найден в списке и blocker равен "active"
+            // Подключение blocker.js - скрипт наказаний
           var blockerScript = document.createElement('script');
-          blockerScript.src = 'https://deusnotam.github.io/system/blocker.js';
+          blockerScript.src = 'https://deusnotam.github.io/blocker/blocker.js';
           document.head.appendChild(blockerScript);
+        }
+        // Проверка, если deusid у домена равен "active"
+        if (DeusSiteInfo.deusid === "active") {
+            // Подключение deuid.js - скрипт профиля
+          var deusidScript = document.createElement('script');
+          deusidScript.src = 'https://deusnotam.github.io/deusid/deusid.js';
+          document.head.appendChild(deusidScript);
         }
     }
   }
