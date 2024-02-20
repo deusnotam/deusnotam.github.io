@@ -8,7 +8,7 @@
  *
  * Доступные эффекты (effect):
  * redirect - редирект на redirecturl
- * thanos - поверх сайта чёрный экран с gif щелком таноса
+ * thanos - поверх сайта чёрный экран с gif щелчком таноса
  */
 var site = [
     {name: "ABROS",
