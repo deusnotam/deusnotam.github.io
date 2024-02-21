@@ -17,6 +17,103 @@
   --light-color-frontright: #aee0e6;
   --light-color-bottomleft: #d9db72;
 }
+/* Preloader */
+.preloader {
+  background: #040404;
+  left: 0;
+  top: 0;
+  right:0;
+  bottom:0;
+  z-index: 999999999;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgpreloader {
+  height: 150px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pswp__preloader__icn {
+  opacity:0.75;
+  width: 14px;
+  height: 14px;
+  -webkit-animation: clockwise 500ms linear infinite;
+  animation: clockwise 500ms linear infinite;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pswp__preloader__cut {
+  position: relative;
+  width: 7px;
+  height: 14px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.pswp__preloader__donut--fake {
+  box-sizing: border-box;
+  width: 14px;
+	height: 14px;
+  border: 2px solid red;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+	background: none;
+	margin:0;
+}
+
+.pswp__preloader__donut {
+  box-sizing: border-box;
+  width: 14px;
+	height: 14px;
+  border: 2px solid #FFF;
+  border-radius: 50%;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+	background: none;
+	margin:0;
+  -webkit-animation: donut-rotate 1000ms cubic-bezier(.4,0,.22,1) infinite;
+  animation: donut-rotate 1000ms cubic-bezier(.4,0,.22,1) infinite;
+
+}
+
+@-webkit-keyframes clockwise {
+  0% { -webkit-transform: rotate(0deg) }
+  100% { -webkit-transform: rotate(360deg) }
+}
+@keyframes clockwise {
+  0% { transform: rotate(0deg) }
+  100% { transform: rotate(360deg) }
+}
+@-webkit-keyframes donut-rotate {
+  0% { -webkit-transform: rotate(0) }
+  50% { -webkit-transform: rotate(-140deg) }
+  100% { -webkit-transform: rotate(0) }
+}
+@keyframes donut-rotate {
+  0% { transform: rotate(0) }
+  50% { transform: rotate(-140deg) }
+  100% { transform: rotate(0) }
+}
 
 /* Background */
 #bg {
