@@ -1,3 +1,191 @@
+//Background
+//global Variables
+let scene;
+let camera;
+let renderer;
+let circle;
+let skeleton;
+let particle;
+let ambientLight;
+let dLight;
+
+//function
+function init() {
+  //scene
+  scene = new THREE.Scene();
+
+  //camera Variables
+  const fov = 75;
+  const aspect = window.innerWidth / window.innerHeight;
+  const near = 0.1;
+  const far = 10000;
+
+  // camera
+  camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+  camera.position.z = 500;
+
+  const minCameraPosition = 100; // Минимальная позиция камеры
+  const cameraChangeSpeed = 0.1; // Скорость изменения позиции камеры
+
+  // Функция для изменения позиции камеры при прокрутке
+  function updateCameraPosition() {
+    // Получите текущую прокрутку страницы
+    const scrollTop = window.scrollY;
+
+    // Вычислите целевую позицию камеры в зависимости от прокрутки
+    const targetCameraPosition =
+      500 -
+      400 *
+        (scrollTop /
+          (document.documentElement.scrollHeight - window.innerHeight));
+
+    // Ограничьте минимальное значение позиции камеры
+    if (targetCameraPosition < minCameraPosition) {
+      camera.position.z = minCameraPosition;
+    } else {
+      camera.position.z = targetCameraPosition;
+    }
+
+    // Обновите отображение сцены
+    scene.add(camera);
+  }
+
+  // Добавьте слушатель события прокрутки
+  window.addEventListener("scroll", updateCameraPosition);
+
+  //renderer
+  renderer = new THREE.WebGLRenderer({
+    antialias: true,
+    alpha: true
+  });
+  renderer.setPixelRatio(window.devicePixelRatio);
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.autoClear = false;
+  renderer.setClearColor(0x000000, 0.0);
+  document.getElementById("bg").appendChild(renderer.domElement);
+
+  //3d object
+  circle = new THREE.Object3D();
+  skeleton = new THREE.Object3D();
+  particle = new THREE.Object3D();
+
+  scene.add(circle);
+  scene.add(skeleton);
+  scene.add(particle);
+
+  //adding Geomentry
+  let geometry = new THREE.TetrahedronGeometry(2, 1);
+  let geomet = new THREE.IcosahedronGeometry(7, 1);
+  let geomet2 = new THREE.IcosahedronGeometry(15, 4);
+
+  //colorSet
+  const getComputedStyleValue = (property) =>
+    getComputedStyle(document.documentElement)
+      .getPropertyValue(property)
+      .trim();
+
+  const bgCircleColor = getComputedStyleValue("--bg-color-circle");
+  const bgSkeletColor = getComputedStyleValue("--bg-color-skelet");
+  const bgOrbitsColor = getComputedStyleValue("--bg-color-orbits");
+  const lightTopRightColor = getComputedStyleValue("--light-color-topright");
+  const lightRightColor = getComputedStyleValue("--light-color-right");
+  const lightFrontRightColor = getComputedStyleValue(
+    "--light-color-frontright"
+  );
+  const lightBottomLeftColor = getComputedStyleValue(
+    "--light-color-bottomleft"
+  );
+
+  //Material
+  let material = new THREE.MeshPhongMaterial({
+    color: new THREE.Color(bgCircleColor),
+    shading: THREE.FLatShading
+  });
+
+  let mat = new THREE.MeshPhongMaterial({
+    color: new THREE.Color(bgSkeletColor),
+    side: THREE.DoubleSide,
+    wireframe: true
+  });
+
+  let mat2 = new THREE.MeshPhongMaterial({
+    color: new THREE.Color(bgOrbitsColor),
+    side: THREE.DoubleSide,
+    wireframe: true
+  });
+
+  //Particle
+  for (let i = 0; i < 1000; i++) {
+    let mesh = new THREE.Mesh(geometry, mat2);
+    mesh.position.set(
+      Math.random() - 0.5,
+      Math.random() - 0.5,
+      Math.random() - 0.5
+    );
+    mesh.position.multiplyScalar(90 + Math.random() * 900);
+    mesh.rotation.set(Math.random() * 3, Math.random() * 3, Math.random() * 3);
+    particle.add(mesh);
+  }
+
+  //innerplanet
+  let innerPlanet = new THREE.Mesh(geomet, material);
+  innerPlanet.scale.x = innerPlanet.scale.y = innerPlanet.scale.z = 16;
+  circle.add(innerPlanet);
+
+  //outerPlanet
+  let outerPlanet = new THREE.Mesh(geomet2, mat);
+  outerPlanet.scale.x = outerPlanet.scale.y = outerPlanet.scale.z = 11;
+  skeleton.add(outerPlanet);
+
+  //ambientLight
+  ambientLight = new THREE.AmbientLight(new THREE.Color(lightTopRightColor));
+  scene.add(ambientLight);
+
+  // directional light
+  dLight = [];
+  dLight[0] = new THREE.DirectionalLight(new THREE.Color(lightRightColor), 1);
+  dLight[0].position.set(1, 0, 0);
+  dLight[1] = new THREE.DirectionalLight(
+    new THREE.Color(lightFrontRightColor),
+    1
+  );
+  dLight[1].position.set(0.75, 1, 0.5);
+  dLight[2] = new THREE.DirectionalLight(
+    new THREE.Color(lightBottomLeftColor),
+    1
+  );
+  dLight[2].position.set(-0.75, -1, 0.5);
+  scene.add(dLight[0]);
+  scene.add(dLight[1]);
+  scene.add(dLight[2]);
+
+  animate();
+  window.addEventListener("resize", onWindowResize, false);
+}
+
+function animate() {
+  requestAnimationFrame(animate);
+
+  particle.rotation.x += 0.0;
+  particle.rotation.y -= 0.0001;
+  particle.rotation.z -= 0.0015;
+
+  circle.rotation.x -= 0.002;
+  circle.rotation.y -= 0.002;
+
+  skeleton.rotation.x += 0.001;
+  skeleton.rotation.y += 0.001;
+
+  renderer.render(scene, camera);
+}
+
+function onWindowResize() {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+}
+window.onload = init;
+
 //меню
 document.addEventListener("DOMContentLoaded", function () {
   const groups = {
@@ -214,194 +402,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-//Background
-//global Variables
-let scene;
-let camera;
-let renderer;
-let circle;
-let skeleton;
-let particle;
-let ambientLight;
-let dLight;
-
-//function
-function init() {
-  //scene
-  scene = new THREE.Scene();
-
-  //camera Variables
-  const fov = 75;
-  const aspect = window.innerWidth / window.innerHeight;
-  const near = 0.1;
-  const far = 10000;
-
-  // camera
-  camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-  camera.position.z = 500;
-
-  const minCameraPosition = 100; // Минимальная позиция камеры
-  const cameraChangeSpeed = 0.1; // Скорость изменения позиции камеры
-
-  // Функция для изменения позиции камеры при прокрутке
-  function updateCameraPosition() {
-    // Получите текущую прокрутку страницы
-    const scrollTop = window.scrollY;
-
-    // Вычислите целевую позицию камеры в зависимости от прокрутки
-    const targetCameraPosition =
-      500 -
-      400 *
-        (scrollTop /
-          (document.documentElement.scrollHeight - window.innerHeight));
-
-    // Ограничьте минимальное значение позиции камеры
-    if (targetCameraPosition < minCameraPosition) {
-      camera.position.z = minCameraPosition;
-    } else {
-      camera.position.z = targetCameraPosition;
-    }
-
-    // Обновите отображение сцены
-    scene.add(camera);
-  }
-
-  // Добавьте слушатель события прокрутки
-  window.addEventListener("scroll", updateCameraPosition);
-
-  //renderer
-  renderer = new THREE.WebGLRenderer({
-    antialias: true,
-    alpha: true
-  });
-  renderer.setPixelRatio(window.devicePixelRatio);
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  renderer.autoClear = false;
-  renderer.setClearColor(0x000000, 0.0);
-  document.getElementById("bg").appendChild(renderer.domElement);
-
-  //3d object
-  circle = new THREE.Object3D();
-  skeleton = new THREE.Object3D();
-  particle = new THREE.Object3D();
-
-  scene.add(circle);
-  scene.add(skeleton);
-  scene.add(particle);
-
-  //adding Geomentry
-  let geometry = new THREE.TetrahedronGeometry(2, 1);
-  let geomet = new THREE.IcosahedronGeometry(7, 1);
-  let geomet2 = new THREE.IcosahedronGeometry(15, 4);
-
-  //colorSet
-  const getComputedStyleValue = (property) =>
-    getComputedStyle(document.documentElement)
-      .getPropertyValue(property)
-      .trim();
-
-  const bgCircleColor = getComputedStyleValue("--bg-color-circle");
-  const bgSkeletColor = getComputedStyleValue("--bg-color-skelet");
-  const bgOrbitsColor = getComputedStyleValue("--bg-color-orbits");
-  const lightTopRightColor = getComputedStyleValue("--light-color-topright");
-  const lightRightColor = getComputedStyleValue("--light-color-right");
-  const lightFrontRightColor = getComputedStyleValue(
-    "--light-color-frontright"
-  );
-  const lightBottomLeftColor = getComputedStyleValue(
-    "--light-color-bottomleft"
-  );
-
-  //Material
-  let material = new THREE.MeshPhongMaterial({
-    color: new THREE.Color(bgCircleColor),
-    shading: THREE.FLatShading
-  });
-
-  let mat = new THREE.MeshPhongMaterial({
-    color: new THREE.Color(bgSkeletColor),
-    side: THREE.DoubleSide,
-    wireframe: true
-  });
-
-  let mat2 = new THREE.MeshPhongMaterial({
-    color: new THREE.Color(bgOrbitsColor),
-    side: THREE.DoubleSide,
-    wireframe: true
-  });
-
-  //Particle
-  for (let i = 0; i < 1000; i++) {
-    let mesh = new THREE.Mesh(geometry, mat2);
-    mesh.position.set(
-      Math.random() - 0.5,
-      Math.random() - 0.5,
-      Math.random() - 0.5
-    );
-    mesh.position.multiplyScalar(90 + Math.random() * 900);
-    mesh.rotation.set(Math.random() * 3, Math.random() * 3, Math.random() * 3);
-    particle.add(mesh);
-  }
-
-  //innerplanet
-  let innerPlanet = new THREE.Mesh(geomet, material);
-  innerPlanet.scale.x = innerPlanet.scale.y = innerPlanet.scale.z = 16;
-  circle.add(innerPlanet);
-
-  //outerPlanet
-  let outerPlanet = new THREE.Mesh(geomet2, mat);
-  outerPlanet.scale.x = outerPlanet.scale.y = outerPlanet.scale.z = 11;
-  skeleton.add(outerPlanet);
-
-  //ambientLight
-  ambientLight = new THREE.AmbientLight(new THREE.Color(lightTopRightColor));
-  scene.add(ambientLight);
-
-  // directional light
-  dLight = [];
-  dLight[0] = new THREE.DirectionalLight(new THREE.Color(lightRightColor), 1);
-  dLight[0].position.set(1, 0, 0);
-  dLight[1] = new THREE.DirectionalLight(
-    new THREE.Color(lightFrontRightColor),
-    1
-  );
-  dLight[1].position.set(0.75, 1, 0.5);
-  dLight[2] = new THREE.DirectionalLight(
-    new THREE.Color(lightBottomLeftColor),
-    1
-  );
-  dLight[2].position.set(-0.75, -1, 0.5);
-  scene.add(dLight[0]);
-  scene.add(dLight[1]);
-  scene.add(dLight[2]);
-
-  animate();
-  window.addEventListener("resize", onWindowResize, false);
-}
-
-function animate() {
-  requestAnimationFrame(animate);
-
-  particle.rotation.x += 0.0;
-  particle.rotation.y -= 0.0001;
-  particle.rotation.z -= 0.0015;
-
-  circle.rotation.x -= 0.002;
-  circle.rotation.y -= 0.002;
-
-  skeleton.rotation.x += 0.001;
-  skeleton.rotation.y += 0.001;
-
-  renderer.render(scene, camera);
-}
-
-function onWindowResize() {
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight);
-}
-window.onload = init;
-
 //Home
 // get the element
 const text = document.querySelector(".typing-text");
@@ -747,6 +747,7 @@ new Vue({
     }
   }
 });
+});
 //Modifications
 var expandingAnimationTiming = 400;
 var collapsingAnimationTiming = 200;
@@ -1013,5 +1014,4 @@ galleryImgs.forEach((item) => {
     );
     galleryMask.classList.remove("mask-off");
   });
-});
 });
