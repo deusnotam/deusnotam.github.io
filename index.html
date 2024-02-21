@@ -4,152 +4,626 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!--metatextblock-->
-		<title>D3usN0tam System</title>
+		<title>D3usN0tam</title>
 		<meta name="description" content="Модификации от Deus Notam">
-		<meta property="og:title" content="D3usN0tam System">
+		<meta property="og:title" content="D3usN0tam">
 		<meta property="og:description" content="Модификации от Deus Notam">
 		<meta property="og:type" content="website">
 		<meta property="og:image" content="site/img/logo.jpeg">
 		<!--/metatextblock-->
 		<link rel="icon" type="image/png" sizes="32x32" href="site/img/logo.jpeg">
 		<!-- Assets -->
-		<link rel="stylesheet" href="site/css/style.css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.0/bootstrap-table.min.css">
-		<link rel="stylesheet" href="https://rawgit.com/vitalets/x-editable/master/dist/bootstrap3-editable/css/bootstrap-editable.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.0/bootstrap-table.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/filter-control/bootstrap-table-filter-control.js"></script>
-		<script src="datasite.js"></script>
+		<script src = 'https://deusnotam.github.io/bd.js'></script>
+
+    <link rel="stylesheet" href="site/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.0/bootstrap-table.min.css">
+    <link rel="stylesheet" href="https://rawgit.com/vitalets/x-editable/master/dist/bootstrap3-editable/css/bootstrap-editable.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r83/three.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.0/bootstrap-table.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/filter-control/bootstrap-table-filter-control.js"></script>
+    <script src="site/js/scripts.js"></script>
 	</head>
 	<body>
-		<div class="menu">
-			<div class="logo">
-				<div class="themeswitcher">
-					<label class="switcher">
-						<div>
-							<a href="https://deusnotam.notion.site/D3usNotam-System-ba149f69de214fd3ba0b9df834eb2c6e?pvs=4" target="_blank">
-								<img class="logoimg" src="site/img/logo.jpeg">
-							</a>
-						</div>
-					</label>
-				</div>
-			</div>
-
-			<div class="button">
-				<div class="themeswitcher">
-					<label class="switcher">
-						<div>
-							<a href="https://deusnotam.notion.site/05f47625ac2f4a1eb47db6e1830a02c5?pvs=4" class="text instructions" target="_blank">
-								<span>Инструкция</span>
-							</a>
-						</div>
-					</label>
-				</div>
-			</div>
-			
-			<div class="button">
-				<div class="themeswitcher">
-					<label class="switcher">
-						<div>
-							<a href="https://deusnotam.notion.site/00f3d2d7f4914bbfa3e4b923dfae8106?pvs=4" class="text update" target="_blank">
-								<span>Что нового?</span>
-							</a>
-						</div>
-					</label>
-				</div>
-			</div>
-			
-			<div class="themeswitcher">
-				<label class="switcher">
-					<input type="checkbox" name="theme-switcher">
-					<div>
-						<i class="fas fa-sun"></i>
-						<i class="fas fa-arrow-right arrow"></i>
-						<i class="fas fa-moon"></i>
-					</div>
-				</label>
-			</div>
-		</div>
-		
-		<div class="container">
-			<h1>D3usN0tam System</h1>
-			<p>Это мод собирающий в себе много модов. Увидеть все моды можно кликнув по логотипу сверху.</p>
-			<p>Здесь можно увидеть проекты, которые были подключены к большой базе модов D3usN0tam.</p>
-			<p>Все подробности о проекте можно найти кликнув по логотипу сверху.</p>
-
-			<table id="table" data-toggle="table" data-search="false" data-filter-control="true" data-show-export="false" data-click-to-select="true" data-toolbar="#toolbar">
-				<thead>
-					<tr>
-						<th data-field="name" data-filter-control="input" data-sortable="true">Название</th>
-						<th data-field="link" data-sortable="false">Ссылка</th>
-						<th data-field="date" data-filter-control="select" data-sortable="true">Дата подключения</th>
-						<th data-field="cause" data-filter-control="select" data-sortable="true">Cистема "Blocker"</th>
-						<th data-field="note" data-sortable="false">Комментарий от исполнителя</th>
-					</tr>
-				</thead>
-				<tbody id="tableBody">
-					
-				</tbody>
-			</table>
-			<script>
-				$(document).ready(function () {
-					var $table = $('#table');
-					function processData(data) {
-						$table.bootstrapTable('destroy');
-						$table.bootstrapTable({
-							data: site,
-							columns: [
-								{ field: 'name', title: 'Название', sortable: true },
-								{ field: 'url', title: 'Ссылка', sortable: false },
-								{ field: 'date', title: 'Дата подключения', sortable: true },
-								{ field: 'blocker', title: 'Cистема "Blocker"', sortable: true },
-								{ field: 'note', title: 'Комментарий от исполнителя', sortable: false }
-							]
-						});
-					}
-					processData(site);
-				});
-			</script>
-			<script>
-				var checkbox = document.querySelector(
-					'input[name=theme-switcher]'
-				);
-				checkbox.addEventListener('change', function() {
-					if(this.checked) {
-						document.documentElement.setAttribute(
-							'data-theme', 
-							'light'
-						)
-					} else {
-						document.documentElement.setAttribute(
-							'data-theme',
-							'dark'
-						)
-					}
-				});
-			</script>
-			<script>
-				document.addEventListener("DOMContentLoaded", function () {
-					var checkbox = document.querySelector('input[name=theme-switcher]');
-					var savedTheme = localStorage.getItem('theme');
-					if (savedTheme) {
-						document.documentElement.setAttribute('data-theme', savedTheme);
-						checkbox.checked = savedTheme === 'light';
-					}
-					checkbox.addEventListener('change', function () {
-						if (this.checked) {
-							document.documentElement.setAttribute('data-theme', 'light');
-							localStorage.setItem('theme', 'light'); // Сохраняем тему в localStorage
-						} else {
-							document.documentElement.setAttribute('data-theme', 'dark');
-							localStorage.setItem('theme', 'dark'); // Сохраняем тему в localStorage
-						}
-					});
-				});
-			</script>
-		</div>
+    <div id="bg"></div>
+    <div class="navbar">
+      <div class="amazing-tabs">
+        <div class="filters-container">
+          <div class="filters-wrapper">
+            <ul class="filter-tabs">
+              <li>
+                <button class="filter-button filter-active" data-translate-value="0" data-group="System">
+                  <p>System</p>
+                </button>
+              </li>
+              <li>
+                <button class="filter-button" data-translate-value="100%" data-group="Modifications">
+                  <p>Модификации</p>
+                </button>
+              </li>
+              <li>
+                <button class="filter-button" data-translate-value="200%" data-group="Comming">
+                  <p>Скоро...</p>
+                </button>
+              </li>
+            </ul>
+            <div class="filter-slider" aria-hidden="true">
+              <div class="filter-slider-rect">&nbsp;</div>
+            </div>
+          </div>
+        </div>
+        <div class="main-tabs-container">
+          <div class="main-tabs-wrapper">
+            <ul class="main-tabs">
+              <li>
+                <button class="round-button" style="--round-button-active-color: #FCFF25" data-translate-value="0" data-color="yellow" data-group="About">
+                  <svg fill="currentColor" viewBox="0 0 236.25 236.25">
+                    <path d="M194.838,135.847c-2.133-22.22-15.158-25.655-21.474-25.995c-2.108-0.113-3.979-1.308-5.003-3.153 c-5.237-9.439-13.203-11.707-19.649-11.707c-0.829,0-1.634,0.038-2.404,0.102c-0.169,0.014-0.337,0.021-0.502,0.021 c-3.804,0-6.652-3.66-5.688-7.434c5.181-20.277,18.426-66.731,18.426-66.731C162.669,8.595,152.587,0.001,142.716,0 c-6.135,0-12.189,3.319-14.701,11.119l-18.587,61.864c-1.253,4.17-4.841,6.267-8.43,6.267c-3.528,0-7.057-2.026-8.37-6.1 L74.875,18.064c-2.114-8.786-8.794-12.64-15.552-12.64c-9.626,0-19.412,7.816-16.398,20.332l19.132,79.563 c0.764,3.175-1.168,6.354-4.329,7.171c-6.207,1.604-15.255,6.709-16.433,22.781c-1.439,19.636,27.503,57.831,33.032,65.885 c0.594,0.865,0.948,1.868,1.029,2.915l2.936,26.793c0.24,3.105,2.83,5.381,5.945,5.381h72.49c3.139,0,5.74-2.311,5.95-5.443 l2.37-24.415c0.071-1.064,0.422-2.054,1.025-2.934C171.323,195.79,197.294,161.439,194.838,135.847z">
+                    </path>
+                  </svg>
+                </button>
+              </li>
+              <li>
+                <button class="round-button work" style="--round-button-active-color: #77DDE7" data-translate-value="100%" data-color="blue" data-group="filter-button-active">
+                  <svg fill="currentColor" viewBox="0 0 522.562 522.562">
+                    <path d="M381.213,219.938h-10.355c-4.523,0-8.109,4.179-8.855,9.562h-37.045l-15.769-65.427 c9.754-11.063,15.348-25.302,15.348-40.593c0-29.615-21.009-54.411-48.893-60.301V0h-28.688v64.002 c-26.278,7.047-45.708,31.011-45.708,59.479c0,16.266,6.33,31.25,17.107,42.496L203.017,229.5h-42.448 c-0.746-5.384-4.332-9.562-8.855-9.562h-10.356c-5.068,0-9.17,5.125-9.17,11.456v0.994c0,6.331,4.103,16.237,9.161,16.237h10.356 c3.452,0,6.426-4.619,7.985-9.562h41.013L138.91,495.376l9.17,2.696l-5.394,18.341c-0.746,2.544,0.698,5.192,3.232,5.938 c0.449,0.134,0.908,0.201,1.348,0.201c2.065,0,3.978-1.349,4.581-3.424l5.403-18.351l4.59,1.349l24.222-31.499l54.525-231.565 H256.5v19.125c0,5.278,4.284,9.562,9.562,9.562s9.562-4.284,9.562-9.562v-19.125h11.743l54.516,231.575l24.222,31.499l4.59-1.349 l5.403,18.351c0.611,2.084,2.515,3.423,4.58,3.423c0.439,0,0.898-0.066,1.349-0.2c2.533-0.746,3.987-3.395,3.231-5.938 l-5.402-18.341l9.17-2.696l-61.773-256.323h35.61c1.559,4.944,4.533,9.562,7.985,9.562h10.355c5.068,0,9.171-9.907,9.171-16.237 v-0.994C390.375,225.063,386.272,219.938,381.213,219.938z M275.625,229.5v-19.125c0-5.278-4.284-9.562-9.562-9.562 s-9.562,4.284-9.562,9.562V229.5h-13.655l21.143-89.801L285.12,229.5H275.625z M299.922,125.718l-35.944,10.585l-35.946-10.585 l-6.933,28.773c-6.531-8.788-10.309-19.517-10.309-31.011c0-28.716,23.361-52.087,52.087-52.087s52.087,23.361,52.087,52.087 c0,10.461-3.137,20.311-8.663,28.668L299.922,125.718z"></path>
+                  </svg>
+                </button>
+              </li>
+              <li>
+                <button class="round-button active" style="--round-button-active-color: #B934FF" data-translate-value="200%" data-color="purple" data-group="Home">
+                  <svg fill="currentColor" viewBox="0 0 8 8">
+                    <path d="M4.03 0c-2.53 0-4.03 3-4.03 3s1.5 3 4.03 3c2.47 0 3.97-3 3.97-3s-1.5-3-3.97-3zm-.03 1c1.11 0 2 .9 2 2 0 1.11-.89 2-2 2-1.1 0-2-.89-2-2 0-1.1.9-2 2-2zm0 1c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1c0-.1-.04-.19-.06-.28-.08.16-.24.28-.44.28-.28 0-.5-.22-.5-.5 0-.2.12-.36.28-.44-.09-.03-.18-.06-.28-.06z" transform="translate(0 1)"></path>
+                  </svg>
+                </button>
+              </li>
+              <li>
+                <button class="round-button " style="--round-button-active-color: #FF1F1F" data-translate-value="300%" data-color="red" data-group="Table">
+                  <svg fill="currentColor" viewBox="0 0 16 16">
+                    <path id="Path_29" data-name="Path 29" d="M37.5,0h-11A2.5,2.5,0,0,0,24,2.5v11A2.5,2.5,0,0,0,26.5,16h11A2.5,2.5,0,0,0,40,13.5V2.5A2.5,2.5,0,0,0,37.5,0Zm-11,1h11A1.5,1.5,0,0,1,39,2.5V4H25V2.5A1.5,1.5,0,0,1,26.5,1ZM25,13.5V5h4V15H26.5A1.5,1.5,0,0,1,25,13.5ZM37.5,15H30V5h9v8.5A1.5,1.5,0,0,1,37.5,15ZM26,6.5a.5.5,0,0,1,.5-.5h1a.5.5,0,0,1,0,1h-1A.5.5,0,0,1,26,6.5Zm2,3a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1,0-1h1A.5.5,0,0,1,28,9.5Zm0,3a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1,0-1h1A.5.5,0,0,1,28,12.5Zm10-6a.5.5,0,0,1-.5.5h-6a.5.5,0,0,1,0-1h6A.5.5,0,0,1,38,6.5Zm0,3a.5.5,0,0,1-.5.5h-6a.5.5,0,0,1,0-1h6A.5.5,0,0,1,38,9.5Zm0,3a.5.5,0,0,1-.5.5h-6a.5.5,0,0,1,0-1h6A.5.5,0,0,1,38,12.5Z" transform="translate(-24)"></path>
+                  </svg>
+                </button>
+              </li>
+              <li>
+                <button class="round-button" style="--round-button-active-color: #A7FF25" data-translate-value="400%" data-color="green" data-group="Settings">
+                  <svg fill="currentColor" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 8.25C9.92894 8.25 8.25 9.92893 8.25 12C8.25 14.0711 9.92894 15.75 12 15.75C14.0711 15.75 15.75 14.0711 15.75 12C15.75 9.92893 14.0711 8.25 12 8.25ZM9.75 12C9.75 10.7574 10.7574 9.75 12 9.75C13.2426 9.75 14.25 10.7574 14.25 12C14.25 13.2426 13.2426 14.25 12 14.25C10.7574 14.25 9.75 13.2426 9.75 12Z" fill="currentColor"></path>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.9747 1.25C11.5303 1.24999 11.1592 1.24999 10.8546 1.27077C10.5375 1.29241 10.238 1.33905 9.94761 1.45933C9.27379 1.73844 8.73843 2.27379 8.45932 2.94762C8.31402 3.29842 8.27467 3.66812 8.25964 4.06996C8.24756 4.39299 8.08454 4.66251 7.84395 4.80141C7.60337 4.94031 7.28845 4.94673 7.00266 4.79568C6.64714 4.60777 6.30729 4.45699 5.93083 4.40743C5.20773 4.31223 4.47642 4.50819 3.89779 4.95219C3.64843 5.14353 3.45827 5.3796 3.28099 5.6434C3.11068 5.89681 2.92517 6.21815 2.70294 6.60307L2.67769 6.64681C2.45545 7.03172 2.26993 7.35304 2.13562 7.62723C1.99581 7.91267 1.88644 8.19539 1.84541 8.50701C1.75021 9.23012 1.94617 9.96142 2.39016 10.5401C2.62128 10.8412 2.92173 11.0602 3.26217 11.2741C3.53595 11.4461 3.68788 11.7221 3.68786 12C3.68785 12.2778 3.53592 12.5538 3.26217 12.7258C2.92169 12.9397 2.62121 13.1587 2.39007 13.4599C1.94607 14.0385 1.75012 14.7698 1.84531 15.4929C1.88634 15.8045 1.99571 16.0873 2.13552 16.3727C2.26983 16.6469 2.45535 16.9682 2.67758 17.3531L2.70284 17.3969C2.92507 17.7818 3.11058 18.1031 3.28089 18.3565C3.45817 18.6203 3.64833 18.8564 3.89769 19.0477C4.47632 19.4917 5.20763 19.6877 5.93073 19.5925C6.30717 19.5429 6.647 19.3922 7.0025 19.2043C7.28833 19.0532 7.60329 19.0596 7.8439 19.1986C8.08452 19.3375 8.24756 19.607 8.25964 19.9301C8.27467 20.3319 8.31403 20.7016 8.45932 21.0524C8.73843 21.7262 9.27379 22.2616 9.94761 22.5407C10.238 22.661 10.5375 22.7076 10.8546 22.7292C11.1592 22.75 11.5303 22.75 11.9747 22.75H12.0252C12.4697 22.75 12.8407 22.75 13.1454 22.7292C13.4625 22.7076 13.762 22.661 14.0524 22.5407C14.7262 22.2616 15.2616 21.7262 15.5407 21.0524C15.686 20.7016 15.7253 20.3319 15.7403 19.93C15.7524 19.607 15.9154 19.3375 16.156 19.1985C16.3966 19.0596 16.7116 19.0532 16.9974 19.2042C17.3529 19.3921 17.6927 19.5429 18.0692 19.5924C18.7923 19.6876 19.5236 19.4917 20.1022 19.0477C20.3516 18.8563 20.5417 18.6203 20.719 18.3565C20.8893 18.1031 21.0748 17.7818 21.297 17.3969L21.3223 17.3531C21.5445 16.9682 21.7301 16.6468 21.8644 16.3726C22.0042 16.0872 22.1135 15.8045 22.1546 15.4929C22.2498 14.7697 22.0538 14.0384 21.6098 13.4598C21.3787 13.1586 21.0782 12.9397 20.7378 12.7258C20.464 12.5538 20.3121 12.2778 20.3121 11.9999C20.3121 11.7221 20.464 11.4462 20.7377 11.2742C21.0783 11.0603 21.3788 10.8414 21.6099 10.5401C22.0539 9.96149 22.2499 9.23019 22.1547 8.50708C22.1136 8.19546 22.0043 7.91274 21.8645 7.6273C21.7302 7.35313 21.5447 7.03183 21.3224 6.64695L21.2972 6.60318C21.0749 6.21825 20.8894 5.89688 20.7191 5.64347C20.5418 5.37967 20.3517 5.1436 20.1023 4.95225C19.5237 4.50826 18.7924 4.3123 18.0692 4.4075C17.6928 4.45706 17.353 4.60782 16.9975 4.79572C16.7117 4.94679 16.3967 4.94036 16.1561 4.80144C15.9155 4.66253 15.7524 4.39297 15.7403 4.06991C15.7253 3.66808 15.686 3.2984 15.5407 2.94762C15.2616 2.27379 14.7262 1.73844 14.0524 1.45933C13.762 1.33905 13.4625 1.29241 13.1454 1.27077C12.8407 1.24999 12.4697 1.24999 12.0252 1.25H11.9747ZM10.5216 2.84515C10.5988 2.81319 10.716 2.78372 10.9567 2.76729C11.2042 2.75041 11.5238 2.75 12 2.75C12.4762 2.75 12.7958 2.75041 13.0432 2.76729C13.284 2.78372 13.4012 2.81319 13.4783 2.84515C13.7846 2.97202 14.028 3.21536 14.1548 3.52165C14.1949 3.61826 14.228 3.76887 14.2414 4.12597C14.271 4.91835 14.68 5.68129 15.4061 6.10048C16.1321 6.51968 16.9974 6.4924 17.6984 6.12188C18.0143 5.9549 18.1614 5.90832 18.265 5.89467C18.5937 5.8514 18.9261 5.94047 19.1891 6.14228C19.2554 6.19312 19.3395 6.27989 19.4741 6.48016C19.6125 6.68603 19.7726 6.9626 20.0107 7.375C20.2488 7.78741 20.4083 8.06438 20.5174 8.28713C20.6235 8.50382 20.6566 8.62007 20.6675 8.70287C20.7108 9.03155 20.6217 9.36397 20.4199 9.62698C20.3562 9.70995 20.2424 9.81399 19.9397 10.0041C19.2684 10.426 18.8122 11.1616 18.8121 11.9999C18.8121 12.8383 19.2683 13.574 19.9397 13.9959C20.2423 14.186 20.3561 14.29 20.4198 14.373C20.6216 14.636 20.7107 14.9684 20.6674 15.2971C20.6565 15.3799 20.6234 15.4961 20.5173 15.7128C20.4082 15.9355 20.2487 16.2125 20.0106 16.6249C19.7725 17.0373 19.6124 17.3139 19.474 17.5198C19.3394 17.72 19.2553 17.8068 19.189 17.8576C18.926 18.0595 18.5936 18.1485 18.2649 18.1053C18.1613 18.0916 18.0142 18.045 17.6983 17.8781C16.9973 17.5075 16.132 17.4803 15.4059 17.8995C14.68 18.3187 14.271 19.0816 14.2414 19.874C14.228 20.2311 14.1949 20.3817 14.1548 20.4784C14.028 20.7846 13.7846 21.028 13.4783 21.1549C13.4012 21.1868 13.284 21.2163 13.0432 21.2327C12.7958 21.2496 12.4762 21.25 12 21.25C11.5238 21.25 11.2042 21.2496 10.9567 21.2327C10.716 21.2163 10.5988 21.1868 10.5216 21.1549C10.2154 21.028 9.97201 20.7846 9.84514 20.4784C9.80512 20.3817 9.77195 20.2311 9.75859 19.874C9.72896 19.0817 9.31997 18.3187 8.5939 17.8995C7.86784 17.4803 7.00262 17.5076 6.30158 17.8781C5.98565 18.0451 5.83863 18.0917 5.73495 18.1053C5.40626 18.1486 5.07385 18.0595 4.81084 17.8577C4.74458 17.8069 4.66045 17.7201 4.52586 17.5198C4.38751 17.314 4.22736 17.0374 3.98926 16.625C3.75115 16.2126 3.59171 15.9356 3.4826 15.7129C3.37646 15.4962 3.34338 15.3799 3.33248 15.2971C3.28921 14.9684 3.37828 14.636 3.5801 14.373C3.64376 14.2901 3.75761 14.186 4.0602 13.9959C4.73158 13.5741 5.18782 12.8384 5.18786 12.0001C5.18791 11.1616 4.73165 10.4259 4.06021 10.004C3.75769 9.81389 3.64385 9.70987 3.58019 9.62691C3.37838 9.3639 3.28931 9.03149 3.33258 8.7028C3.34348 8.62001 3.37656 8.50375 3.4827 8.28707C3.59181 8.06431 3.75125 7.78734 3.98935 7.37493C4.22746 6.96253 4.3876 6.68596 4.52596 6.48009C4.66055 6.27983 4.74468 6.19305 4.81093 6.14222C5.07395 5.9404 5.40636 5.85133 5.73504 5.8946C5.83873 5.90825 5.98576 5.95483 6.30173 6.12184C7.00273 6.49235 7.86791 6.51962 8.59394 6.10045C9.31998 5.68128 9.72896 4.91837 9.75859 4.12602C9.77195 3.76889 9.80512 3.61827 9.84514 3.52165C9.97201 3.21536 10.2154 2.97202 10.5216 2.84515Z" fill="currentColor"></path>
+                  </svg>
+                </button>
+              </li>
+            </ul>
+            <div class="main-slider" aria-hidden="true">
+              <div class="main-slider-circle">&nbsp;</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="home" class="home">
+      <div class="background">
+        <div class="header">
+          <div class="headerWrapper">
+            <h1>Deus Notam</h1>
+            <h2>Частный разработчик</h2>
+            <h2 class="typing-text"></h2>
+          </div>
+        </div>
+      </div>
+    
+      <div class="section services">
+        <div class="sectionWrapper">
+          <h6>Новости</h6>
+          <h2>Самое актуальное</h2>
+          <p class="description">Я стараюсь сделать не только то что просят, но и добавить "изюминки". Поэтому я изучаю все сферы деятельности для того чтобы сделать максимально актуальный контент.</p>
+          <img class="gif news1" src="https://media.giphy.com/media/BPJmthQ3YRwD6QqcVD/giphy.gif?cid=ecf05e47x1jm75mlb13051bo7cnflcp6pdnnhi46a4kitjqg&ep=v1_gifs_search&rid=giphy.gif&ct=g">
+          <img class="gif news2" src="https://media.giphy.com/media/r1fDuPIcs18d2/giphy.gif?cid=ecf05e47d2goa3juyc6vh8kewrf5xxapqyxf1sebxrkirlxg&ep=v1_gifs_search&rid=giphy.gif&ct=g">
+    
+          <!-- Slider -->
+          <div class="slider-designe" id="slider">
+            <!-- Slides -->
+            <div style="background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/30256/1200_110627-8240-Myst.jpg)"></div>
+            <div style="background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/30256/Gif-pont-lueur-600.gif)"></div>
+            <div style="background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/30256/1200_Sharpened-version.jpg)"></div>
+            <div style="background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/30256/jungle.jpg)"></div>
+            <div style="background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/30256/1200_bodie-11.jpg)"></div>
+            <!-- The Arrows -->
+            <i class="left" class="arrows" style="z-index:2; position:absolute;"><svg viewBox="0 0 100 100">
+                <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z"></path>
+              </svg></i>
+            <i class="right" class="arrows" style="z-index:2; position:absolute;"><svg viewBox="0 0 100 100">
+                <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" transform="translate(100, 100) rotate(180) "></path>
+              </svg></i>
+          </div>
+    
+        </div>
+      </div>
+    
+      <div class="testimonials section services">
+        <div class="sectionWrapper">
+          <h2>Что обо мне говорят люди</h2>
+          <img class="gif review1" src="https://media.giphy.com/media/5VKbvrjxpVJCM/giphy.gif?cid=ecf05e47oexfjfl3luu9q5o60ptpv3dwrx43ms1yl1dncpxu&ep=v1_gifs_search&rid=giphy.gif&ct=g">
+          <img class="gif review2" src="https://media.giphy.com/media/t3sZxY5zS5B0z5zMIz/giphy.gif?cid=ecf05e47oexfjfl3luu9q5o60ptpv3dwrx43ms1yl1dncpxu&ep=v1_gifs_search&rid=giphy.gif&ct=g">
+          <div class="owl-carousel owl-carousel1 owl-theme">
+            <div>
+              <div class="card text-center"><img class="card-img-top" src="https://images.unsplash.com/photo-1572561300743-2dd367ed0c9a?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=300&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=50&w=300" alt="">
+                <div class="card-body">
+                  <h5>Ronne Galle <br />
+                    <span> Project Manager </span>
+                  </h5>
+                  <p class="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+                    impedit quo minus id quod maxime placeat ” </p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="card text-center"><img class="card-img-top" src="https://images.unsplash.com/photo-1588361035994-295e21daa761?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=301&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=50&w=301" alt="">
+                <div class="card-body">
+                  <h5>Missy Limana<br />
+                    <span> Engineer </span>
+                  </h5>
+                  <p class="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+                    impedit quo minus id quod maxime placeat ” </p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="card text-center"><img class="card-img-top" src="https://images.unsplash.com/photo-1575377222312-dd1a63a51638?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=302&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=50&w=302" alt="">
+                <div class="card-body">
+                  <h5>Martha Brown<br />
+                    <span> Project Manager </span>
+                  </h5>
+                  <p class="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+                    impedit quo minus id quod maxime placeat ” </p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="card text-center"><img class="card-img-top" src="https://images.unsplash.com/photo-1549836938-d278c5d46d20?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=303&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=50&w=303" alt="">
+                <div class="card-body">
+                  <h5>Hanna Lisem<br />
+                    <span> Project Manager </span>
+                  </h5>
+                  <p class="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+                    impedit quo minus id quod maxime placeat ” </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="maintable" class="maintable">
+      <h1>D3usN0tam System</h1>
+      <p>Это мод собирающий в себе много модов. Увидеть все моды можно кликнув по логотипу сверху.</p>
+      <p>Здесь можно увидеть проекты, которые были подключены к большой базе модов D3usN0tam.</p>
+      <p>Все подробности о проекте можно найти кликнув по логотипу сверху.</p>
+    
+      <table id="table" data-toggle="table" data-search="false" data-filter-control="true" data-show-export="false" data-click-to-select="true" data-toolbar="#toolbar">
+        <thead>
+          <tr>
+            <th data-field="name" data-filter-control="input" data-sortable="true">Название</th>
+            <th data-field="link" data-sortable="false">Ссылка</th>
+            <th data-field="date" data-filter-control="select" data-sortable="true">Дата подключения</th>
+            <th data-field="cause" data-filter-control="select" data-sortable="true">Cистема "Blocker"</th>
+            <th data-field="note" data-sortable="false">Комментарий от исполнителя</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+    
+        </tbody>
+      </table>
+      <script>
+        $(document).ready(function() {
+          var $table = $('#table');
+    
+          function processData(data) {
+            $table.bootstrapTable('destroy');
+            $table.bootstrapTable({
+              data: site,
+              columns: [{
+                  field: 'name',
+                  title: 'Название',
+                  sortable: true
+                },
+                {
+                  field: 'url',
+                  title: 'Ссылка',
+                  sortable: false
+                },
+                {
+                  field: 'date',
+                  title: 'Дата подключения',
+                  sortable: true
+                },
+                {
+                  field: 'blocker',
+                  title: 'Cистема "Blocker"',
+                  sortable: true
+                },
+                {
+                  field: 'note',
+                  title: 'Комментарий от исполнителя',
+                  sortable: false
+                }
+              ]
+            });
+          }
+          processData(site);
+        });
+      </script>
+    </div>
+    <div id="modifications" class="modifications">
+      <div class="list-wrapper">
+        <div class="modificationstitle">
+          <h1>Блог</h1>
+        </div>
+        <input type="radio" id="All" name="categories" value="All" checked>
+        <input type="radio" id="Studio" name="categories" value="Studio">
+        <input type="radio" id="Tilda" name="categories" value="Tilda">
+    
+        <ol class="sorts">
+          <li>
+            <label for="All">Все</label>
+          </li>
+          <li>
+            <label for="Studio">Наша студия</label>
+          </li>
+          <li>
+            <label for="Tilda">Tilda</label>
+          </li>
+    
+        </ol>
+        <div class="cards-list">
+    
+          <div class="card" data-category="Tilda">
+            <div class="card-content">
+              <div class="banner-holder">
+                <div class="banner" data-height="20vh" data-height-expanded="45vh" style="background-image: url('https://portswigger.net/cms/images/6b/75/1359-article-200921-interpol-body-text.jpg')"></div>
+              </div>
+              <div class="container-fluid content-holder">
+                <div class="inner-content" data-position="20vh" data-position-expanded="40vh">
+                  <div class="info-holder">
+                    <div class="date-category">11.11.2023 / Модификация Tilda<br>Daniel Abros</div>
+                  </div>
+                  <h2 class="title">ABROS ID</h2>
+                  <div class="description">
+                    <p>Наша большая модификация для платформы Tilda. Пользовательская база данных и не только.</p>
+                    <p>Наверное стоит начать с того, что как и каждый творец медиа контента, мы задумались о создании своего личного уголка, где мы сможем реализовывать всё что будет душе угодно. Так и началась история создания нашего сайта.</p>
+                    <div class="gallery">
+                      <div class="gallery-mask mask-off">
+                        <img class="mask-image" src="" alt="" width="200">
+                      </div>
+                      <div class="image-item image-1" alt="" width="200" style="background-image: url('https://images.unsplash.com/photo-1551668231-6a07c2b7d544?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1777&q=80');"></div>
+                      <div class="image-item image-2" alt="" width="200" style="background-image: url('https://images.unsplash.com/photo-1605092675701-0dafa674328e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80');"></div>
+                      <div class="image-item image-3" alt="" width="200" style="background-image: url('https://images.unsplash.com/photo-1604946591005-c481923435b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1780&q=80');"></div>
+                      <div class="image-item image-4" alt="" width="200" style="background-image: url('https://images.unsplash.com/photo-1603741583823-e588bae552b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1964&q=80');"></div>
+                      <div class="image-item image-5" alt="" width="200" style="background-image: url('https://images.unsplash.com/photo-1618611157876-3517925c6285?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80');"></div>
+                    </div>
+                    <p>В течении первых 3 месяцев, вынашивалась идея о том, что какой контент должен быть на сайте, о чем мы хотим рассказать, что показать, а что и вовсе не нужно. Так спустя 3 месяца была выведена внутреняя структура сайта, после чего мы занялись дизайном.</p>
+                    <p>Как и пологается дизайн мы делали на Figma. Первый вариант дизайна заключался в том, чтобы сделать простой и не нагруженный дизайн, чтобы пользователь мог легко и просто разобраться, но по итогу когда дело дошло до мобильной версии, то оказалось, что у нас есть только два выбора: либо делать мобильную версию совершенно отличную от десктопной, либо делать совершенно неудобную навигацию для мобилок. В итоге спустя неделю пыхтения над мобильной версией, было решено создать совершенно новый и другой дизайн.</p>
+                    <blockquote class="pullquote">"I'd rather learn from one bird how to sing than teach ten thousand stars how not to dance" &mdash; e.e. cummings</blockquote>
+                    <p>Вторая версия дизайна сайта, уже не была такой простой. Так как мы пришли к выводу, что пользователь попадая на наш сайт, должен понимать, что в конечном итоге мы можем ему предложить. Крайний дизайн сайта вы и можете сейчас наблюдать. Думаю как раз теперь и можно рассказать подробне.</p>
+                    <p>Весь дизайн закрутился с того, что я искал варианты дизайнов мобильной навигации, чтобы понимать, что лучше дать пользователю и как это впишется в концепцию сайта. По итогу это стал нижний navbar как приложениях. Хотелось его сделать приятным на любом мобильном устройстве, поэтому сделали его "плавающим" на экране. Неделя работы с навигационным меню и оно мне так понравилось, что я решил сохранить этот способ навигации и для десктопа.</p>
+                    <img class="image-item onephoto" src="https://static.tildacdn.com/tild3066-3130-4535-a531-383836316634/ABROS_Nav.png">
+                    <p>Настало время страниц сайта и тут я решил сделать необычный концепт - страницы в странице. Звучит как бред в реализации тоже безумие, но раз захотел - делай. Идея заключалась в следующем: одна страница, на которой есть секции с разделами, при определенных действиях пользователя и соблюдении всех условий, нужные секции показываются или скрываются.</p>
+                    <p>После реализации функционала с секциями открылась возможность сделать не обычный фон сайта. Не так давно я познакомился с Three.js, не сказать что я углублялся в его основы, но пару простых проектов на нем сделать получилось. Решено, делаем фон на Three.js. Рассказывать в подробностях нечего. Просто 3D объект, просто камера, просто сцена, просто частицы. Обучений на эту тему тысячи и в свободном доступе из интересного наверное только то, что цвет объектов и сцены тоже зависит от действий пользователя и соблюдения условий.</p>
+                    <img class="onephoto" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmV5bmxtN2ttazdpdWhlNzY5Zjc4bzl3Ym1uYjNweW92aHg5c2o3dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/cusgalje1USJphLXZJ/source.gif">
+                    <p>На этом пожалуй и все. Подробный функционал каждой секции и как это реализовано описывать не буду, так как это можно продолжать до бесконечности. Но это все давным давно изучено, расписано и доступно в интернете. Но если вам будет интересно, то обязательно расскажу о чем-то подробнее.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="close-btn">
+                <h1>x</h1>
+              </div>
+            </div>
+          </div>
+          <div class="card" data-category="Studio">
+            <div class="card-content">
+              <div class="banner-holder">
+                <div class="banner" data-height="20vh" data-height-expanded="45vh" style="background-image: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeDQ4NzRjdTllOW1vNXVsZTFxMDJsNzl2ZmgzNjBtdWJqNXM5d2pvZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/aYqxNFLr1drrHUvaqK/source.gif')"></div>
+              </div>
+              <div class="container-fluid content-holder">
+                <div class="inner-content" data-position="20vh" data-position-expanded="40vh">
+                  <div class="info-holder">
+                    <div class="date-category">11.11.2023 / Наша Студия<br>Daniel Abros</div>
+                  </div>
+                  <h2 class="title">Разработка и запуск нашего сайта</h2>
+                  <div class="description">
+                    <p>Мы поделимся с вами нашим самым большим успехом - запуск нашего сайта.</p>
+                    <p>Наверное стоит начать с того, что как и каждый творец медиа контента, мы задумались о создании своего личного уголка, где мы сможем реализовывать всё что будет душе угодно. Так и началась история создания нашего сайта.</p>
+                    <p>В течении первых 3 месяцев, вынашивалась идея о том, что какой контент должен быть на сайте, о чем мы хотим рассказать, что показать, а что и вовсе не нужно. Так спустя 3 месяца была выведена внутреняя структура сайта, после чего мы занялись дизайном.</p>
+                    <p>Как и пологается дизайн мы делали на Figma. Первый вариант дизайна заключался в том, чтобы сделать простой и не нагруженный дизайн, чтобы пользователь мог легко и просто разобраться, но по итогу когда дело дошло до мобильной версии, то оказалось, что у нас есть только два выбора: либо делать мобильную версию совершенно отличную от десктопной, либо делать совершенно неудобную навигацию для мобилок. В итоге спустя неделю пыхтения над мобильной версией, было решено создать совершенно новый и другой дизайн.</p>
+                    <p>Вторая версия дизайна сайта, уже не была такой простой. Так как мы пришли к выводу, что пользователь попадая на наш сайт, должен понимать, что в конечном итоге мы можем ему предложить. Крайний дизайн сайта вы и можете сейчас наблюдать. Думаю как раз теперь и можно рассказать подробне.</p>
+                    <p>Весь дизайн закрутился с того, что я искал варианты дизайнов мобильной навигации, чтобы понимать, что лучше дать пользователю и как это впишется в концепцию сайта. По итогу это стал нижний navbar как приложениях. Хотелось его сделать приятным на любом мобильном устройстве, поэтому сделали его "плавающим" на экране. Неделя работы с навигационным меню и оно мне так понравилось, что я решил сохранить этот способ навигации и для десктопа.</p>
+                    <img class="onephoto" src="https://static.tildacdn.com/tild3066-3130-4535-a531-383836316634/ABROS_Nav.png">
+                    <p>Настало время страниц сайта и тут я решил сделать необычный концепт - страницы в странице. Звучит как бред в реализации тоже безумие, но раз захотел - делай. Идея заключалась в следующем: одна страница, на которой есть секции с разделами, при определенных действиях пользователя и соблюдении всех условий, нужные секции показываются или скрываются.</p>
+                    <p>После реализации функционала с секциями открылась возможность сделать не обычный фон сайта. Не так давно я познакомился с Three.js, не сказать что я углублялся в его основы, но пару простых проектов на нем сделать получилось. Решено, делаем фон на Three.js. Рассказывать в подробностях нечего. Просто 3D объект, просто камера, просто сцена, просто частицы. Обучений на эту тему тысячи и в свободном доступе из интересного наверное только то, что цвет объектов и сцены тоже зависит от действий пользователя и соблюдения условий.</p>
+                    <img class="onephoto" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmV5bmxtN2ttazdpdWhlNzY5Zjc4bzl3Ym1uYjNweW92aHg5c2o3dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/cusgalje1USJphLXZJ/source.gif">
+                    <p>На этом пожалуй и все. Подробный функционал каждой секции и как это реализовано описывать не буду, так как это можно продолжать до бесконечности. Но это все давным давно изучено, расписано и доступно в интернете. Но если вам будет интересно, то обязательно расскажу о чем-то подробнее.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="close-btn">
+                <h1>x</h1>
+              </div>
+            </div>
+          </div>
+          <div class="card" data-category="Tilda">
+            <div class="card-content">
+              <div class="banner-holder">
+                <div class="banner" data-height="20vh" data-height-expanded="45vh" style="background-image: url('https://static.tildacdn.com/tild3066-6566-4564-b362-326234343564/web-site-translation.png')"></div>
+              </div>
+              <div class="container-fluid content-holder">
+                <div class="inner-content" data-position="20vh" data-position-expanded="40vh">
+                  <div class="info-holder">
+                    <div class="date-category">12.10.2023 / Модификация Tilda<br>Daniel Abros</div>
+                  </div>
+                  <h2 class="title">Переводчик для сайта</h2>
+                  <div class="description">
+                    <p>Заказчику треболась реализовать перевод его интернет магазина на несколько языков, что на платформе Tilda проблемотично. Решений было два: 1.Дубликаты страниц переведенные на другие языки 2.Использование переводчика страниц для машинного перевода. Заказчик выбрал второе.</p>
+                    <p>В данной модификации мы интегрируем переводчик от компании Google прямо в наш сайт. При этом никаких лишних элементов кроме списка выбора языка</p>
+                    <p>Преступим!</p>
+                    <p>Вам нужно лишь скопировать код ниже и заменить значениея на свои:<br><br>1. "default_language": - Оригинальный язык сайта (Указывать в формате en, ua,ru,pl...)<br><br>2. "languages": - Языки на которые нужно осуществлять перевод (Указывать в том же формате через запятую)<br><br>3. "detect_browser_language": - Нужно ли определять язык браузера пользователя (Заменить на false если не нужно и вы хотите изначально показывать в том языке на котором сайт изначально)</p>
+                    <br>
+                    <p>Код переводчика:</p>
+                    <div class="abroscode">
+    
+                      <button class="copy-button" data-code="multilang" onclick="copyCode('multilang')">Скопировать код</button>
+                      <div class="code-box" data-code="multilang">&lt;div class="gtranslate_wrapper"&gt;&lt;/div&gt;
+                        &lt;script&gt;
+                        window.gtranslateSettings = {
+                        "default_language":"ru", //Оригинальный язык сайта
+                        "native_language_names":true,
+                        "detect_browser_language":true, //Определять язык браузера?
+                        "languages":["ru","pl","uk"], //На какие языки переводить?
+                        "wrapper_selector":".gtranslate_wrapper",
+                        "flag_size":24, //Размер иконки флага языка
+                        "flag_style":"3d"
+                        }
+                        &lt;/script&gt;
+                        &lt;script src="https://cdn.gtranslate.net/widgets/latest/dwf.js" defer&gt;&lt;/script&gt;
+                      </div>
+                    </div>
+    
+                  </div>
+                </div>
+              </div>
+              <div class="close-btn">
+                <h1>x</h1>
+              </div>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+    </div>
+    <div id="about" class="about">
+    
+      <div class="section services">
+        <div class="sectionWrapper">
+          <h2>Поддержать</h2>
+          <div class="donate">
+    
+            <input type="radio" id="tab1" name="tab-control" checked>
+            <input type="radio" id="tab2" name="tab-control">
+            <input type="radio" id="tab3" name="tab-control">
+            <input type="radio" id="tab4" name="tab-control">
+            <ul>
+              <li title="PaySystem"><label for="tab1" role="button"><svg width="24px" height="24px" viewBox="-23 0 302 302">
+                    <path d="M217.168476,23.5070146 C203.234077,7.62479651 178.045612,0.815753338 145.823355,0.815753338 L52.3030619,0.815753338 C45.7104431,0.815753338 40.1083819,5.6103852 39.0762042,12.1114399 L0.136468302,259.076601 C-0.637664968,263.946149 3.13311322,268.357876 8.06925331,268.357876 L65.804612,268.357876 L80.3050438,176.385849 L79.8555471,179.265958 C80.8877248,172.764903 86.4481659,167.970272 93.0324607,167.970272 L120.46841,167.970272 C174.366398,167.970272 216.569147,146.078116 228.897012,82.7490197 C229.263268,80.8761167 229.579581,79.0531577 229.854273,77.2718188 C228.297683,76.4477414 228.297683,76.4477414 229.854273,77.2718188 C233.525163,53.8646924 229.829301,37.9325302 217.168476,23.5070146" fill="#27346A"></path>
+                    <path d="M102.396976,68.8395929 C103.936919,68.1070797 105.651665,67.699203 107.449652,67.699203 L180.767565,67.699203 C189.449511,67.699203 197.548776,68.265236 204.948824,69.4555699 C207.071448,69.7968545 209.127479,70.1880831 211.125242,70.6375799 C213.123006,71.0787526 215.062501,71.5781934 216.943728,72.1275783 C217.884341,72.4022708 218.808307,72.6852872 219.715624,72.9849517 C223.353218,74.2002577 226.741092,75.61534 229.854273,77.2718188 C233.525163,53.8563683 229.829301,37.9325302 217.168476,23.5070146 C203.225753,7.62479651 178.045612,0.815753338 145.823355,0.815753338 L52.2947379,0.815753338 C45.7104431,0.815753338 40.1083819,5.6103852 39.0762042,12.1114399 L0.136468302,259.068277 C-0.637664968,263.946149 3.13311322,268.349552 8.0609293,268.349552 L65.804612,268.349552 L95.8875974,77.5798073 C96.5035744,73.6675208 99.0174265,70.4627756 102.396976,68.8395929 Z" fill="#27346A"></path>
+                    <path d="M228.897012,82.7490197 C216.569147,146.069792 174.366398,167.970272 120.46841,167.970272 L93.0241367,167.970272 C86.4398419,167.970272 80.8794007,172.764903 79.8555471,179.265958 L61.8174095,293.621258 C61.1431644,297.883153 64.4394738,301.745495 68.7513129,301.745495 L117.421821,301.745495 C123.182038,301.745495 128.084882,297.550192 128.983876,291.864891 L129.458344,289.384335 L138.631407,231.249423 L139.222412,228.036354 C140.121406,222.351053 145.02425,218.15575 150.784467,218.15575 L158.067979,218.15575 C205.215193,218.15575 242.132193,199.002194 252.920115,143.605884 C257.423406,120.456802 255.092683,101.128442 243.181019,87.5519756 C239.568397,83.4399129 235.081754,80.0437153 229.854273,77.2718188 C229.571257,79.0614817 229.263268,80.8761167 228.897012,82.7490197 L228.897012,82.7490197 Z" fill="#2790C3"></path>
+                    <path d="M216.952052,72.1275783 C215.070825,71.5781934 213.13133,71.0787526 211.133566,70.6375799 C209.135803,70.1964071 207.071448,69.8051785 204.957148,69.4638939 C197.548776,68.265236 189.457835,67.699203 180.767565,67.699203 L107.457976,67.699203 C105.651665,67.699203 103.936919,68.1070797 102.4053,68.8479169 C99.0174265,70.4710996 96.5118984,73.6675208 95.8959214,77.5881313 L80.3133678,176.385849 L79.8638711,179.265958 C80.8877248,172.764903 86.4481659,167.970272 93.0324607,167.970272 L120.476734,167.970272 C174.374722,167.970272 216.577471,146.078116 228.905336,82.7490197 C229.271592,80.8761167 229.579581,79.0614817 229.862597,77.2718188 C226.741092,75.623664 223.361542,74.2002577 219.723948,72.9932757 C218.816631,72.6936112 217.892665,72.4022708 216.952052,72.1275783" fill="#1F264F"></path>
+                  </svg><br><span>Кошельки и карты</span></label></li>
+              <li title="Crypto"><label for="tab2" role="button">
+                  <svg width="24px" height="24px" viewBox="0 -0.5 34 34" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M33.2538 16.1292C33.2538 25.0371 26.0329 32.2584 17.1255 32.2584C8.21799 32.2584 0.99707 25.0371 0.99707 16.1292C0.99707 7.22128 8.21799 0 17.1255 0C26.0329 0 33.2538 7.22128 33.2538 16.1292ZM21.0002 10.1366C23.2438 10.9071 24.8849 12.0607 24.5629 14.2077C24.3291 15.7799 23.4543 16.5403 22.2921 16.8065C23.8866 17.6335 24.4301 19.2029 23.9251 21.1005C22.9664 23.8314 20.6874 24.0613 17.6562 23.4905L16.9202 26.4261L15.1434 25.9844L15.8693 23.0882C15.4087 22.9742 14.9379 22.8522 14.4529 22.7221L13.724 25.6325L11.9492 25.1908L12.6842 22.2491L9.10534 21.3496L9.98817 19.3226C9.98817 19.3226 11.2982 19.6685 11.28 19.6433C11.7832 19.7673 12.0069 19.4406 12.095 19.2238L14.0895 11.256C14.1117 10.8798 13.9811 10.4059 13.2613 10.2264C13.2886 10.2072 11.9705 9.90669 11.9705 9.90669L12.4433 8.01585L16.0272 8.90026L16.7562 5.99188L18.532 6.43358L17.8182 9.28448C18.2961 9.39238 18.776 9.5023 19.2427 9.61828L19.9514 6.78553L21.7282 7.22724L21.0002 10.1366ZM16.7488 14.9882C17.9591 15.3091 20.5928 16.0074 21.0519 14.1765C21.5202 12.3033 18.9615 11.7376 17.7087 11.4606L17.7086 11.4606L17.7085 11.4606C17.5666 11.4292 17.4414 11.4015 17.3393 11.3761L16.4545 14.9117C16.5388 14.9325 16.6378 14.9588 16.7488 14.9882ZM15.3775 20.6807C16.8271 21.0626 19.9976 21.8977 20.5021 19.8803C21.0185 17.8175 17.9445 17.1305 16.4446 16.7952L16.4441 16.7951C16.2767 16.7577 16.129 16.7247 16.008 16.6946L15.032 20.5913C15.1311 20.6158 15.2472 20.6464 15.3771 20.6806L15.3775 20.6807Z" fill="#F7931A"></path>
+                    </g>
+                  </svg><br><span>Криптовалюта</span></label></li>
+              <li title="DonateSystem"><label for="tab3" role="button">
+                  <svg width="24px" height="24px" viewBox="0 0 1024 1024" fill="#000000">
+                    <path d="M314.8 267.7h395.5c11.2 0 21.4 6.7 25.8 17l39.1 91.1H249.9l39.1-91.1c4.4-10.3 14.6-17 25.8-17z" fill="#FFFFFF"></path>
+                    <path d="M817.8 404H207.3l55.8-130.3c8.9-20.7 29.1-34 51.6-34h395.5c22.5 0 42.8 13.4 51.6 34.1l56 130.2z m-525.3-56.2h440.1l-22.3-52H314.8l-22.3 52z m22.3-80.1v28.1-28.1z" fill="#333333"></path>
+                    <path d="M265.7 422.2h493.8c15.5 0 28.1 12.6 28.1 28.1 0 1-0.1 2-0.2 2.9L747 836.7c-1.5 14.3-13.6 25.1-27.9 25.1h-413c-14.4 0-26.4-10.9-27.9-25.1l-40.4-383.4c-1.6-15.4 9.6-29.3 25-30.9 0.9-0.1 1.9-0.2 2.9-0.2z" fill="#FFFFFF"></path>
+                    <path d="M677.8 861.9H315.5c-19.7 0-36.2-14.9-38.3-34.5L239 464.8c-2.4-22.7 15.4-42.6 38.3-42.6h470.6c22.9 0 40.7 19.8 38.3 42.6l-34.9 330.9c-4 37.6-35.7 66.2-73.5 66.2z m-311.7-56.2h293c19.7 0 36.2-14.9 38.3-34.5L723.8 521c2.4-22.7-15.4-42.6-38.3-42.6H339.7c-22.9 0-40.7 19.8-38.3 42.6l26.4 250.2c2 19.6 18.6 34.5 38.3 34.5z" fill="#333333"></path>
+                    <path d="M310 598.1h406.2l-10.7 103.6-385.7 1.7z" fill="#F4CE26"></path>
+                    <path d="M296.3 690.5h417.1v61.8H296.3zM296.3 537.4h441v61.8h-441z" fill="#333333"></path>
+                    <path d="M249.9 375.9h525.3c25.6 0 46.3 20.8 46.3 46.3 0 25.6-20.8 46.3-46.3 46.3H249.9c-25.6 0-46.3-20.8-46.3-46.3 0-25.6 20.7-46.3 46.3-46.3z" fill="#F4CE26"></path>
+                    <path d="M775.2 496.7H249.9c-41 0-74.4-33.4-74.4-74.4s33.4-74.4 74.4-74.4h525.3c41 0 74.4 33.4 74.4 74.4s-33.3 74.4-74.4 74.4zM249.9 404c-10.1 0-18.3 8.2-18.3 18.3 0 10.1 8.2 18.3 18.3 18.3h525.3c10.1 0 18.3-8.2 18.3-18.3 0-10.1-8.2-18.3-18.3-18.3H249.9zM357.6 101.1c15-4 30.4 4.9 34.4 19.9l14.5 54.3c4 15-4.9 30.4-19.9 34.4-15 4-30.4-4.9-34.4-19.9l-14.5-54.3c-4-15 4.9-30.4 19.9-34.4zM498 101.1c15-4 30.4 4.9 34.4 19.9l14.5 54.3c4 15-4.9 30.4-19.9 34.4-15 4-30.4-4.9-34.4-19.9l-14.5-54.3c-3.9-15 5-30.4 19.9-34.4zM638.5 101.1c15-4 30.4 4.9 34.4 19.9l14.5 54.3c4 15-4.9 30.4-19.9 34.4-15 4-30.4-4.9-34.4-19.9l-14.5-54.3c-4-15 4.9-30.4 19.9-34.4z" fill="#333333"></path>
+                  </svg><br><span>Донат системы</span></label></li>
+              <li title="Info"><label for="tab4" role="button"><svg viewBox="0 0 24 24">
+                    <path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z" />
+                  </svg><br><span>Информация</span></label></li>
+            </ul>
+    
+            <div class="slider">
+              <div class="indicator"></div>
+            </div>
+            <div class="content">
+              <section>
+                <h2 style="color: #428bff;">Кошельки и карты</h2>
+                Старые добрые электронные кошельки и карты. Быстро, удобно, надежно!<br>
+                <div class="menubutton">
+                  <a class="button" style="background-color: #ffb700; color: black;" href="https://www.paypal.com/paypalme/danyaabros" target="_blank">
+                    <svg width="24px" height="24px" viewBox="-23 0 302 302">
+                      <path d="M217.168476,23.5070146 C203.234077,7.62479651 178.045612,0.815753338 145.823355,0.815753338 L52.3030619,0.815753338 C45.7104431,0.815753338 40.1083819,5.6103852 39.0762042,12.1114399 L0.136468302,259.076601 C-0.637664968,263.946149 3.13311322,268.357876 8.06925331,268.357876 L65.804612,268.357876 L80.3050438,176.385849 L79.8555471,179.265958 C80.8877248,172.764903 86.4481659,167.970272 93.0324607,167.970272 L120.46841,167.970272 C174.366398,167.970272 216.569147,146.078116 228.897012,82.7490197 C229.263268,80.8761167 229.579581,79.0531577 229.854273,77.2718188 C228.297683,76.4477414 228.297683,76.4477414 229.854273,77.2718188 C233.525163,53.8646924 229.829301,37.9325302 217.168476,23.5070146" fill="#27346A"></path>
+                      <path d="M102.396976,68.8395929 C103.936919,68.1070797 105.651665,67.699203 107.449652,67.699203 L180.767565,67.699203 C189.449511,67.699203 197.548776,68.265236 204.948824,69.4555699 C207.071448,69.7968545 209.127479,70.1880831 211.125242,70.6375799 C213.123006,71.0787526 215.062501,71.5781934 216.943728,72.1275783 C217.884341,72.4022708 218.808307,72.6852872 219.715624,72.9849517 C223.353218,74.2002577 226.741092,75.61534 229.854273,77.2718188 C233.525163,53.8563683 229.829301,37.9325302 217.168476,23.5070146 C203.225753,7.62479651 178.045612,0.815753338 145.823355,0.815753338 L52.2947379,0.815753338 C45.7104431,0.815753338 40.1083819,5.6103852 39.0762042,12.1114399 L0.136468302,259.068277 C-0.637664968,263.946149 3.13311322,268.349552 8.0609293,268.349552 L65.804612,268.349552 L95.8875974,77.5798073 C96.5035744,73.6675208 99.0174265,70.4627756 102.396976,68.8395929 Z" fill="#27346A"></path>
+                      <path d="M228.897012,82.7490197 C216.569147,146.069792 174.366398,167.970272 120.46841,167.970272 L93.0241367,167.970272 C86.4398419,167.970272 80.8794007,172.764903 79.8555471,179.265958 L61.8174095,293.621258 C61.1431644,297.883153 64.4394738,301.745495 68.7513129,301.745495 L117.421821,301.745495 C123.182038,301.745495 128.084882,297.550192 128.983876,291.864891 L129.458344,289.384335 L138.631407,231.249423 L139.222412,228.036354 C140.121406,222.351053 145.02425,218.15575 150.784467,218.15575 L158.067979,218.15575 C205.215193,218.15575 242.132193,199.002194 252.920115,143.605884 C257.423406,120.456802 255.092683,101.128442 243.181019,87.5519756 C239.568397,83.4399129 235.081754,80.0437153 229.854273,77.2718188 C229.571257,79.0614817 229.263268,80.8761167 228.897012,82.7490197 L228.897012,82.7490197 Z" fill="#2790C3"></path>
+                      <path d="M216.952052,72.1275783 C215.070825,71.5781934 213.13133,71.0787526 211.133566,70.6375799 C209.135803,70.1964071 207.071448,69.8051785 204.957148,69.4638939 C197.548776,68.265236 189.457835,67.699203 180.767565,67.699203 L107.457976,67.699203 C105.651665,67.699203 103.936919,68.1070797 102.4053,68.8479169 C99.0174265,70.4710996 96.5118984,73.6675208 95.8959214,77.5881313 L80.3133678,176.385849 L79.8638711,179.265958 C80.8877248,172.764903 86.4481659,167.970272 93.0324607,167.970272 L120.476734,167.970272 C174.374722,167.970272 216.577471,146.078116 228.905336,82.7490197 C229.271592,80.8761167 229.579581,79.0614817 229.862597,77.2718188 C226.741092,75.623664 223.361542,74.2002577 219.723948,72.9932757 C218.816631,72.6936112 217.892665,72.4022708 216.952052,72.1275783" fill="#1F264F"></path>
+                    </svg>
+                    <span>PayPal</span>
+                  </a>
+                  <a class="button" style="background-color: #fff; color: black;" href="https://revolut.me/danyaabros" target="_blank">
+                    <svg width="24px" height="24px" viewBox="0 0 192 192" fill="none">
+                      <path stroke="#000000" stroke-linejoin="round" stroke-width="12" d="M99 22c-13.415 0-29.564 1.953-38.077 3.13-3.521.486-6.226 3.294-6.667 6.82L39.138 152.897c-1.154 9.233 5.793 17.672 15.093 17.36 7.908-.265 14.743-1.197 20.936-3.119 5.049-1.567 8.26-6.27 8.974-11.508L89 120l14.191 39.42c2.285 6.348 8.318 10.693 15.053 10.29 10.248-.611 18.11-2.294 27.788-5.98 4.703-1.791 6.264-7.558 3.671-11.871C139.848 135.468 136.165 121.216 131 104c0 0 22-14 22-38 0-36-30-44-54-44Z"></path>
+                      <path fill="#000000" d="m85.929 87.19 4.363-32c.406-2.974 2.95-5.235 5.94-4.984C112.14 51.539 117.362 59.302 116 72c-1.142 10.655-7.352 19.734-24.13 21.635-3.613.409-6.433-2.843-5.941-6.446Z"></path>
+                    </svg>
+                    <span>Revolut</span>
+                  </a>
+                </div>
+              </section>
+              <section>
+                <h2 style="color: #F7931A;">Криптовалюта</h2>
+                Откуда угодно и как угодно.<br>
+                <div class="card-wrap" id="card">
+    
+                  <!-- tabs -->
+                  <main class="tabs-wrap">
+                    <!-- tab buttons -->
+                    <nav class="tabs-nav">
+                      <button v-for="w in walletsList" :key="w.symbol" :class="{ 'active': w.active }" @click="selectWallet( w.symbol )">{{ w.symbol }}</button>
+                    </nav>
+                    <!-- tab content -->
+                    <section class="tabs-info">
+                      <!-- qr image -->
+                      <div class="tabs-info-row">
+                        <div class="tabs-info-qr">
+                          <img :src="getQrImage()" :alt="wallet.name" />
+                        </div>
+                        <div class="tabs-info-details">
+                          <div class="tabs-info-title">Donate {{ wallet.name }}</div>
+                          <div class="tabs-info-warn">Отправляйте только {{ wallet.name }} ({{ wallet.symbol }}) на этот депозитный адрес. Отправка любой другой монеты или токена на этот адрес может привести к потере вашего пожертвования. Спасибо!</div>
+                        </div>
+                      </div>
+                      <!-- address input -->
+                      <div class="tabs-info-input">
+                        <span>Адрес</span>
+                        <input type="text" :value="wallet.address" readonly />
+                        <button type="button" @click="copyText( wallet.address )">
+                          <span v-if="wallet.copied">✔ Скопировано</span>
+                          <span v-else>✚ Копировать</span>
+                        </button>
+                      </div>
+                    </section>
+                  </main>
+    
+                </div>
+              </section>
+              <section>
+                <h2 style="color: #F4CE26;">Донат системы</h2>
+                Стороний сервис донатов - решает многие проблемы с конвертацией.<br>
+                <div class="menubutton">
+                  <a class="button" style="background-color: #ffb700; color: black;" href="https://www.paypal.com/donate/?hosted_button_id=VEVSDGCZBKVLJ" target="_blank">
+                    <svg width="24px" height="24px" viewBox="-23 0 302 302">
+                      <path d="M217.168476,23.5070146 C203.234077,7.62479651 178.045612,0.815753338 145.823355,0.815753338 L52.3030619,0.815753338 C45.7104431,0.815753338 40.1083819,5.6103852 39.0762042,12.1114399 L0.136468302,259.076601 C-0.637664968,263.946149 3.13311322,268.357876 8.06925331,268.357876 L65.804612,268.357876 L80.3050438,176.385849 L79.8555471,179.265958 C80.8877248,172.764903 86.4481659,167.970272 93.0324607,167.970272 L120.46841,167.970272 C174.366398,167.970272 216.569147,146.078116 228.897012,82.7490197 C229.263268,80.8761167 229.579581,79.0531577 229.854273,77.2718188 C228.297683,76.4477414 228.297683,76.4477414 229.854273,77.2718188 C233.525163,53.8646924 229.829301,37.9325302 217.168476,23.5070146" fill="#27346A"></path>
+                      <path d="M102.396976,68.8395929 C103.936919,68.1070797 105.651665,67.699203 107.449652,67.699203 L180.767565,67.699203 C189.449511,67.699203 197.548776,68.265236 204.948824,69.4555699 C207.071448,69.7968545 209.127479,70.1880831 211.125242,70.6375799 C213.123006,71.0787526 215.062501,71.5781934 216.943728,72.1275783 C217.884341,72.4022708 218.808307,72.6852872 219.715624,72.9849517 C223.353218,74.2002577 226.741092,75.61534 229.854273,77.2718188 C233.525163,53.8563683 229.829301,37.9325302 217.168476,23.5070146 C203.225753,7.62479651 178.045612,0.815753338 145.823355,0.815753338 L52.2947379,0.815753338 C45.7104431,0.815753338 40.1083819,5.6103852 39.0762042,12.1114399 L0.136468302,259.068277 C-0.637664968,263.946149 3.13311322,268.349552 8.0609293,268.349552 L65.804612,268.349552 L95.8875974,77.5798073 C96.5035744,73.6675208 99.0174265,70.4627756 102.396976,68.8395929 Z" fill="#27346A"></path>
+                      <path d="M228.897012,82.7490197 C216.569147,146.069792 174.366398,167.970272 120.46841,167.970272 L93.0241367,167.970272 C86.4398419,167.970272 80.8794007,172.764903 79.8555471,179.265958 L61.8174095,293.621258 C61.1431644,297.883153 64.4394738,301.745495 68.7513129,301.745495 L117.421821,301.745495 C123.182038,301.745495 128.084882,297.550192 128.983876,291.864891 L129.458344,289.384335 L138.631407,231.249423 L139.222412,228.036354 C140.121406,222.351053 145.02425,218.15575 150.784467,218.15575 L158.067979,218.15575 C205.215193,218.15575 242.132193,199.002194 252.920115,143.605884 C257.423406,120.456802 255.092683,101.128442 243.181019,87.5519756 C239.568397,83.4399129 235.081754,80.0437153 229.854273,77.2718188 C229.571257,79.0614817 229.263268,80.8761167 228.897012,82.7490197 L228.897012,82.7490197 Z" fill="#2790C3"></path>
+                      <path d="M216.952052,72.1275783 C215.070825,71.5781934 213.13133,71.0787526 211.133566,70.6375799 C209.135803,70.1964071 207.071448,69.8051785 204.957148,69.4638939 C197.548776,68.265236 189.457835,67.699203 180.767565,67.699203 L107.457976,67.699203 C105.651665,67.699203 103.936919,68.1070797 102.4053,68.8479169 C99.0174265,70.4710996 96.5118984,73.6675208 95.8959214,77.5881313 L80.3133678,176.385849 L79.8638711,179.265958 C80.8877248,172.764903 86.4481659,167.970272 93.0324607,167.970272 L120.476734,167.970272 C174.374722,167.970272 216.577471,146.078116 228.905336,82.7490197 C229.271592,80.8761167 229.579581,79.0614817 229.862597,77.2718188 C226.741092,75.623664 223.361542,74.2002577 219.723948,72.9932757 C218.816631,72.6936112 217.892665,72.4022708 216.952052,72.1275783" fill="#1F264F"></path>
+                    </svg>
+                    <span>Donate PayPal</span>
+                  </a>
+                  <a class="button" style="background-color: #fff700; color: black;" href="https://buymeacoffee.com/danyaabros" target="_blank">
+                    <svg fill="#000000" width="24px" height="24px" viewBox="0 0 24 24">
+                      <path d="m20.216 6.415-.132-.666c-.119-.598-.388-1.163-1.001-1.379-.197-.069-.42-.098-.57-.241-.152-.143-.196-.366-.231-.572-.065-.378-.125-.756-.192-1.133-.057-.325-.102-.69-.25-.987-.195-.4-.597-.634-.996-.788a5.723 5.723 0 0 0-.626-.194c-1-.263-2.05-.36-3.077-.416a25.834 25.834 0 0 0-3.7.062c-.915.083-1.88.184-2.75.5-.318.116-.646.256-.888.501-.297.302-.393.77-.177 1.146.154.267.415.456.692.58.36.162.737.284 1.123.366 1.075.238 2.189.331 3.287.37 1.218.05 2.437.01 3.65-.118.299-.033.598-.073.896-.119.352-.054.578-.513.474-.834-.124-.383-.457-.531-.834-.473-.466.074-.96.108-1.382.146-1.177.08-2.358.082-3.536.006a22.228 22.228 0 0 1-1.157-.107c-.086-.01-.18-.025-.258-.036-.243-.036-.484-.08-.724-.13-.111-.027-.111-.185 0-.212h.005c.277-.06.557-.108.838-.147h.002c.131-.009.263-.032.394-.048a25.076 25.076 0 0 1 3.426-.12c.674.019 1.347.067 2.017.144l.228.031c.267.04.533.088.798.145.392.085.895.113 1.07.542.055.137.08.288.111.431l.319 1.484a.237.237 0 0 1-.199.284h-.003c-.037.006-.075.01-.112.015a36.704 36.704 0 0 1-4.743.295 37.059 37.059 0 0 1-4.699-.304c-.14-.017-.293-.042-.417-.06-.326-.048-.649-.108-.973-.161-.393-.065-.768-.032-1.123.161-.29.16-.527.404-.675.701-.154.316-.199.66-.267 1-.069.34-.176.707-.135 1.056.087.753.613 1.365 1.37 1.502a39.69 39.69 0 0 0 11.343.376.483.483 0 0 1 .535.53l-.071.697-1.018 9.907c-.041.41-.047.832-.125 1.237-.122.637-.553 1.028-1.182 1.171-.577.131-1.165.2-1.756.205-.656.004-1.31-.025-1.966-.022-.699.004-1.556-.06-2.095-.58-.475-.458-.54-1.174-.605-1.793l-.731-7.013-.322-3.094c-.037-.351-.286-.695-.678-.678-.336.015-.718.3-.678.679l.228 2.185.949 9.112c.147 1.344 1.174 2.068 2.446 2.272.742.12 1.503.144 2.257.156.966.016 1.942.053 2.892-.122 1.408-.258 2.465-1.198 2.616-2.657.34-3.332.683-6.663 1.024-9.995l.215-2.087a.484.484 0 0 1 .39-.426c.402-.078.787-.212 1.074-.518.455-.488.546-1.124.385-1.766zm-1.478.772c-.145.137-.363.201-.578.233-2.416.359-4.866.54-7.308.46-1.748-.06-3.477-.254-5.207-.498-.17-.024-.353-.055-.47-.18-.22-.236-.111-.71-.054-.995.052-.26.152-.609.463-.646.484-.057 1.046.148 1.526.22.577.088 1.156.159 1.737.212 2.48.226 5.002.19 7.472-.14.45-.06.899-.13 1.345-.21.399-.072.84-.206 1.08.206.166.281.188.657.162.974a.544.544 0 0 1-.169.364zm-6.159 3.9c-.862.37-1.84.788-3.109.788a5.884 5.884 0 0 1-1.569-.217l.877 9.004c.065.78.717 1.38 1.5 1.38 0 0 1.243.065 1.658.065.447 0 1.786-.065 1.786-.065.783 0 1.434-.6 1.499-1.38l.94-9.95a3.996 3.996 0 0 0-1.322-.238c-.826 0-1.491.284-2.26.613z"></path>
+                    </svg>
+                    <span>Buy Me a Coffee</span>
+                  </a>
+                </div>
+              </section>
+              <section>
+                <h2 style="color: white;">Информация</h2>
+                Мы очень ценим вашу поддержку и стараемся вас радовать хорошим контентом. Ваши донаты - показатель того, что мы делаем все правильно.<br><br>Спасибо!
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="section services">
+        <div class="sectionWrapper faq">
+          <h2>Ответы на ваши вопросы</h2>
+          <div class="sea-accordeon">
+            <div class="faq-summary">
+              <div class="faq-title-main">
+                <h3>О студии</h3>
+              </div>
+              <div class="faq-item">
+                <div class="faq-title">
+                  <span class="faq-ask-title">Как попасть к вам в команду?</span>
+                  <span class="faq-icon">
+                    <span class="faq-line"></span>
+                    <span class="faq-line"></span>
+                  </span>
+                </div>
+                <div class="faq-content">
+                  <p>Мы верим, что полезен каждый человек. Поэтому попасть к нам в команду - реально! Возможно, нам не хватало именно тебя. Раскажи нам о себе нажав на кнопку ниже.</p>
+                  <a href="#">
+                    <div class="faq_read_more">
+                      <p>Я готов, иду к вам!
+                      <p>
+                    </div>
+                  </a>
+                </div>
+    
+              </div>
+              <div class="faq-title-main">
+                <h3>Цены</h3>
+              </div>
+              <div class="faq-item faq-active">
+                <div class="faq-title">
+                  <span class="faq-ask-title"><i class="fas fa-site"></i>А что с ценой? Почему так дорого?</span>
+                  <span class="faq-icon faq-icon-open">
+                    <span class="faq-line"></span>
+                    <span class="faq-line"></span>
+                  </span>
+                </div>
+                <div class="faq-content">
+                  Цена за каждый проект обсуждается лично при детальном разборе проекта. Мы реализуем то, что вы хотите видеть в конечном итоге. А это наше потраченное время, силы и ресурсы. Так же это опыт и знания, на которые тоже было потрачено время. Конечно мы можем предложить вариант дешевле. Мы с радостью предоставим вам все нужные материалы для изучения и реализации вашей идеи.
+                </div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-title">
+                  <span class="faq-ask-title"><i class="fas fa-tag"></i>Что я получу за свои деньги?</span>
+                  <span class="faq-icon">
+                    <span class="faq-line"></span>
+                    <span class="faq-line"></span>
+                  </span>
+                </div>
+                <div class="faq-content">
+                  Вы получаете свой готовый проект, в это входит:<br><br>1. Полностью реализованный проект<br>2. Хранение вашего проекта на нашем сервере в течении 6 месяцев ( В случае утери файлов вы всегда можете запросить копию )<br>3. Последущая поддержка проекта в течении 6 месяцев ( Просьба не путать с редакцией )<br>4. Публикация вашего проекта в сети ( Если требуется )
+                </div>
+              </div>
+              <div class="faq-title-main">
+                <h3>Рабочий процесс</h3>
+              </div>
+              <div class="faq-item">
+                <div class="faq-title">
+                  <span class="faq-ask-title"><i class="fas fa-search"></i>Как выглядит обсуждение проекта?</span>
+                  <span class="faq-icon">
+                    <span class="faq-line"></span>
+                    <span class="faq-line"></span>
+                  </span>
+                </div>
+                <div class="faq-content">
+                  Есть два варианта:<br><br>1. Вы приходите с уже подготовленным Техническим Заданием.<br>Мы изучаем ваш проект, задаем уточняющие вопросы по проекту, после чего оглашаем вам цену. Когда цена утверждена, мы обсуждаем способ оплаты и в конечном итоге начинаем заниматься вашим проектом. В течении всего проекта мы учитываем ваши правки. Сдаем вам готовый проект.<br><br>2. У вас нет Технического Задания.<br>Мы обсуждаем ваш проект в деталях и составляем перечень работ, после чего оглашаем вам цену. Когда цена утверждена, мы обсуждаем способ оплаты и в конечном итоге начинаем заниматься вашим проектом. В течении всего проекта мы учитываем ваши правки. Сдаем вам готовый проект.
+                </div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-title">
+                  <span class="faq-ask-title"><i class="fas fa-search"></i>В чем отличие правок от редакций?</span>
+                  <span class="faq-icon">
+                    <span class="faq-line"></span>
+                    <span class="faq-line"></span>
+                  </span>
+                </div>
+                <div class="faq-content">
+                  Правки - это когда вы просите внести мелкие изменения: поменять цвет, передвинуть кнопку, скруглить края...<br><br>Редакции - это когда вы просите внести крупные изменения: поменять функционал, изменить дизайн блока, сделать новый блок...
+                </div>
+              </div>
+    
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+    <div id="soon" class="soon">
 	</body>
 </html>
