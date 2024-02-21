@@ -991,6 +991,7 @@ function copyCode(codeName) {
   alert("Код скопирован в буфер обмена");
 }
 
+document.addEventListener("DOMContentLoaded", function () {
 const galleryMask = document.querySelector(
   ".modifications .description .gallery-mask"
 );
@@ -1014,4 +1015,5 @@ galleryImgs.forEach((item) => {
     );
     galleryMask.classList.remove("mask-off");
   });
+});
 });
