@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', function() {
 //Background
 //global Variables
 let scene;
@@ -1012,4 +1013,5 @@ galleryImgs.forEach((item) => {
     );
     galleryMask.classList.remove("mask-off");
   });
+});
 });
