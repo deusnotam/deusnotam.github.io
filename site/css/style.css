@@ -1844,6 +1844,22 @@
   overflow: auto;
 }
 
+.modifications .card.open .content-holder::-webkit-scrollbar {
+    background-color: transparent;
+    display: none;
+    width: 0px;
+}
+.modifications .card.open .content-holder::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    display: none;
+    width: 0px;
+}
+.modifications .card.open .content-holder::-webkit-scrollbar-track {
+    background-color: transparent;
+    display: none;
+    width: 0px;
+}
+
 .modifications .inner-content {
   top: 20vh;
   padding: 20px;
