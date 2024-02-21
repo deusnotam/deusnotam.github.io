@@ -1,3 +1,20 @@
+let isPreloaderDone = false; 
+$("body").css("overflow","hidden"); 
+$(document).ready(function() { 
+setTimeout(function() { 
+if (!isPreloaderDone) { 
+isPreloaderDone = true; 
+$("#preloader").delay(350).fadeOut('slow'); 
+$("body").css("overflow",""); 
+window.dispatchEvent(new Event('resize')); } }, 5000); }); 
+$(window).on('load', function () { 
+if (!isPreloaderDone) { 
+isPreloaderDone = true; 
+$("#preloader").delay(350).fadeOut('slow'); 
+setTimeout(function() { 
+$("body").css("overflow",""); 
+window.dispatchEvent(new Event('resize')); }, 400); } });
+
 //Background
 //global Variables
 let scene;
