@@ -1824,14 +1824,12 @@
 }
 
 .news {
-  font-family: "Comfortaa", cursive;
-}
-
-.news {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 30px;
+  font-family: "Comfortaa", cursive;
+  width: 100vw;
+  overflow-x: hidden;
 }
 .news h1 {
   font-size: 50px;
@@ -1864,6 +1862,7 @@
   flex-wrap: wrap;
   justify-content: center;
   position: relative;
+  padding: 15px 15px 20px;
   padding-bottom: calc(20px + env(safe-area-inset-bottom));
   max-width: 100%;
   margin: auto;
