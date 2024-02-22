@@ -1034,3 +1034,48 @@ galleryImgs.forEach((item) => {
   });
 });
 });
+
+//Cookie
+function checkConsent() {
+    return localStorage.getItem('D3usN0tam') === 'true';
+  }
+
+  // Функция для сохранения согласия на куки
+  function saveConsent() {
+    localStorage.setItem('D3usN0tam', 'true');
+  }
+
+  // Функция для скрытия баннера согласия на куки
+  function hideBanner() {
+    const banner = document.querySelector('.deuscookie');
+    if (banner) {
+      banner.style.display = 'none';
+    }
+  }
+
+  // Функция для анимированного скрытия баннера согласия на куки
+  function hideBannerWithAnimation() {
+    const banner = document.querySelector('.deuscookie');
+    if (banner) {
+      banner.style.transition = 'top 0.5s ease, opacity 0.5s ease';
+      banner.style.top = '-400px';
+      banner.style.opacity = '0';
+      setTimeout(() => {
+        banner.style.display = 'none';
+      }, 500);
+    }
+  }
+
+  // Проверяем, было ли дано согласие на куки
+  if (checkConsent()) {
+    hideBanner();
+  }
+
+  // Обработчик клика по кнопке согласия
+  const consentButton = document.querySelector('.deuscookie .consent-button');
+  if (consentButton) {
+    consentButton.addEventListener('click', () => {
+      saveConsent();
+      hideBannerWithAnimation();
+    });
+  }
