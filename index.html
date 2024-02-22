@@ -113,7 +113,23 @@
 					processData(site);
 				});
 			</script>
-			
+			<script>
+				function setTheme() {
+					var now = new Date();
+					var hours = now.getHours();
+        
+					if (hours >= 6 && hours < 18) {
+						document.documentElement.setAttribute('data-theme', 'dark');
+					} else {
+						document.documentElement.setAttribute('data-theme', 'light');
+					}
+				}
+				
+				setTheme();
+				
+				setInterval(setTheme, 3600000);
+			</script>
+
 		</div>
 	</body>
 </html>
