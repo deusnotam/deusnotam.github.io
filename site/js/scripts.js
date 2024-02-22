@@ -765,7 +765,7 @@ new Vue({
   }
 });
 });
-//Modifications
+//News
 var expandingAnimationTiming = 400;
 var collapsingAnimationTiming = 200;
 
@@ -780,22 +780,22 @@ $.easing = Object.assign({}, $.easing, {
 /* Function to expand cards */
 function expandElement(elementToExpand) {
   // Adds class 'open' to help with styling
-  elementToExpand.parents(".modifications .card").addClass("open");
+  elementToExpand.parents(".news .card").addClass("open");
 
   // Prevents 'body' scroll
   $("body").addClass("lock");
 
   // freeze the current scroll position of the background page expand-wrapper
-  var elementOffset = $(".modifications .list-wrapper").offset();
+  var elementOffset = $(".news .list-wrapper").offset();
   var elementScrollTop = $("body").scrollTop();
   var netOffset = elementOffset.top - elementScrollTop;
-  var expandPosition = $(".modifications .list-wrapper").offset();
+  var expandPosition = $(".news .list-wrapper").offset();
   var expandTop = expandPosition.top;
   var expandLeft = expandPosition.left;
-  var expandWidth = $(".modifications .list-wrapper").outerWidth();
-  var expandHeight = $(".modifications .list-wrapper").outerHeight();
+  var expandWidth = $(".news .list-wrapper").outerWidth();
+  var expandHeight = $(".news .list-wrapper").outerHeight();
 
-  $(".modifications .list-wrapper").css({
+  $(".news .list-wrapper").css({
     top: netOffset,
     position: "fixed",
     overflow: "hidden",
@@ -814,9 +814,9 @@ function expandElement(elementToExpand) {
 
   // Changes height of banner
   var expandedHeight = elementToExpand
-    .find(".modifications .banner")
+    .find(".news .banner")
     .data("height-expanded");
-  elementToExpand.find(".modifications .banner").animate(
+  elementToExpand.find(".news .banner").animate(
     {
       height: expandedHeight
     },
@@ -826,9 +826,9 @@ function expandElement(elementToExpand) {
 
   // Changes position of content
   var expandedPosition = elementToExpand
-    .find(".modifications .inner-content")
+    .find(".news .inner-content")
     .data("position-expanded");
-  elementToExpand.find(".modifications .inner-content").animate(
+  elementToExpand.find(".news .inner-content").animate(
     {
       top: expandedPosition
     },
@@ -856,7 +856,7 @@ function expandElement(elementToExpand) {
         height: "auto"
       });
 
-      elementToExpand.find(".modifications .banner-holder").css({
+      elementToExpand.find(".news .banner-holder").css({
         position: "fixed"
       });
     }
@@ -866,12 +866,12 @@ function expandElement(elementToExpand) {
 /* Function to collapse cards */
 function collapseElement(collapseButton) {
   // find the element to collapse
-  var elementToCollpseParent = collapseButton.parents(".modifications .card");
+  var elementToCollpseParent = collapseButton.parents(".news .card");
   var elementToCollpse = elementToCollpseParent.find(".card-content");
 
   // find the location of the placeholder
   var elementToCollpsePlaceholder = elementToCollpse.parents(
-    ".modifications .card"
+    ".news .card"
   );
   var elementToCollpsePlaceholderTop =
     elementToCollpsePlaceholder.offset().top - $("body").scrollTop();
@@ -880,7 +880,7 @@ function collapseElement(collapseButton) {
   var elementToCollpsePlaceholderHeight = elementToCollpsePlaceholder.outerHeight();
   var elementToCollpsePlaceholderWidth = elementToCollpsePlaceholder.outerWidth();
 
-  elementToCollpse.find(".modifications .banner-holder").css({
+  elementToCollpse.find(".news .banner-holder").css({
     position: "absolute"
   });
 
@@ -892,7 +892,7 @@ function collapseElement(collapseButton) {
     height: elementToCollpse.outerHeight()
   });
 
-  $(".modifications .list-wrapper").css({
+  $(".news .list-wrapper").css({
     top: 0,
     position: "absolute",
     overflow: "auto",
@@ -901,9 +901,9 @@ function collapseElement(collapseButton) {
 
   // Changes height of banner
   var collapsedHeight = elementToCollpse
-    .find(".modifications .banner")
+    .find(".news .banner")
     .data("height");
-  elementToCollpse.find(".modifications .banner").animate(
+  elementToCollpse.find(".news .banner").animate(
     {
       height: collapsedHeight
     },
@@ -913,9 +913,9 @@ function collapseElement(collapseButton) {
 
   // Changes position of content
   var collapsedPosition = elementToCollpse
-    .find(".modifications .inner-content")
+    .find(".news .inner-content")
     .data("position");
-  elementToCollpse.find(".modifications .inner-content").animate(
+  elementToCollpse.find(".news .inner-content").animate(
     {
       top: collapsedPosition
     },
@@ -951,7 +951,7 @@ function collapseElement(collapseButton) {
 }
 
 function setCardHeight() {
-  $(".modifications .card ").each(function (index, element) {
+  $(".news .card ").each(function (index, element) {
     var slideHeight = $(element).find(".banner-holder").outerHeight();
     var containerHeight = $(element).find(".inner-content").outerHeight();
     var contentHeight = slideHeight + containerHeight;
@@ -964,20 +964,20 @@ function setCardHeight() {
 
 function attachListeners() {
   $(document)
-    .on("click", ".modifications .card-content", function () {
-      if ($(this).parents(".modifications .card").hasClass("open")) {
+    .on("click", ".news .card-content", function () {
+      if ($(this).parents(".news .card").hasClass("open")) {
         return;
       }
       expandElement($(this));
     })
-    .on("click", ".modifications .card .close-btn", function (event) {
+    .on("click", ".news .card .close-btn", function (event) {
       event.stopPropagation();
       collapseElement($(this));
     })
-    .on("touchstart", ".modifications .card", function () {
+    .on("touchstart", ".news .card", function () {
       $(this).addClass("hover");
     })
-    .on("touchend touchmove touchcancel", ".modifications .card", function () {
+    .on("touchend touchmove touchcancel", ".news .card", function () {
       $(this).removeClass("hover");
     });
 }
@@ -991,7 +991,7 @@ initialiseCards();
 
 function copyCode(codeName) {
   const codeBoxes = document.querySelectorAll(
-    '.modifications .code-box[data-code="' + codeName + '"]'
+    '.news .code-box[data-code="' + codeName + '"]'
   );
   let codeText = "";
 
@@ -1010,13 +1010,13 @@ function copyCode(codeName) {
 
 document.addEventListener("DOMContentLoaded", function () {
 const galleryMask = document.querySelector(
-  ".modifications .description .gallery-mask"
+  ".news .description .gallery-mask"
 );
 const maskImage = document.querySelector(
-  ".modifications .description .mask-image"
+  ".news .description .mask-image"
 );
 const galleryImgs = document.querySelectorAll(
-  ".modifications .description .image-item"
+  ".news .description .image-item"
 );
 
 galleryMask.addEventListener("click", () => {
