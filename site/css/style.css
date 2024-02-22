@@ -1859,7 +1859,6 @@
   flex-wrap: wrap;
   justify-content: center;
   position: relative;
-  padding: 15px 15px 20px;
   padding-bottom: calc(20px + env(safe-area-inset-bottom));
   max-width: 100%;
   margin: auto;
