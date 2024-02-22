@@ -2264,3 +2264,7 @@
 .maintable .table-hover > tbody > tr:hover {
   background-color: grey !important;
 }
+
+.maintable .fixed-table-container {
+  background-color: #0000004d;
+}
