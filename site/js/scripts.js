@@ -804,7 +804,6 @@ function expandElement(elementToExpand) {
 
   // convert the expand-item to fixed position without moving it
   elementToExpand.css({
-    inset: "0px",
     top: elementToExpand.offset().top - $("body").scrollTop(),
     left: elementToExpand.offset().left,
     height: elementToExpand.height(),
