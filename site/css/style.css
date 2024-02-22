@@ -127,6 +127,212 @@
   position: fixed;
   background-image: var(--bg-image);
 }
+
+/* Cookie */
+.deuscookie {
+	 display: flex;
+	 font-family: 'Comfortaa', cursive;
+	 justify-content: center;
+	 align-items: center;
+	 width: 100%;
+	 position: fixed;
+     top: 0;
+     z-index: 9999;
+     animation: 1s slideCookie ease;
+}
+
+.deuscookie.none {
+    top: -400px;
+    animation: 1s outslideCookie ease;
+}
+
+.deuscookie .cookie {
+	 position: relative;
+	 transform: rotate(0deg);
+	 transform-origin: 50% 100%;
+}
+.deuscookie .cookie .piece {
+	 fill: #f6a976;
+	 stroke-width: 0.5;
+	 stroke: #d5906e;
+	 position: absolute;
+	 width: 6px;
+	 height: 6px;
+}
+.deuscookie .cookie .piece.left {
+	 top: 15px;
+	 left: 4px;
+}
+.deuscookie .cookie .piece.right {
+	 top: 15px;
+	 right: 4px;
+}
+.deuscookie .cookie .top, .cookie .bottom {
+	 display: block;
+	 width: 40px;
+	 height: 40px;
+	 stroke-linecap: round;
+	 stroke-linejoin: round;
+	 position: relative;
+	 z-index: 1;
+}
+.deuscookie .cookie .top .background, .cookie .bottom .background {
+	 fill: #f6a976;
+}
+.deuscookie .cookie .top .shine, .cookie .bottom .shine {
+	 fill: #ffdaae;
+}
+.deuscookie .cookie .top .dark, .cookie .bottom .dark {
+	 fill: #a96249;
+}
+.deuscookie .cookie .top .border, .cookie .bottom .border {
+	 fill: none;
+	 stroke: #d5906e;
+}
+.deuscookie .cookie .top .crack, .cookie .bottom .crack {
+	 fill: none;
+	 stroke: #a96249;
+	 stroke-width: 1.25;
+	 stroke-dasharray: 38px;
+	 stroke-dashoffset: 38px;
+}
+.deuscookie .cookie .top {
+	 position: absolute;
+	 left: 0;
+	 top: 0;
+	 transform: translateY(0px);
+}
+.deuscookie .cookie .eye {
+	 top: 14px;
+	 position: absolute;
+	 z-index: 2;
+}
+.deuscookie .cookie .eye.left {
+	 left: 9px;
+}
+.deuscookie .cookie .eye.right {
+	 right: 9px;
+}
+.deuscookie .cookie .eye svg {
+	 display: block;
+	 width: 10px;
+	 height: 10px;
+	 fill: #fff;
+	 stroke: #000;
+	 stroke-width: 0.75;
+}
+.deuscookie .cookie .eye:after {
+	 content: "";
+	 left: 50%;
+	 top: 50%;
+	 position: absolute;
+	 transform: translate(-2px, -2px) scale(0.75);
+	 width: 4px;
+	 height: 4px;
+	 border-radius: 2px;
+	 background-color: #000;
+}
+.deuscookie .cookie .mouth {
+	 width: 12px;
+	 height: 9px;
+	 position: absolute;
+	 left: 14px;
+	 top: 20px;
+	 fill: #d5393f;
+	 stroke-width: 0.75;
+	 z-index: 2;
+	 stroke: #000;
+	 stroke-linejoin: round;
+	 transform: translateY(0px);
+}
+
+.deuscookie .banner.none{
+   opacity: 0;
+   y: 16;
+   duration: 0.2;
+}
+.deuscookie .banner {
+	 background-color: #252731;
+   margin-top: 5px;
+	 padding: 24px;
+	 border-radius: 27px;
+	 display: flex;
+	 gap: 20px;
+	 font-size: 14px;
+	 line-height: 1.4;
+	 color: #e1e3eb;
+	 box-shadow: 0px 1px 3px rgba(9, 10, 15, 0.25), 0px 4px 16px rgba(9, 10, 15, 0.1), 0px 8px 24px rgba(9, 10, 15, 0.1), inset 0px 1px 1px #323543;
+}
+ @media (min-width: 601px) {
+	 .deuscookie .banner {
+		 align-items: center;
+	}
+}
+  .deuscookie .banner .content {
+	 display: flex;
+	 gap: 24px;
+}
+ @media (min-width: 601px) {
+	 .deuscookie .banner .content {
+		 align-items: center;
+	}
+}
+ @media (max-width: 600px) {
+	 .deuscookie .banner .content {
+		 flex-direction: column;
+		 gap: 16px;
+	}
+}
+ .deuscookie .banner .content .list {
+	 display: flex;
+	 gap: 12px;
+}
+ .deuscookie .banner .content .list button {
+	 appearance: none;
+	 border: none;
+	 color: inherit;
+	 outline: none;
+	 font: inherit;
+	 font-size: 14px;
+	 font-weight: 500;
+	 background: #2e303d;
+	 box-shadow: inset 0 0 0 1px #3c3e4d;
+	 line-height: 24px;
+	 padding: 8px 16px;
+	 border-radius: 15px;
+	 cursor: pointer;
+	 margin: 0;
+	 transition: background-color 0.2s;
+}
+ .deuscookie .banner .content .list button:hover {
+	 background-color: #323543;
+}
+ .deuscookie .banner .content .list button.muted {
+	 background: none;
+	 box-shadow: inset 0 0 0 1px #353744;
+}
+ .deuscookie .banner .content .list button.muted:hover {
+	 background-color: #292b36;
+}
+
+@keyframes slideCookie{
+  0% {
+    transform: translateY(-400px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes outslideCookie{
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-400px);
+  }
+}
+
 /* Navbar */
 .navbar {
   display: flex;
