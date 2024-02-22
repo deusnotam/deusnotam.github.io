@@ -206,13 +206,13 @@ window.onload = init;
 //меню
 document.addEventListener("DOMContentLoaded", function () {
   const groups = {
-    About: ["#about"],
-    System: ["#soon"],
-    Modifications: ["#modifications"],
-    Comming: ["#soon"],
+    Profile: ["#soon"],
+      System: ["#soon"],
+      News: ["#news"],
+      Table: ["#maintable"],
     Home: ["#home"],
-    Table: ["#maintable"],
-    Settings: ["#soon"]
+    Shop: ["#soon"],
+    About: ["#about"]
   };
 
   const showOnlyElements = (group) => {
