@@ -113,43 +113,7 @@
 					processData(site);
 				});
 			</script>
-			<script>
-				var checkbox = document.querySelector(
-					'input[name=theme-switcher]'
-				);
-				checkbox.addEventListener('change', function() {
-					if(this.checked) {
-						document.documentElement.setAttribute(
-							'data-theme', 
-							'light'
-						)
-					} else {
-						document.documentElement.setAttribute(
-							'data-theme',
-							'dark'
-						)
-					}
-				});
-			</script>
-			<script>
-				document.addEventListener("DOMContentLoaded", function () {
-					var checkbox = document.querySelector('input[name=theme-switcher]');
-					var savedTheme = localStorage.getItem('theme');
-					if (savedTheme) {
-						document.documentElement.setAttribute('data-theme', savedTheme);
-						checkbox.checked = savedTheme === 'light';
-					}
-					checkbox.addEventListener('change', function () {
-						if (this.checked) {
-							document.documentElement.setAttribute('data-theme', 'light');
-							localStorage.setItem('theme', 'light'); // Сохраняем тему в localStorage
-						} else {
-							document.documentElement.setAttribute('data-theme', 'dark');
-							localStorage.setItem('theme', 'dark'); // Сохраняем тему в localStorage
-						}
-					});
-				});
-			</script>
+			
 		</div>
 	</body>
 </html>
