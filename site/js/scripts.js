@@ -1036,6 +1036,7 @@ galleryImgs.forEach((item) => {
 });
 
 //Cookie
+document.addEventListener("DOMContentLoaded", function () {
 function checkConsent() {
     return localStorage.getItem('D3usN0tam') === 'true';
   }
@@ -1079,3 +1080,4 @@ function checkConsent() {
       hideBannerWithAnimation();
     });
   }
+});
