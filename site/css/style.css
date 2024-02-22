@@ -136,7 +136,7 @@
   bottom: 5px;
   position: relative;
   z-index: 9;
-  padding-top: 0;
+  padding: 0 !important;
 }
 
 .navbar button {
