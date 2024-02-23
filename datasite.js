@@ -19,10 +19,8 @@ var site = [
            noti_title: 'Демонстрационный сайт',
            noti_text: 'Здесь вы можете увидеть, что проект работает :)<br>Подробности на <a style="color: #32a6ff;" href="https://codepen.io/cleveryeti/pen/JjwNqgP" target="_blank">сайте</a>',
         blocker: 'active',
-           blocker_date: '01/01/2022',
-           blocker_cause: 'didnt pay',
            blocker_effect: 'thanos',
            blocker_redirecturl: 'https://www.notion.so/deusnotam/D3usN0tam-System-ba149f69de214fd3ba0b9df834eb2c6e',
-        deusid: 'active',
+           blocker_note: 'Этот заказчик 01.01.2024 не оплатил заказанную работу',
     }
 ];
