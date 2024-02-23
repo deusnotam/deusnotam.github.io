@@ -16,7 +16,7 @@ var site = [
      url: "https://abros.me",
      date: "09/01/2022",
         noti: "active",
-           noti_title: "Тестовый сайт"
+           noti_title: "Тестовый сайт",
            notibody: "Это сайт для демонстрации работы системы D3usN0tam.",
         blocker: "active",
            blocker_date: "01/01/2022",
