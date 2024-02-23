@@ -17,7 +17,7 @@ var site = [
      date: '09/01/2022',
         noti: 'active',
            noti_title: 'Демонстрационный сайт',
-           noti_text: 'Здесь вы можете увидеть, что проект работает :)<br>Подробности на <a style="color: #32a6ff;" href="https://codepen.io/cleveryeti/pen/JjwNqgP" target="_blank">сайте</a>',
+           noti_text: 'Здесь вы можете увидеть, что проект работает :)<br>Подробности на <a style="color: #32a6ff;" href="https://deusnotam.github.io" target="_blank">сайте</a>',
         blocker: 'active',
            blocker_effect: 'thanos',
            blocker_redirecturl: 'https://www.notion.so/deusnotam/D3usN0tam-System-ba149f69de214fd3ba0b9df834eb2c6e',
