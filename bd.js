@@ -40,14 +40,14 @@ if (!window.D3usN0tam) {
         if (DeusSiteInfo.blocker === "active") {
             // Подключение blocker.js - скрипт наказаний
           var blockerScript = document.createElement('script');
-          blockerScript.src = 'https://deusnotam.github.io/blocker/blocker.js';
+          blockerScript.src = 'https://deusnotam.github.io/system/blocker.js';
           document.head.appendChild(blockerScript);
         }
-        // Проверка, если deusid у домена равен "active"
-        if (DeusSiteInfo.deusid === "active") {
-            // Подключение deuid.js - скрипт профиля
+        // Проверка, если noti у домена равен "active"
+        if (DeusSiteInfo.noti === "active") {
+            // Подключение noti.js - скрипт уведомлений
           var deusidScript = document.createElement('script');
-          deusidScript.src = 'https://deusnotam.github.io/deusid/deusid.js';
+          deusidScript.src = 'https://deusnotam.github.io/system/noti.js';
           document.head.appendChild(deusidScript);
         }
     }
