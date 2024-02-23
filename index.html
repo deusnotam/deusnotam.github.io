@@ -65,8 +65,8 @@
 		
 		<div class="container">
 			<h1>D3usN0tam System</h1>
-			<p>Это мод собирающий в себе много модов. Увидеть все моды можно кликнув по логотипу сверху.</p>
-			<p>Здесь можно увидеть проекты, которые были подключены к большой базе модов D3usN0tam.</p>
+			<p>Это система собирающая в себе много модификаций. Увидеть все доступные модификации можно кликнув по логотипу сверху.</p>
+			<p>Здесь можно увидеть проекты, которые были подключены к системе D3usN0tam.</p>
 			<p>Все подробности о проекте можно найти кликнув по логотипу сверху.</p>
 
 			<table id="table" data-toggle="table" data-search="false" data-filter-control="true" data-show-export="false" data-click-to-select="true" data-toolbar="#toolbar">
@@ -75,7 +75,8 @@
 						<th data-field="name" data-filter-control="input" data-sortable="true">Название</th>
 						<th data-field="link" data-sortable="false">Ссылка</th>
 						<th data-field="date" data-filter-control="select" data-sortable="true">Дата подключения</th>
-						<th data-field="cause" data-filter-control="select" data-sortable="true">Cистема "Blocker"</th>
+						<th data-field="noti" data-filter-control="select" data-sortable="true">Cистема "Noti"</th>
+						<th data-field="blocker" data-filter-control="select" data-sortable="true">Cистема "Blocker"</th>
 						<th data-field="note" data-sortable="false">Комментарий от исполнителя</th>
 					</tr>
 				</thead>
@@ -94,6 +95,7 @@
 								{ field: 'name', title: 'Название', sortable: true },
 								{ field: 'url', title: 'Ссылка', sortable: false },
 								{ field: 'date', title: 'Дата подключения', sortable: true },
+								{ field: 'noti', title: 'Cистема "Noti"', sortable: true },
 								{ field: 'blocker', title: 'Cистема "Blocker"', sortable: true },
 								{ field: 'note', title: 'Комментарий от исполнителя', sortable: false }
 							]
