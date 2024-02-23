@@ -97,19 +97,15 @@
 								{ field: 'date', title: 'Дата подключения', sortable: true },
 								{ field: 'noti', title: 'Cистема "Noti"', sortable: true },
 								{ field: 'blocker', title: 'Cистема "Blocker"', sortable: true,
-								 events: {
-									 'mouseover .blocker-cell': function (e, value, row, index) {
-										 var blockerNote = row.blocker_note || '';
-										 alert('Blocker Note: ' + blockerNote);
-									 }
-								 },
 								 formatter: function (value, row, index) {
-									 return '<div class="blocker-cell">' + value + '</div>';
+									 var blockerNote = row.blocker_note || '';
+									 return '<div data-toggle="tooltip" data-placement="auto" title="' + blockerNote + '">' + value + '</div>';
 								 }
 								},
 								{ field: 'note', title: 'Комментарий от исполнителя', sortable: false }
 							]
 						});
+						$('[data-toggle="tooltip"]').tooltip();
 					}
 					processData(site);
 				});
