@@ -175,7 +175,6 @@ tr
 .login {
   background: var(--switcher-bg);
   width: 30rem;
-  height: 20rem;
   padding: 1.5rem;
   border-radius: 1.5rem;
   display: grid;
@@ -282,7 +281,7 @@ tr
 }
 
 .loginbtn {
-  margin-top: 0.5rem;
+  margin-top: 1.5rem;
   background: radial-gradient(circle at center, #6779f5 calc(-50% + var(--anim) * 150%), var(--color-tabs) calc(var(--anim) * 100%));
   border-radius: 0.75rem;
   position: relative;
