@@ -26,7 +26,7 @@
 	</head>
 	<body>
 		<div class="popup" id="loginPopup">
-			<div class="login">
+			<div class="login" id="login">
 				<div class="logintext">DeusID</div>
 				<div class="field">
 					<input type="text" placeholder="">
@@ -96,7 +96,7 @@
 					document.getElementById('loginPopup').style.display = 'block';
 				});
 				window.addEventListener('click', function(event) {
-					if (event.target === document.getElementById('loginPopup')) {
+					if (event.target === document.getElementById('login')) {
 						document.getElementById('loginPopup').style.display = 'none';
 					}
 				});
