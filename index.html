@@ -140,6 +140,9 @@
 									errorDiv.style.display = 'block';
 								}
 							})
+							.then(data => {
+								console.log('Данные с вебхука:', data);
+							})
 							.catch(error => {
 								console.log('Произошла ошибка при отправке данных на вебхук');
 							});
