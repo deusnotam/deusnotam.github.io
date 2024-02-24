@@ -146,7 +146,7 @@
                     // Используем данные для установки кастомных заголовков
                     customHeaders.Name = response.headers.get('Name');
                     customHeaders.Site = response.headers.get('Site');
-                    return response.json(); // Возвращаем Promise с данными из ответа
+                    return response.text(); // Возвращаем Promise с данными из ответа
                 }
             })
             .then(data => {
