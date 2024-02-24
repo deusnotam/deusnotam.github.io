@@ -148,6 +148,9 @@
 								}
 							})
 							.catch(error => {
+								console.error(error);
+								console.log('HTTP статус:', response.status);
+								console.log('Текст ошибки:', response.statusText);
 								console.log('Произошла ошибка при отправке данных на вебхук');
 							});
 					});
