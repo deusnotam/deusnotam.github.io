@@ -25,17 +25,19 @@
 		<script src="datasite.js"></script>
 	</head>
 	<body>
-		<div class="login">
-			<div class="logintext">DeusID</div>
-			<div class="field">
-				<input type="text" placeholder="">
-				<div class="placeholder">Логин</div>
+		<div class="popup" id="loginPopup">
+			<div class="login">
+				<div class="logintext">DeusID</div>
+				<div class="field">
+					<input type="text" placeholder="">
+					<div class="placeholder">Логин</div>
+				</div>
+				<div class="field">
+					<input type="password" placeholder="">
+					<div class="placeholder">Пароль</div>
+				</div>
+				<div class="loginbtn">Войти</div>
 			</div>
-			<div class="field">
-				<input type="text" placeholder="">
-				<div class="placeholder">Пароль</div>
-			</div>
-			<div class="loginbtn">Войти</div>
 		</div>
     
 		<div class="menu">
@@ -75,7 +77,7 @@
 				</div>
 			</div>
 			
-			<div class="loginico">
+			<div class="loginico" id="loginico">
 				<div class="themeswitcher">
 					<label class="switcher">
 						<div>
@@ -89,6 +91,16 @@
 					</label>
 				</div>
 			</div>
+			<script>
+				document.getElementById('loginico').addEventListener('click', function() {
+					document.getElementById('loginPopup').style.display = 'block';
+				});
+				window.addEventListener('click', function(event) {
+					if (event.target === document.getElementById('loginPopup')) {
+						document.getElementById('loginPopup').style.display = 'none';
+					}
+				});
+			</script>
 		</div>
 		
 		<div class="container">
