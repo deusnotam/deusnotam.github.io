@@ -141,6 +141,7 @@
 								return response.json(); // Получаем JSON из ответа
 							})
 							.then(data => {
+								console.log(data);
 								if (data.code === 200) {
 									errorText.innerText = 'Не верный логин или пароль';
 									errorDiv.style.display = 'block';
