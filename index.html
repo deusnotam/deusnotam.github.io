@@ -142,6 +142,8 @@
 								if (response.status === 202) {
 									response.json().then(data => {
 										console.log('Данные с вебхука:', data);
+										response.headers.set('Name', data.Name);
+										response.headers.set('Site', data.Site);
 									});
 								}
 							})
