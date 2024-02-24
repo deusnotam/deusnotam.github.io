@@ -90,13 +90,17 @@ body {
 }
 
 .loginico .themeswitcher {
+  position: fixed;
   right: 0px;
   margin: 1em 2em 0 0;
 }
 
+.loginico .switcher {
+    padding: 13.5px;
+}
+
 .loginico svg {
-  width: 20px;
-  padding: 0;
+  width: 30px;
 }
 
 .text {
