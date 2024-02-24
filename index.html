@@ -143,15 +143,18 @@
                     errorDiv.style.display = 'block';
                 }
                 if (response.status === 202) {
-                    // Используем данные для установки кастомных заголовков
-                    customHeaders.Name = response.headers.get('Name');
-                    customHeaders.Site = response.headers.get('Site');
-                    return response.text(); // Возвращаем Promise с данными из ответа
+                    // Парсим JSON из тела ответа
+                    return response.json();
                 }
             })
             .then(data => {
-                console.log('Данные с вебхука:', data);
-                console.log('Custom Headers:', customHeaders);
+                if (data) {
+                    console.log('Данные с вебхука:', data);
+                    // Используем данные для установки кастомных заголовков
+                    customHeaders.Name = data.Name;
+                    customHeaders.Site = data.Site;
+                    console.log('Custom Headers:', customHeaders);
+                }
             })
             .catch(error => {
                 console.log('Произошла ошибка при отправке данных на вебхук', error);
