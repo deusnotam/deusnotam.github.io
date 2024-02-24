@@ -269,15 +269,16 @@ tr
 }
 
 .error {
-    background-color: #ff4500db;
-    padding: 5px;
-    border-radius: 0.75rem;
+  background-color: #ff4500db;
+  padding: 5px;
+  border-radius: 0.75rem;
+  display: none;
 }
 
 .errortext {
-    text-align: center;
-    display: block;
-    word-break: break-all;
+  text-align: center;
+  display: block;
+  word-break: break-all;
 }
 
 .loginbtn {
