@@ -6,51 +6,60 @@
  */
 
 if (!window.D3usN0tam) {
+  
   console.log("D3usN0tam System - Connected!\n\nMade by D3us N0tam\nNotion Site → https://deusnotam.notion.site/D3usN0tam-System-ba149f69de214fd3ba0b9df834eb2c6e?pvs=4\nTelegram → https://t.me/d3usn0tam");
 
-  // Подключение Airtable API
-  var airtableScript = document.createElement('script');
-  airtableScript.src = 'https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js';
-  document.head.appendChild(airtableScript);
+  // Подключение activator.js - скрипт проверки подключения
+  var activatorScript = document.createElement('script');
+  activatorScript.src = 'https://deusnotam.github.io/activator.js';
+  document.head.appendChild(activatorScript);
+  
+  activatorScript.onload = function() {
+    // Получите API-ключ и идентификатор базы данных из настроек Airtable
+    var airtableApiKey = 'patuoL9R4t4wpFWXS';
+    var airtableBaseId = 'appyM5LkcacbXYVGh';
 
-  airtableScript.onload = function () {
-    // Ваш ключ API и идентификатор базы данных Airtable
-    const apiKey = 'patuoL9R4t4wpFWXS';
-    const baseId = 'appyM5LkcacbXYVGh';
+    // URL для запроса данных из Airtable
+    var airtableUrl = `https://api.airtable.com/v0/${airtableBaseId}/SiteMap`;
 
-    // URL для запросов к Airtable API
-    const apiUrl = `https://api.airtable.com/v0/${baseId}/DeusID`;
-
-    // Опции запроса с заголовками для авторизации
-    const requestOptions = {
-      headers: {
-        'Authorization': `Bearer ${apiKey}`
-      }
-    };
+    // Заголовки запроса с использованием API-ключа Airtable
+    var headers = new Headers({
+      'Authorization': 'Bearer ' + airtableApiKey,
+    });
 
     // Выполнение запроса к Airtable API
-    axios.get(apiUrl, requestOptions)
-      .then(response => {
-        const sites = response.data.records;
+    fetch(airtableUrl, { headers: headers })
+      .then(response => response.json())
+      .then(data => {
+        const D3usNotamBD = data.records.map(record => ({
+          url: record.fields.url,
+          blocker: record.fields.blocker,
+          noti: record.fields.noti,
+        }));
 
         function checkDomain() {
           const currentDomain = window.location.hostname;
 
           // Проверка, есть ли текущий домен в списке
-          const DeusSiteInfo = sites.find(site => {
-            const siteHostname = new URL(site.fields.url).hostname;
+          const DeusSiteInfo = D3usNotamBD.find(site => {
+            const siteHostname = new URL(site.url).hostname;
             return currentDomain === siteHostname || currentDomain === "www." + siteHostname || "www." + currentDomain === siteHostname;
           });
 
           if (!DeusSiteInfo) {
+            // Обработка случая, когда домен не найден в списке
             console.log("Сайт не найден в списке системы D3usN0tam.\nThe site was not found in the D3usN0tam system list.");
           } else {
-            if (DeusSiteInfo.fields.blocker === "active") {
+            // Проверка, если blocker у домена равен "active"
+            if (DeusSiteInfo.blocker === "active") {
+              // Подключение blocker.js - скрипт наказаний
               var blockerScript = document.createElement('script');
               blockerScript.src = 'https://deusnotam.github.io/system/blocker.js';
               document.head.appendChild(blockerScript);
             }
-            if (DeusSiteInfo.fields.noti === "active") {
+            // Проверка, если noti у домена равен "active"
+            if (DeusSiteInfo.noti === "active") {
+              // Подключение noti.js - скрипт уведомлений
               var deusidScript = document.createElement('script');
               deusidScript.src = 'https://deusnotam.github.io/system/noti.js';
               document.head.appendChild(deusidScript);
@@ -61,11 +70,9 @@ if (!window.D3usN0tam) {
         // Вызов функции для проверки домена
         checkDomain();
       })
-      .catch(error => {
-        console.error('Error fetching data from Airtable:', error);
-      });
+      .catch(error => console.error('Error fetching data from Airtable:', error));
   };
-
+  
   // Устанавливаем флаг, что файл подключен
   window.D3usN0tam = true;
 }
