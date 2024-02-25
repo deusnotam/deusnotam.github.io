@@ -9,32 +9,31 @@ if (!window.D3usN0tam) {
   
   console.log("D3usN0tam System - Connected!\n\nMade by D3us N0tam\nNotion Site → https://deusnotam.notion.site/D3usN0tam-System-ba149f69de214fd3ba0b9df834eb2c6e?pvs=4\nTelegram → https://t.me/d3usn0tam");
 
+  // Подключение airtable.js - база данных
+  var activatorScript = document.createElement('script');
+  activatorScript.src = 'https://cdn.jsdelivr.net/npm/airtable@0.13.4/build/airtable.browser.js';
+  document.head.appendChild(activatorScript);
+  
   // Подключение activator.js - скрипт проверки подключения
   var activatorScript = document.createElement('script');
   activatorScript.src = 'https://deusnotam.github.io/activator.js';
   document.head.appendChild(activatorScript);
   
-    // Получите API-ключ и идентификатор базы данных из настроек Airtable
-    var airtableApiKey = 'patuoL9R4t4wpFWXS';
-    var airtableBaseId = 'appyM5LkcacbXYVGh';
+  var airtableApiKey = 'patuoL9R4t4wpFWXS';
+  var airtableBaseId = 'appyM5LkcacbXYVGh';
 
-    // URL для запроса данных из Airtable
-    var airtableUrl = `https://api.airtable.com/v0/${airtableBaseId}/SiteMap`;
+  // Подключение airtable.js
+  var Airtable = require('airtable');
+  var base = new Airtable({ apiKey: airtableApiKey }).base(airtableBaseId);
 
-    // Заголовки запроса с использованием API-ключа Airtable
-    var headers = new Headers({
-      'Authorization': 'Bearer ' + airtableApiKey,
-    });
-
-    // Выполнение запроса к Airtable API
-    fetch(airtableUrl, { headers: headers })
-      .then(response => response.json())
-      .then(data => {
-        const D3usNotamBD = data.records.map(record => ({
-          url: record.fields.url,
-          blocker: record.fields.blocker,
-          noti: record.fields.noti,
-        }));
+  base('SiteMap').select({
+    // Можете добавить параметры выборки, если нужно
+  }).eachPage(function page(records, fetchNextPage) {
+    const D3usNotamBD = records.map(record => ({
+      url: record.get('url'),
+      blocker: record.get('blocker'),
+      noti: record.get('noti'),
+    }));
 
         function checkDomain() {
           const currentDomain = window.location.hostname;
