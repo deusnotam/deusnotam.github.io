@@ -25,7 +25,7 @@
 		<script src="datasite.js"></script>
 	</head>
 	<body>
-		<div class="popup" id="loginPopup">
+<!-- 		<div class="popup" id="loginPopup">
 			<div class="login">
 				<div class="logintext">DeusID</div>
 				<div class="field">
@@ -41,7 +41,7 @@
 						</div>
 				<div class="loginbtn">Войти</div>
 			</div>
-		</div>
+		</div> -->
     
 		<div class="menu">
 			<div class="logo">
@@ -94,7 +94,7 @@
 					</label>
 				</div>
 			</div>
-			<script>
+<!-- 			<script>
 				document.getElementById('loginico').addEventListener('click', function() {
 					document.getElementById('loginPopup').classList.add('show');
 				});
@@ -103,62 +103,7 @@
 						document.getElementById('loginPopup').classList.remove('show');
 					}
 				});
-			</script>
-			<script>
-				document.addEventListener('DOMContentLoaded', function () {
-    document.querySelector('.loginbtn').addEventListener('click', function () {
-        var loginField = document.querySelector('input[type="text"]');
-        var passwordField = document.querySelector('input[type="password"]');
-        var errorText = document.querySelector('.errortext');
-        var errorDiv = document.querySelector('.error');
-
-        if (loginField.value === '' || passwordField.value === '') {
-            errorText.innerText = 'Одно из полей пустое';
-            errorDiv.style.display = 'block';
-            return;
-        }
-
-        errorText.innerText = '';
-        errorDiv.style.display = 'none';
-
-        var webhookURL = 'https://hook.eu2.make.com/jfk4pee4p1k92avnsasm7mmvp9bamxcf';
-        var requestData = {
-            login: loginField.value,
-            password: passwordField.value
-        };
-
-        // Сохраняем данные из ответа в переменные
-        var customHeaders = {};
-
-        fetch(webhookURL, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(requestData)
-        })
-            .then(response => {
-                if (response.status === 201) {
-                    errorText.innerText = 'Не верный логин или пароль';
-                    errorDiv.style.display = 'block';
-                }
-                if (response.status === 202) {
-                    // Парсим JSON из тела ответа
-                    return response.text();
-			console.log('Данные с вебхука1:', data);
-                }
-            })
-            .then(data => {
-    if (data) {
-        console.log('Данные с вебхука2:', data);
-    }
-})
-            .catch(error => {
-                console.log('Произошла ошибка при отправке данных на вебхук', error);
-            });
-    });
-});
-			</script>
+			</script> -->
 		</div>
 		
 		<div class="container">
