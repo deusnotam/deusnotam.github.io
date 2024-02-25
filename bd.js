@@ -14,7 +14,6 @@ if (!window.D3usN0tam) {
   activatorScript.src = 'https://deusnotam.github.io/activator.js';
   document.head.appendChild(activatorScript);
   
-  activatorScript.onload = function() {
     // Получите API-ключ и идентификатор базы данных из настроек Airtable
     var airtableApiKey = 'patuoL9R4t4wpFWXS';
     var airtableBaseId = 'appyM5LkcacbXYVGh';
@@ -71,7 +70,6 @@ if (!window.D3usN0tam) {
         checkDomain();
       })
       .catch(error => console.error('Error fetching data from Airtable:', error));
-  };
   
   // Устанавливаем флаг, что файл подключен
   window.D3usN0tam = true;
