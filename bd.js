@@ -19,7 +19,7 @@ if (!window.D3usN0tam) {
     const baseId = 'appyM5LkcacbXYVGh';
 
     // URL для запросов к Airtable API
-    const apiUrl = `https://api.airtable.com/v0/${baseId}/SiteMap`;
+    const apiUrl = `https://api.airtable.com/v0/${baseId}/DeusID`;
 
     // Опции запроса с заголовками для авторизации
     const requestOptions = {
