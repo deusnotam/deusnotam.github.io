@@ -10,18 +10,28 @@ if (!window.D3usN0tam) {
   
   console.log("D3usN0tam System - Connected!\n\nMade by D3us N0tam\nNotion Site → https://deusnotam.notion.site/D3usN0tam-System-ba149f69de214fd3ba0b9df834eb2c6e?pvs=4\nTelegram → https://t.me/d3usn0tam");
 
-  // Подключение datasite.js - база данных сайтов
-  var datasiteScript = document.createElement('script');
-  datasiteScript.src = 'https://deusnotam.github.io/datasite.js';
-  document.head.appendChild(datasiteScript);
-
   // Подключение activator.js - скрипт проверки подключения
   var activatorScript = document.createElement('script');
   activatorScript.src = 'https://deusnotam.github.io/activator.js';
   document.head.appendChild(activatorScript);
   
-  datasiteScript.onload = function() {
-  const sites = site;
+ // Загрузка данных из Airtable
+    var baseId = 'appyM5LkcacbXYVGh';
+    var apiKey = 'patuoL9R4t4wpFWXS';
+    var airtableUrl = 'https://api.airtable.com/v0/' + baseId + '/YourTableName';
+    
+    fetch(airtableUrl, {
+      headers: {
+        'Authorization': 'Bearer ' + apiKey,
+      },
+    })
+    .then(response => response.json())
+    .then(data => {
+      const sites = data.records.map(record => ({
+        url: record.fields.YourURLFieldName,
+        blocker: record.fields.YourBlockerFieldName,
+        noti: record.fields.YourNotiFieldName,
+      }));
 
   function checkDomain() {
     const currentDomain = window.location.hostname;
@@ -55,7 +65,6 @@ if (!window.D3usN0tam) {
 
 // Вызов функции для проверки домена
 checkDomain();
-  };
   
   // Устанавливаем флаг, что файл подключен
   window.D3usN0tam = true;
