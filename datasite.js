@@ -37,6 +37,7 @@ fetch('https://app.nocodb.com/api/v1/db/data/noco/p2kmbphsgvqs8kz/mpqof3e6f1ueoz
             };
 
             // Теперь 'site' содержит данные из вашей таблицы NocoDB
+            console.log(data);
             console.log(site);
         } else {
             console.error('Ошибка: Полученные данные не являются объектом');
