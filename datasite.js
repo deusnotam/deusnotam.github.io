@@ -11,9 +11,6 @@
  * thanos - поверх сайта чёрный экран с gif щелчком таноса
  */
 
-// Получение токена из GitHub Secrets
-const authToken = process.env.XC_AUTH_TOKEN;
-
 if (!authToken) {
     console.error('Ошибка: Токен не найден в GitHub Secrets.');
     process.exit(1);
@@ -22,7 +19,7 @@ if (!authToken) {
 const options = {
     method: 'GET',
     headers: {
-        'xc-auth': authToken
+        'xc-auth': process.env.XC_AUTH_TOKEN
     }
 };
 
