@@ -23,7 +23,7 @@ fetch('https://app.nocodb.com/api/v1/db/data/noco/p2kmbphsgvqs8kz/mpqof3e6f1ueoz
     .then(data => {
         if (data && data.list && Array.isArray(data.list)) {
             // Преобразование данных в нужный формат
-            var site = data.list.map(item => ({
+             DNsite = data.list.map(item => ({
                 name: item.SiteName,
                 url: item.SiteURL,
                 date: item.Subscribe,
@@ -37,7 +37,7 @@ fetch('https://app.nocodb.com/api/v1/db/data/noco/p2kmbphsgvqs8kz/mpqof3e6f1ueoz
             }));
 
             // Теперь 'siteList' содержит данные из вашей таблицы NocoDB
-            console.log(site);
+            console.log(DNsite);
         } else {
             console.error('Ошибка: Полученные данные не соответствуют ожидаемой структуре');
         }
