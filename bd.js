@@ -9,27 +9,24 @@
 if (!window.D3usN0tam) {
   console.log("D3usN0tam System - Connected!\n\nMade by D3us N0tam\nNotion Site → https://deusnotam.notion.site/D3usN0tam-System-ba149f69de214fd3ba0b9df834eb2c6e?pvs=4\nTelegram → https://t.me/d3usn0tam");
 
-  // Подключение datasite.js - база данных сайтов
-  var datasiteScript = document.createElement('script');
-  datasiteScript.src = 'https://deusnotam.github.io/datasite.js';
-  datasiteScript.onreadystatechange = datasiteScript.onload = function() {
-    if (!window.DNsite) {
-      return; // DNsite еще не загружена, ждем дальше
-    }
-
-    // DNsite загружена, вызываем функцию для проверки домена
-    checkDomain();
-  };
-  document.head.appendChild(datasiteScript);
-
   // Подключение activator.js - скрипт проверки подключения
   var activatorScript = document.createElement('script');
   activatorScript.src = 'https://deusnotam.github.io/activator.js';
   document.head.appendChild(activatorScript);
 
+  document.addEventListener('DOMContentLoaded', function() {
+    // Подключение datasite.js - база данных сайтов
+    var datasiteScript = document.createElement('script');
+    datasiteScript.src = 'https://deusnotam.github.io/datasite.js';
+    datasiteScript.onload = function() {
+      checkDomain(); // Вызов функции для проверки домена после загрузки datasite.js
+    };
+    document.head.appendChild(datasiteScript);
+  });
+
   // Функция для проверки домена
   function checkDomain() {
-    const sites = DNsite;
+    const sites = window.DNsite;
 
     const currentDomain = window.location.hostname;
 
