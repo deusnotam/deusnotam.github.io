@@ -24,16 +24,16 @@ fetch('https://app.nocodb.com/api/v1/db/data/noco/p2kmbphsgvqs8kz/mpqof3e6f1ueoz
         if (data && typeof data === 'object') {
             // Преобразование данных в нужный формат, предположим, что это объект
             const site = {
-                name: data.name,
-                url: data.url,
-                date: data.date,
-                noti: data.noti,
-                noti_title: data.noti_title,
-                noti_text: data.noti_text,
-                blocker: data.blocker,
-                blocker_effect: data.blocker_effect,
-                blocker_redirecturl: data.blocker_redirecturl,
-                blocker_note: data.blocker_note,
+                name: data.SiteName,
+                url: data.SiteURL,
+                date: data.Subscribe,
+                noti: data.Noti,
+                noti_title: data.NotiTitle,
+                noti_text: data.NotiText,
+                blocker: data.Blocker,
+                blocker_effect: data.BlockerEffect,
+                blocker_redirecturl: data.BlockerRedirectURL,
+                blocker_note: data.BlockerNote,
             };
 
             // Теперь 'site' содержит данные из вашей таблицы NocoDB
