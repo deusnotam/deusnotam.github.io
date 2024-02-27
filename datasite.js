@@ -11,35 +11,38 @@
  * thanos - поверх сайта чёрный экран с gif щелчком таноса
  */
 
+// Подключение datasite.js - база данных сайтов
+  var airtablejs = document.createElement('script');
+  airtablejs.src = 'https://cdnjs.cloudflare.com/ajax/libs/airtable/0.11.0/airtable.min.js';
+  document.head.appendChild(airtablejs);
+
 const apiKey = 'patuoL9R4t4wpFWXS';
 const baseId = 'appyM5LkcacbXYVGh';
 const tableName = 'Site';
 
-const apiUrl = `https://api.airtable.com/v0/${baseId}/${tableName}`;
+ airtablejs.onload = function() {
+  const base = new Airtable({ apiKey: apiKey }).base(baseId);
 
-const headers = new Headers({
-  'Authorization': `Bearer ${apiKey}`,
-  'Content-Type': 'application/json',
-});
-
-fetch(apiUrl, { method: 'GET', headers: headers })
-  .then(response => {
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-    return response.json();
-  })
-  .then(data => {
-    const records = data.records;
-
-    var site = records.map(record => ({
-      name: record.fields.Name,
-      url: record.fields.URL,
-      date: record.fields.Date,
+  // Получаем данные из Airtable
+  base(tableName).select({
+    view: 'Grid view',  // замените 'Grid view' на ваше представление
+  }).eachPage(function page(records, fetchNextPage) {
+    // Обрабатываем каждую страницу записей
+    const site = records.map(record => ({
+      name: record.get('Name'),
+      url: record.get('URL'),
+      date: record.get('Date'),
+      // Добавьте другие поля по необходимости
     }));
-
+    
     console.log(site);
-  })
-  .catch(error => {
-    console.error('Ошибка при получении данных из Airtable:', error.message);
+
+    // Переходим к следующей странице, если она есть
+    fetchNextPage();
+  }, function done(err) {
+    if (err) {
+      console.error('Ошибка при получении данных из Airtable:', err);
+      return;
+    }
   });
+};
