@@ -21,7 +21,7 @@ if (!window.D3usN0tam) {
   document.head.appendChild(activatorScript);
   
   datasiteScript.onload = function() {
-  const sites = site;
+  const sites = DNsite;
 
   function checkDomain() {
     const currentDomain = window.location.hostname;
