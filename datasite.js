@@ -22,24 +22,24 @@ fetch('https://app.nocodb.com/api/v1/db/data/noco/p2kmbphsgvqs8kz/mpqof3e6f1ueoz
     .then(response => response.json())
     .then(data => {
         if (data && data.list && Array.isArray(data.list)) {
-            // Преобразование данных в нужный формат
-            const siteList = data.list.map(item => ({
-                name: item.SiteName,
-                url: item.SiteURL,
-                date: item.Subscribe,
-                noti: item.Noti,
-                noti_title: item.NotiTitle,
-                noti_text: item.NotiText,
-                blocker: item.Blocker,
-                blocker_effect: item.BlockerEffect,
-                blocker_redirecturl: item.BlockerRedirectURL,
-                blocker_note: item.BlockerNote,
-            }));
-
-            // Теперь 'siteList' содержит данные из вашей таблицы NocoDB
-            console.log(siteList);
+            processData(data.list);
         } else {
             console.error('Ошибка: Полученные данные не соответствуют ожидаемой структуре');
         }
     })
     .catch(error => console.error('Ошибка при получении данных:', error));
+
+function processData(data) {
+    // Преобразование данных в нужный формат
+    const siteList = data.map(item => ({
+        name: item.SiteName,
+        url: item.SiteURL,
+        date: item.Subscribe,
+        noti: item.Noti,
+        blocker: item.Blocker,
+        blocker_note: item.BlockerNote,
+    }));
+
+    // Передаем данные для обновления таблицы
+    updateTable(siteList);
+}
