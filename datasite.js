@@ -21,21 +21,25 @@ const options = {
 fetch('https://app.nocodb.com/api/v1/db/data/noco/p2kmbphsgvqs8kz/mpqof3e6f1ueozo/views/vwz1zne8sfxvhxco?offset=0&limit=25&where=', options)
     .then(response => response.json())
     .then(data => {
-        // Преобразование данных в нужный формат, предположим, что это массив объектов
-        const site = data.map(item => ({
-            name: item.name,
-            url: item.url,
-            date: item.date,
-            noti: item.noti,
-            noti_title: item.noti_title,
-            noti_text: item.noti_text,
-            blocker: item.blocker,
-            blocker_effect: item.blocker_effect,
-            blocker_redirecturl: item.blocker_redirecturl,
-            blocker_note: item.blocker_note,
-        }));
+        if (Array.isArray(data)) {
+            // Преобразование данных в нужный формат, предположим, что это массив объектов
+            const site = data.map(item => ({
+                name: item.name,
+                url: item.url,
+                date: item.date,
+                noti: item.noti,
+                noti_title: item.noti_title,
+                noti_text: item.noti_text,
+                blocker: item.blocker,
+                blocker_effect: item.blocker_effect,
+                blocker_redirecturl: item.blocker_redirecturl,
+                blocker_note: item.blocker_note,
+            }));
 
-        // Теперь 'site' содержит данные из вашей таблицы NocoDB
-        console.log(site);
+            // Теперь 'site' содержит данные из вашей таблицы NocoDB
+            console.log(site);
+        } else {
+            console.error('Ошибка: Полученные данные не являются массивом');
+        }
     })
     .catch(error => console.error('Ошибка при получении данных:', error));
