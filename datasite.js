@@ -11,38 +11,31 @@
  * thanos - поверх сайта чёрный экран с gif щелчком таноса
  */
 
-// Подключение datasite.js - база данных сайтов
-  var airtablejs = document.createElement('script');
-  airtablejs.src = 'https://cdn.jsdelivr.net/npm/airtable@0.12.2/lib/airtable.umd.min.js';
-  document.head.appendChild(airtablejs);
-
-const apiKey = 'patuoL9R4t4wpFWXS';
-const baseId = 'appyM5LkcacbXYVGh';
-const tableName = 'Site';
-
- airtablejs.onload = function() {
-  const base = new Airtable({ apiKey: apiKey }).base(baseId);
-
-  // Получаем данные из Airtable
-  base(tableName).select({
-    view: 'Grid view',  // замените 'Grid view' на ваше представление
-  }).eachPage(function page(records, fetchNextPage) {
-    // Обрабатываем каждую страницу записей
-    const site = records.map(record => ({
-      name: record.get('Name'),
-      url: record.get('URL'),
-      date: record.get('Date'),
-      // Добавьте другие поля по необходимости
-    }));
-    
-    console.log(site);
-
-    // Переходим к следующей странице, если она есть
-    fetchNextPage();
-  }, function done(err) {
-    if (err) {
-      console.error('Ошибка при получении данных из Airtable:', err);
-      return;
+const options = {
+    method: 'GET',
+    headers: {
+        'xc-auth': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbnlhYWJyb3NAZ21haWwuY29tIiwiZGlzcGxheV9uYW1lIjoiRGFuaWVsIEFicm9zIiwiYXZhdGFyIjpudWxsLCJ1c2VyX25hbWUiOm51bGwsImlkIjoidXM1cGE1a3FlYmx6MjBxOSIsInJvbGVzIjoib3JnLWxldmVsLXZpZXdlciIsInRva2VuX3ZlcnNpb24iOiI4MjMyYzQ5ZGJhNjhhOTRlYTg0MGY5ZGUwOTljMDQ1NTQ0YjA2MGRjNDExNTFlYWZhMzEwNzM1OGE2M2MwNjI1MWExOTQwMGI0MzM5ZTdiOCIsInByb3ZpZGVyIjoiY29nbml0byIsImlhdCI6MTcwOTA2MzE3MSwiZXhwIjoxNzA5MDk5MTcxfQ.mjkJTW5DiVDwtGvzxGw6cLVY2PLM4w3tFUMEKQKi6B4'
     }
-  });
 };
+
+fetch('https://app.nocodb.com/api/v1/db/data/noco/p2kmbphsgvqs8kz/mpqof3e6f1ueozo/views/vwz1zne8sfxvhxco?offset=0&limit=25&where=', options)
+    .then(response => response.json())
+    .then(data => {
+        // Преобразование данных в нужный формат, предположим, что это массив объектов
+        const site = data.map(item => ({
+            name: item.name,
+            url: item.url,
+            date: item.date,
+            noti: item.noti,
+            noti_title: item.noti_title,
+            noti_text: item.noti_text,
+            blocker: item.blocker,
+            blocker_effect: item.blocker_effect,
+            blocker_redirecturl: item.blocker_redirecturl,
+            blocker_note: item.blocker_note,
+        }));
+
+        // Теперь 'site' содержит данные из вашей таблицы NocoDB
+        console.log(site);
+    })
+    .catch(error => console.error('Ошибка при получении данных:', error));
