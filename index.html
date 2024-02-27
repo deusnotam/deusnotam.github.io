@@ -84,30 +84,45 @@
 				</tbody>
 			</table>
 			<script>
-				$(document).ready(function () {
-					var $table = $('#table');
-					function processData(data) {
-						$table.bootstrapTable('destroy');
-						$table.bootstrapTable({
-							data: DNsite,
-							columns: [
-								{ field: 'item.SiteName', title: 'Название', sortable: true },
-								{ field: 'url', title: 'Ссылка', sortable: false },
-								{ field: 'date', title: 'Дата подключения', sortable: true },
-								{ field: 'noti', title: 'Cистема "Noti"', sortable: true },
-								{ field: 'blocker', title: 'Cистема "Blocker"', sortable: true,
-								 formatter: function (value, row, index) {
-									 var blockerNote = row.blocker_note || '';
-									 return '<div data-toggle="tooltip" data-placement="auto" title="' + blockerNote + '">' + value + '</div>';
-								 }
-								},
-							]
-						});
-						$('[data-toggle="tooltip"]').tooltip();
-					}
-					processData(DNsite);
-				});
-			</script>
+    $(document).ready(function () {
+        var $table = $('#table');
+
+        function waitForData() {
+            // Проверяем, есть ли данные (ваше условие для проверки данных)
+            if (DNsite && DNsite.length > 0) {
+                // Если данные есть, обрабатываем их
+                processData(DNsite);
+            } else {
+                // Если данных нет, повторяем ожидание через 1 секунду
+                setTimeout(waitForData, 1000);
+            }
+        }
+
+        // Начинаем ожидание данных при загрузке документа
+        waitForData();
+        
+        function processData(data) {
+            $table.bootstrapTable('destroy');
+            $table.bootstrapTable({
+                data: data,
+                columns: [
+                    { field: 'item.SiteName', title: 'Название', sortable: true },
+                    { field: 'url', title: 'Ссылка', sortable: false },
+                    { field: 'date', title: 'Дата подключения', sortable: true },
+                    { field: 'noti', title: 'Cистема "Noti"', sortable: true },
+                    {
+                        field: 'blocker', title: 'Cистема "Blocker"', sortable: true,
+                        formatter: function (value, row, index) {
+                            var blockerNote = row.blocker_note || '';
+                            return '<div data-toggle="tooltip" data-placement="auto" title="' + blockerNote + '">' + value + '</div>';
+                        }
+                    },
+                ]
+            });
+            $('[data-toggle="tooltip"]').tooltip();
+        }
+    });
+</script>
 			<script>
 				function setTheme() {
 					var now = new Date();
