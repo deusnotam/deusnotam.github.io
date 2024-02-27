@@ -38,7 +38,7 @@ fetch('https://app.nocodb.com/api/v1/db/data/noco/p2kmbphsgvqs8kz/mpqof3e6f1ueoz
 
             // Теперь 'siteList' содержит данные из вашей таблицы NocoDB
             console.log(DNsite);
-            console.log(DNsite.item.SiteName);
+            console.log(DNsite.name);
         } else {
             console.error('Ошибка: Полученные данные не соответствуют ожидаемой структуре');
         }
