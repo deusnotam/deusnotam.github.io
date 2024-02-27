@@ -11,17 +11,22 @@
  * thanos - поверх сайта чёрный экран с gif щелчком таноса
  */
 
-if (!authToken) {
-    console.error('Ошибка: Токен не найден в GitHub Secrets.');
-    process.exit(1);
-}
+const fs = require('fs');
 
-const options = {
-    method: 'GET',
-    headers: {
-        'xc-auth': process.env.XC_AUTH_TOKEN
+// Прочитать токен из файла
+fs.readFile('.gitignore/tokenbd.txt', 'utf8', (err, token) => {
+    if (err) {
+        console.error('Ошибка чтения файла:', err);
+        return;
     }
-};
+
+    const options = {
+        method: 'GET',
+        headers: {
+            'xc-auth': token.trim() // Убедитесь, что удалили пробелы и символы новой строки
+        }
+    };
+
 
 fetch('https://app.nocodb.com/api/v1/db/data/noco/p2kmbphsgvqs8kz/mpqof3e6f1ueozo/views/vwz1zne8sfxvhxco', options)
     .then(response => response.json())
