@@ -11,7 +11,7 @@
  * thanos - поверх сайта чёрный экран с gif щелчком таноса
  */
 // Ваш API URL для доступа к Airtable
-const airtableApiUrl = 'https://api.airtable.com/v0/appyM5LkcacbXYVGh/site';
+const airtableApiUrl = 'https://api.airtable.com/v0/appyM5LkcacbXYVGh/Site';
 
 // Ваш API ключ для аутентификации
 const apiKey = 'patuoL9R4t4wpFWXS';
