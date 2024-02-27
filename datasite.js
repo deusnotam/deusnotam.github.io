@@ -19,16 +19,16 @@ const tableName = 'Site';
 const apiUrl = `https://api.airtable.com/v0/${baseId}/${tableName}`;
 
 // Заголовки запроса, включая API ключ
-const headers = {
+const headers = new Headers({
   'Authorization': `Bearer ${apiKey}`,
   'Content-Type': 'application/json',
-};
+});
 
 // Выполняем запрос к Airtable API
-fetch(apiUrl, { headers })
+fetch(apiUrl, { method: 'GET', headers: headers })
   .then(response => {
     if (!response.ok) {
-      throw new Error('Ошибка при получении данных из Airtable');
+      throw new Error(`HTTP error! Status: ${response.status}`);
     }
     return response.json();
   })
@@ -49,5 +49,5 @@ fetch(apiUrl, { headers })
     console.log(site);
   })
   .catch(error => {
-    console.error('Ошибка при получении данных из Airtable:', error);
+    console.error('Ошибка при получении данных из Airtable:', error.message);
   });
