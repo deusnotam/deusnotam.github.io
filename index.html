@@ -89,9 +89,9 @@
 
         function waitForData() {
             // Проверяем, есть ли данные (ваше условие для проверки данных)
-            if (DNsite && DNsite.length > 0) {
+            if (window.DNsite && window.DNsite.length > 0) {
                 // Если данные есть, обрабатываем их
-                processData(DNsite);
+                processData(window.DNsite);
             } else {
                 // Если данных нет, повторяем ожидание через 1 секунду
                 setTimeout(waitForData, 1000);
@@ -100,7 +100,7 @@
 
         // Начинаем ожидание данных при загрузке документа
         waitForData();
-        
+
         function processData(data) {
             $table.bootstrapTable('destroy');
             $table.bootstrapTable({
