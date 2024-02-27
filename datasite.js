@@ -11,40 +11,42 @@
  * thanos - поверх сайта чёрный экран с gif щелчком таноса
  */
 
-const axios = require('axios');
-
 const apiKey = 'patuoL9R4t4wpFWXS';
 const baseId = 'appyM5LkcacbXYVGh';
 const tableName = 'Site';
 
+// URL для запросов к API Airtable
 const apiUrl = `https://api.airtable.com/v0/${baseId}/${tableName}`;
 
+// Заголовки запроса, включая API ключ
 const headers = {
   'Authorization': `Bearer ${apiKey}`,
   'Content-Type': 'application/json',
 };
 
-axios.get(apiUrl, { headers })
+// Выполняем запрос к Airtable API
+fetch(apiUrl, { headers })
   .then(response => {
-    const data = response.data.records;
+    if (!response.ok) {
+      throw new Error('Ошибка при получении данных из Airtable');
+    }
+    return response.json();
+  })
+  .then(data => {
+    // Получаем данные из ответа
+    const records = data.records;
 
-    const site = data.map(record => ({
+    // Обрабатываем данные (здесь можно добавить логику обработки)
+
+    // Ваш код для использования данных из Airtable
+    var site = records.map(record => ({
       name: record.fields.Name,
-      url: record.fields.SiteURL,
-      date: record.fields.Subscribe,
-      noti: record.fields.Noti,
-      noti_title: record.fields.NotiTitle,
-      noti_text: record.fields.NotiText,
-      blocker: record.fields.Blocker,
-      blocker_effect: record.fields.BlockerEffect,
-      blocker_redirecturl: record.fields.BlockerRedirectURL,
-      blocker_note: record.fields.BlockerNote,
+      url: record.fields.URL,
+      date: record.fields.Date,
+      // Добавьте другие поля по необходимости
     }));
 
-    // Теперь у вас есть массив объектов с данными из Airtable
     console.log(site);
-
-    // Добавьте здесь свою логику обработки данных
   })
   .catch(error => {
     console.error('Ошибка при получении данных из Airtable:', error);
