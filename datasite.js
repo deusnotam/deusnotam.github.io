@@ -26,7 +26,7 @@ const options = {
     }
 };
 
-fetch('https://app.nocodb.com/api/v1/db/data/noco/p2kmbphsgvqs8kz/mpqof3e6f1ueozo/views/vwz1zne8sfxvhxco?offset=0&limit=25&where=', options)
+fetch('https://app.nocodb.com/api/v1/db/data/noco/p2kmbphsgvqs8kz/mpqof3e6f1ueozo/views/vwz1zne8sfxvhxco', options)
     .then(response => response.json())
     .then(data => {
         if (data && data.list && Array.isArray(data.list)) {
@@ -43,3 +43,11 @@ fetch('https://app.nocodb.com/api/v1/db/data/noco/p2kmbphsgvqs8kz/mpqof3e6f1ueoz
                 blocker_redirecturl: item.BlockerRedirectURL,
                 blocker_note: item.BlockerNote,
             }));
+
+            // Теперь 'siteList' содержит данные из вашей таблицы NocoDB
+            console.log(siteList);
+        } else {
+            console.error('Ошибка: Полученные данные не соответствуют ожидаемой структуре');
+        }
+    })
+    .catch(error => console.error('Ошибка при получении данных:', error));
