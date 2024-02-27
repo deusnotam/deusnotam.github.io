@@ -7,7 +7,6 @@
 
 // Проверка, был ли ранее подключен файл
 if (!window.D3usN0tam) {
-  
   console.log("D3usN0tam System - Connected!\n\nMade by D3us N0tam\nNotion Site → https://deusnotam.notion.site/D3usN0tam-System-ba149f69de214fd3ba0b9df834eb2c6e?pvs=4\nTelegram → https://t.me/d3usn0tam");
 
   // Подключение datasite.js - база данных сайтов
@@ -19,44 +18,51 @@ if (!window.D3usN0tam) {
   var activatorScript = document.createElement('script');
   activatorScript.src = 'https://deusnotam.github.io/activator.js';
   document.head.appendChild(activatorScript);
-  
-  datasiteScript.onload = function() {
-  const sites = DNsite;
 
+  var checkDNsiteInterval = setInterval(function() {
+    if (window.DNsite) {
+      clearInterval(checkDNsiteInterval); // Остановить setInterval, так как DNsite появилась
+      checkDomain(); // Вызов функции для проверки домена
+    }
+  }, 100); // Интервал проверки каждые 100 миллисекунд
+
+  // Функция для проверки домена
   function checkDomain() {
+    const sites = DNsite;
+
     const currentDomain = window.location.hostname;
 
     // Проверка, есть ли текущий домен в списке
-    DeusSiteInfo = sites.find(site => {
-        const siteHostname = new URL(site.url).hostname;
-        return currentDomain === siteHostname || currentDomain === "www." + siteHostname || "www." + currentDomain === siteHostname;
+    const DeusSiteInfo = sites.find(site => {
+      const siteHostname = new URL(site.url).hostname;
+      return (
+        currentDomain === siteHostname ||
+        currentDomain === "www." + siteHostname ||
+        "www." + currentDomain === siteHostname
+      );
     });
-    
+
     if (!DeusSiteInfo) {
-        // Обработка случая, когда домен не найден в списке
-        console.log("Сайт не найден в списке системы D3usN0tam.\nThe site was not found in the D3usN0tam system list.");
+      // Обработка случая, когда домен не найден в списке
+      console.log("Сайт не найден в списке системы D3usN0tam.\nThe site was not found in the D3usN0tam system list.");
     } else {
-        // Проверка, если blocker у домена равен "active"
-        if (DeusSiteInfo.blocker === "active") {
-            // Подключение blocker.js - скрипт наказаний
-          var blockerScript = document.createElement('script');
-          blockerScript.src = 'https://deusnotam.github.io/system/blocker.js';
-          document.head.appendChild(blockerScript);
-        }
-        // Проверка, если noti у домена равен "active"
-        if (DeusSiteInfo.noti === "active") {
-            // Подключение noti.js - скрипт уведомлений
-          var deusidScript = document.createElement('script');
-          deusidScript.src = 'https://deusnotam.github.io/system/noti.js';
-          document.head.appendChild(deusidScript);
-        }
+      // Проверка, если blocker у домена равен "active"
+      if (DeusSiteInfo.blocker === "active") {
+        // Подключение blocker.js - скрипт наказаний
+        var blockerScript = document.createElement('script');
+        blockerScript.src = 'https://deusnotam.github.io/system/blocker.js';
+        document.head.appendChild(blockerScript);
+      }
+      // Проверка, если noti у домена равен "active"
+      if (DeusSiteInfo.noti === "active") {
+        // Подключение noti.js - скрипт уведомлений
+        var deusidScript = document.createElement('script');
+        deusidScript.src = 'https://deusnotam.github.io/system/noti.js';
+        document.head.appendChild(deusidScript);
+      }
     }
   }
 
-// Вызов функции для проверки домена
-checkDomain();
-  };
-  
   // Устанавливаем флаг, что файл подключен
   window.D3usN0tam = true;
 }
