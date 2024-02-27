@@ -12,19 +12,15 @@ if (!window.D3usN0tam) {
   // Подключение datasite.js - база данных сайтов
   var datasiteScript = document.createElement('script');
   datasiteScript.src = 'https://deusnotam.github.io/datasite.js';
+  datasiteScript.onload = function() {
+    checkDomain(); // Вызов функции для проверки домена после загрузки datasite.js
+  };
   document.head.appendChild(datasiteScript);
 
   // Подключение activator.js - скрипт проверки подключения
   var activatorScript = document.createElement('script');
   activatorScript.src = 'https://deusnotam.github.io/activator.js';
   document.head.appendChild(activatorScript);
-
-  var checkDNsiteInterval = setInterval(function() {
-    if (window.DNsite) {
-      clearInterval(checkDNsiteInterval); // Остановить setInterval, так как DNsite появилась
-      checkDomain(); // Вызов функции для проверки домена
-    }
-  }, 100); // Интервал проверки каждые 100 миллисекунд
 
   // Функция для проверки домена
   function checkDomain() {
