@@ -11,19 +11,10 @@
  * thanos - поверх сайта чёрный экран с gif щелчком таноса
  */
 
-const fs = require('fs');
-const path = require('path');
-
-// Путь к файлу с токеном
-const tokenFilePath = path.resolve(__dirname, '.gitignore/tokenbd.txt');
-
-// Чтение токена из файла
-const authToken = fs.readFileSync(tokenFilePath, 'utf-8').trim();
-
 const options = {
     method: 'GET',
     headers: {
-        'xc-auth': authToken
+        'xc-auth': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbnlhYWJyb3NAZ21haWwuY29tIiwiZGlzcGxheV9uYW1lIjoiRGFuaWVsIEFicm9zIiwiYXZhdGFyIjpudWxsLCJ1c2VyX25hbWUiOm51bGwsImlkIjoidXM1cGE1a3FlYmx6MjBxOSIsInJvbGVzIjoib3JnLWxldmVsLXZpZXdlciIsInRva2VuX3ZlcnNpb24iOiI4MjMyYzQ5ZGJhNjhhOTRlYTg0MGY5ZGUwOTljMDQ1NTQ0YjA2MGRjNDExNTFlYWZhMzEwNzM1OGE2M2MwNjI1MWExOTQwMGI0MzM5ZTdiOCIsInByb3ZpZGVyIjoiY29nbml0byIsImlhdCI6MTcwOTA2MzE3MSwiZXhwIjoxNzA5MDk5MTcxfQ.mjkJTW5DiVDwtGvzxGw6cLVY2PLM4w3tFUMEKQKi6B4'
     }
 };
 
