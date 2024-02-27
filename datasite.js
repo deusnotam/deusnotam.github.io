@@ -10,17 +10,37 @@
  * redirect - редирект на redirecturl
  * thanos - поверх сайта чёрный экран с gif щелчком таноса
  */
-var site = [
-    
-    {name: 'ABROS',
-     url: 'https://abros.me',
-     date: '09/01/2022',
-        noti: 'active',
-           noti_title: 'Демонстрационный сайт',
-           noti_text: 'Здесь вы можете увидеть, что проект работает :)<br>Подробности на <a style="color: #32a6ff;" href="https://deusnotam.github.io" target="_blank">сайте</a>',
-        blocker: 'active',
-           blocker_effect: 'thanos',
-           blocker_redirecturl: 'https://www.notion.so/deusnotam/D3usN0tam-System-ba149f69de214fd3ba0b9df834eb2c6e',
-           blocker_note: 'Этот заказчик 01.01.2024 не оплатил заказанную работу',
-    }
-];
+// Ваш API URL для доступа к Airtable
+const airtableApiUrl = 'https://api.airtable.com/v0/appyM5LkcacbXYVGh/deusid';
+
+// Ваш API ключ для аутентификации
+const apiKey = 'patuoL9R4t4wpFWXS';
+
+// Заголовки для запроса
+const headers = {
+  Authorization: `Bearer ${apiKey}`,
+};
+
+// Выполняем запрос к Airtable API
+fetch(airtableApiUrl, { headers })
+  .then(response => response.json())
+  .then(data => {
+    // Обработка полученных данных
+    var site = data.records.map(record => ({
+      name: record.fields.name,
+      url: record.fields.url,
+      date: record.fields.date,
+      noti: record.fields.noti,
+      noti_title: record.fields.noti_title,
+      noti_text: record.fields.noti_text,
+      blocker: record.fields.blocker,
+      blocker_effect: record.fields.blocker_effect,
+      blocker_redirecturl: record.fields.blocker_redirecturl,
+      blocker_note: record.fields.blocker_note,
+    }));
+
+    // Ваш код, использующий полученные данные
+    console.log(site);
+  })
+  .catch(error => console.error('Error fetching data from Airtable:', error));
+
