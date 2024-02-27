@@ -23,7 +23,7 @@ fetch('https://app.nocodb.com/api/v1/db/data/noco/p2kmbphsgvqs8kz/mpqof3e6f1ueoz
     .then(data => {
         if (data && data.list && Array.isArray(data.list)) {
             // Преобразование данных в нужный формат
-             DNsite = data.list.map(item => ({
+             var DNsite = data.list.map(item => ({
                 name: item.SiteName,
                 url: item.SiteURL,
                 date: item.Subscribe,
