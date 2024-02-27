@@ -89,7 +89,7 @@
 					function processData(data) {
 						$table.bootstrapTable('destroy');
 						$table.bootstrapTable({
-							data: site,
+							data: DNsite,
 							columns: [
 								{ field: 'item.SiteName', title: 'Название', sortable: true },
 								{ field: 'url', title: 'Ссылка', sortable: false },
@@ -105,7 +105,7 @@
 						});
 						$('[data-toggle="tooltip"]').tooltip();
 					}
-					processData(site);
+					processData(DNsite);
 				});
 			</script>
 			<script>
