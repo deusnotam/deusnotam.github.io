@@ -25,22 +25,26 @@ const headers = {
 fetch(airtableApiUrl, { headers })
   .then(response => response.json())
   .then(data => {
-    // Обработка полученных данных
-    var site = data.records.map(record => ({
-      name: record.fields.name,
-      url: record.fields.url,
-      date: record.fields.date,
-      noti: record.fields.noti,
-      noti_title: record.fields.noti_title,
-      noti_text: record.fields.noti_text,
-      blocker: record.fields.blocker,
-      blocker_effect: record.fields.blocker_effect,
-      blocker_redirecturl: record.fields.blocker_redirecturl,
-      blocker_note: record.fields.blocker_note,
-    }));
+    // Проверка наличия данных
+    if (data && data.records) {
+      // Обработка полученных данных
+      const site = data.records.map(record => ({
+        name: record.fields.name,
+        url: record.fields.url,
+        date: record.fields.date,
+        noti: record.fields.noti,
+        noti_title: record.fields.noti_title,
+        noti_text: record.fields.noti_text,
+        blocker: record.fields.blocker,
+        blocker_effect: record.fields.blocker_effect,
+        blocker_redirecturl: record.fields.blocker_redirecturl,
+        blocker_note: record.fields.blocker_note,
+      }));
 
-    // Ваш код, использующий полученные данные
-    console.log(site);
+      // Ваш код, использующий полученные данные
+      console.log(site);
+    } else {
+      console.error('No records found in Airtable data.');
+    }
   })
   .catch(error => console.error('Error fetching data from Airtable:', error));
-
