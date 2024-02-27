@@ -13,7 +13,7 @@
 
 // Подключение datasite.js - база данных сайтов
   var airtablejs = document.createElement('script');
-  airtablejs.src = 'https://cdnjs.cloudflare.com/ajax/libs/airtable/0.11.0/airtable.min.js';
+  airtablejs.src = 'https://cdn.jsdelivr.net/npm/airtable@0.12.2/lib/airtable.umd.min.js';
   document.head.appendChild(airtablejs);
 
 const apiKey = 'patuoL9R4t4wpFWXS';
