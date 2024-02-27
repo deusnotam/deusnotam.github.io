@@ -30,12 +30,12 @@ axios.get(apiUrl, { headers })
 
     const site = data.map(record => ({
       name: record.fields.Name,
-      url: record.fields.URL,
-      date: record.fields.Date,
-      noti: record.fields.NotificationStatus,
-      noti_title: record.fields.NotificationTitle,
-      noti_text: record.fields.NotificationText,
-      blocker: record.fields.BlockerStatus,
+      url: record.fields.SiteURL,
+      date: record.fields.Subscribe,
+      noti: record.fields.Noti,
+      noti_title: record.fields.NotiTitle,
+      noti_text: record.fields.NotiText,
+      blocker: record.fields.Blocker,
       blocker_effect: record.fields.BlockerEffect,
       blocker_redirecturl: record.fields.BlockerRedirectURL,
       blocker_note: record.fields.BlockerNote,
