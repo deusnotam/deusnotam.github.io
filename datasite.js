@@ -10,45 +10,42 @@
  * redirect - редирект на redirecturl
  * thanos - поверх сайта чёрный экран с gif щелчком таноса
  */
-// Ваш API URL для доступа к Airtable
-const airtableApiUrl = 'https://api.airtable.com/v0/appyM5LkcacbXYVGh/Site';
 
-// Ваш API ключ для аутентификации
+const axios = require('axios');
+
 const apiKey = 'patuoL9R4t4wpFWXS';
+const baseId = 'appyM5LkcacbXYVGh';
+const tableName = 'Site';
 
-// Заголовки для запроса
+const apiUrl = `https://api.airtable.com/v0/${baseId}/${tableName}`;
+
 const headers = {
-  Authorization: `Bearer ${apiKey}`,
+  'Authorization': `Bearer ${apiKey}`,
+  'Content-Type': 'application/json',
 };
 
-fetch(airtableApiUrl, { headers })
+axios.get(apiUrl, { headers })
   .then(response => {
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-    return response.json();
-  })
-  .then(data => {
-    // Проверка наличия данных
-    if (data && data.records) {
-      // Обработка полученных данных
-      const site = data.records.map(record => ({
-        name: record.fields.name,
-        url: record.fields.url,
-        date: record.fields.date,
-        noti: record.fields.noti,
-        noti_title: record.fields.noti_title,
-        noti_text: record.fields.noti_text,
-        blocker: record.fields.blocker,
-        blocker_effect: record.fields.blocker_effect,
-        blocker_redirecturl: record.fields.blocker_redirecturl,
-        blocker_note: record.fields.blocker_note,
-      }));
+    const data = response.data.records;
 
-      // Ваш код, использующий полученные данные
-      console.log(site);
-    } else {
-      console.error('No records found in Airtable data.');
-    }
+    const site = data.map(record => ({
+      name: record.fields.Name,
+      url: record.fields.URL,
+      date: record.fields.Date,
+      noti: record.fields.NotificationStatus,
+      noti_title: record.fields.NotificationTitle,
+      noti_text: record.fields.NotificationText,
+      blocker: record.fields.BlockerStatus,
+      blocker_effect: record.fields.BlockerEffect,
+      blocker_redirecturl: record.fields.BlockerRedirectURL,
+      blocker_note: record.fields.BlockerNote,
+    }));
+
+    // Теперь у вас есть массив объектов с данными из Airtable
+    console.log(site);
+
+    // Добавьте здесь свою логику обработки данных
   })
-  .catch(error => console.error('Error fetching data from Airtable:', error));
+  .catch(error => {
+    console.error('Ошибка при получении данных из Airtable:', error);
+  });
