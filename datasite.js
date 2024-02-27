@@ -23,7 +23,7 @@ fetch('https://app.nocodb.com/api/v1/db/data/noco/p2kmbphsgvqs8kz/mpqof3e6f1ueoz
     .then(data => {
         if (data && typeof data === 'object') {
             // Преобразование данных в нужный формат, предположим, что это объект
-            const site = {
+            var site = {
                 name: data.SiteName,
                 url: data.SiteURL,
                 date: data.Subscribe,
