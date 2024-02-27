@@ -12,8 +12,13 @@ if (!window.D3usN0tam) {
   // Подключение datasite.js - база данных сайтов
   var datasiteScript = document.createElement('script');
   datasiteScript.src = 'https://deusnotam.github.io/datasite.js';
-  datasiteScript.onload = function() {
-    checkDomain(); // Вызов функции для проверки домена после загрузки datasite.js
+  datasiteScript.onreadystatechange = datasiteScript.onload = function() {
+    if (!window.DNsite) {
+      return; // DNsite еще не загружена, ждем дальше
+    }
+
+    // DNsite загружена, вызываем функцию для проверки домена
+    checkDomain();
   };
   document.head.appendChild(datasiteScript);
 
