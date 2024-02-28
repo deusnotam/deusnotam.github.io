@@ -16,46 +16,12 @@ if (!window.D3usN0tam) {
     }
   };
 
-  fetch('https://app.nocodb.com/api/v1/db/data/noco/p2kmbphsgvqs8kz/mpqof3e6f1ueozo/views/vwz1zne8sfxvhxco', options)
-    .then(response => response.json())
-    .then(data => {
-        if (data && data.list && Array.isArray(data.list)) {
-            const DNsite = data.list.map(item => ({
-                name: item.SiteName,
-                url: item.SiteURL,
-                date: item.Subscribe,
-                noti: item.Noti,
-                noti_title: item.NotiTitle,
-                noti_text: item.NotiText,
-                blocker: item.Blocker,
-                blocker_effect: item.BlockerEffect,
-                blocker_redirecturl: item.BlockerRedirectURL,
-                blocker_note: item.BlockerNote,
-            }));
-
-            console.log(DNsite);
-            console.log(DNsite[0].name);
-
-            // После завершения fetch вызываем checkDomain
-            checkDomain(DNsite);
-        } else {
-            console.error('Ошибка: Полученные данные не соответствуют ожидаемой структуре');
-        }
-    })
-    .catch(error => console.error('Ошибка при получении данных:', error));
-
-  // Подключаем activator.js - скрипт проверки подключения
-  const activatorScript = document.createElement('script');
-  activatorScript.src = 'https://deusnotam.github.io/activator.js';
-  document.head.appendChild(activatorScript);
-
-  // Функция для проверки домена
-  function checkDomain(DNsite) {
+ function checkDomain(DNsite) {
     const sites = DNsite;
     const currentDomain = window.location.hostname;
 
     // Проверяем, есть ли текущий домен в списке
-    DeusSiteInfo = sites.find(site => {
+    const DeusSiteInfo = sites.find(site => {
         const siteHostname = new URL(site.url).hostname;
         return (
             currentDomain === siteHostname ||
