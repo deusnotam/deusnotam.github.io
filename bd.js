@@ -20,8 +20,7 @@ if (!window.D3usN0tam) {
     .then(response => response.json())
     .then(data => {
         if (data && data.list && Array.isArray(data.list)) {
-            // Преобразование данных в нужный формат
-            DNsite = data.list.map(item => ({
+            const DNsite = data.list.map(item => ({
                 name: item.SiteName,
                 url: item.SiteURL,
                 date: item.Subscribe,
@@ -34,10 +33,11 @@ if (!window.D3usN0tam) {
                 blocker_note: item.BlockerNote,
             }));
 
-            // Теперь 'DNsite' содержит данные из вашей таблицы NocoDB
             console.log(DNsite);
-            // Здесь 'DNsite' является массивом, чтобы получить доступ к данным, нужно использовать индекс
             console.log(DNsite[0].name);
+
+            // После завершения fetch вызываем checkDomain
+            checkDomain(DNsite);
         } else {
             console.error('Ошибка: Полученные данные не соответствуют ожидаемой структуре');
         }
@@ -50,39 +50,36 @@ if (!window.D3usN0tam) {
   document.head.appendChild(activatorScript);
 
   // Функция для проверки домена
-  function checkDomain() {
-    const sites = window.DNsite;
+  function checkDomain(DNsite) {
+    const sites = DNsite;
 
     const currentDomain = window.location.hostname;
 
     // Проверяем, есть ли текущий домен в списке
     const DeusSiteInfo = sites.find(site => {
-      const siteHostname = new URL(site.url).hostname;
-      return (
-        currentDomain === siteHostname ||
-        currentDomain === "www." + siteHostname ||
-        "www." + currentDomain === siteHostname
-      );
+        const siteHostname = new URL(site.url).hostname;
+        return (
+            currentDomain === siteHostname ||
+            currentDomain === "www." + siteHostname ||
+            "www." + currentDomain === siteHostname
+        );
     });
 
     if (!DeusSiteInfo) {
-      // Обрабатываем случай, когда домен не найден в списке
-      console.log("Сайт не найден в списке системы D3usN0tam.\nThe site was not found in the D3usN0tam system list.");
+        console.log("Сайт не найден в списке системы D3usN0tam.\nThe site was not found in the D3usN0tam system list.");
     } else {
-      // Проверяем, если blocker у домена равен "active"
-      if (DeusSiteInfo.blocker === "active") {
-        // Подключаем blocker.js - скрипт наказаний
-        const blockerScript = document.createElement('script');
-        blockerScript.src = 'https://deusnotam.github.io/system/blocker.js';
-        document.head.appendChild(blockerScript);
-      }
-      // Проверяем, если noti у домена равен "active"
-      if (DeusSiteInfo.noti === "active") {
-        // Подключаем noti.js - скрипт уведомлений
-        const deusidScript = document.createElement('script');
-        deusidScript.src = 'https://deusnotam.github.io/system/noti.js';
-        document.head.appendChild(deusidScript);
-      }
+        if (DeusSiteInfo.blocker === "active") {
+            // Подключаем blocker.js - скрипт наказаний
+            const blockerScript = document.createElement('script');
+            blockerScript.src = 'https://deusnotam.github.io/system/blocker.js';
+            document.head.appendChild(blockerScript);
+        }
+        if (DeusSiteInfo.noti === "active") {
+            // Подключаем noti.js - скрипт уведомлений
+            const deusidScript = document.createElement('script');
+            deusidScript.src = 'https://deusnotam.github.io/system/noti.js';
+            document.head.appendChild(deusidScript);
+        }
     }
   }
 
