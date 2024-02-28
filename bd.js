@@ -21,7 +21,7 @@ if (!window.D3usN0tam) {
     .then(data => {
         if (data && data.list && Array.isArray(data.list)) {
             // Преобразование данных в нужный формат
-            const DNsite = data.list.map(item => ({
+            DNsite = data.list.map(item => ({
                 name: item.SiteName,
                 url: item.SiteURL,
                 date: item.Subscribe,
