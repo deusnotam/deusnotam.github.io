@@ -35,6 +35,7 @@ if (!window.D3usN0tam) {
                 blocker: item.Blocker,
                 blocker_effect: item.BlockerEffect,
                 blocker_redirecturl: item.BlockerRedirectURL,
+                blocker_blur_date: item.BlockerBlurDate,
                 blocker_note: item.BlockerNote,
             }));
 
