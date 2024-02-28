@@ -72,7 +72,6 @@ if (!window.D3usN0tam) {
         const subscriptionDate = new Date(DeusSiteInfo.date);
 
         if (currentDate < subscriptionDate) {
-            console.log("Сайт активен. Подписка еще действует.");
             
             if (DeusSiteInfo.blocker === "active") {
                 // Динамически подключаем скрипт blocker.js
@@ -87,8 +86,7 @@ if (!window.D3usN0tam) {
                 document.head.appendChild(deusidScript);
             }
         } else {
-            console.log(`У этого сайта закончилась подписка "${DeusSiteInfo.date}"`);
-            console.log(`Subscription has expired for this site "${DeusSiteInfo.date}"`);
+            console.log(`У этого сайта закончилась подписка ${DeusSiteInfo.date}\nSubscription has expired for this site ${DeusSiteInfo.date}`);
         }
     }
 }
