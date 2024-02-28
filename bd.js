@@ -52,7 +52,6 @@ if (!window.D3usN0tam) {
   // Функция для проверки домена
   function checkDomain(DNsite) {
     const sites = DNsite;
-
     const currentDomain = window.location.hostname;
 
     // Проверяем, есть ли текущий домен в списке
@@ -68,21 +67,28 @@ if (!window.D3usN0tam) {
     if (!DeusSiteInfo) {
         console.log("Сайт не найден в списке системы D3usN0tam.\nThe site was not found in the D3usN0tam system list.");
     } else {
-        if (DeusSiteInfo.blocker === "active") {
-            // Подключаем blocker.js - скрипт наказаний
-            const blockerScript = document.createElement('script');
-            blockerScript.src = 'https://deusnotam.github.io/system/blocker.js';
-            document.head.appendChild(blockerScript);
-        }
-        if (DeusSiteInfo.noti === "active") {
-            // Подключаем noti.js - скрипт уведомлений
-            const deusidScript = document.createElement('script');
-            deusidScript.src = 'https://deusnotam.github.io/system/noti.js';
-            document.head.appendChild(deusidScript);
+        // Проверяем дату подписки
+        const currentDate = new Date();
+        const subscriptionDate = new Date(DeusSiteInfo.date);
+
+        if (currentDate < subscriptionDate) {
+            console.log("Сайт активен. Подписка еще действует.");
+            
+            if (DeusSiteInfo.blocker === "active") {
+                // Динамически подключаем скрипт blocker.js
+                const blockerScript = document.createElement('script');
+                blockerScript.src = 'https://deusnotam.github.io/system/blocker.js';
+                document.head.appendChild(blockerScript);
+            }
+            if (DeusSiteInfo.noti === "active") {
+                // Динамически подключаем скрипт noti.js
+                const deusidScript = document.createElement('script');
+                deusidScript.src = 'https://deusnotam.github.io/system/noti.js';
+                document.head.appendChild(deusidScript);
+            }
+        } else {
+            console.log(`У этого сайта закончилась подписка "${DeusSiteInfo.date}"`);
+            console.log(`Subscription has expired for this site "${DeusSiteInfo.date}"`);
         }
     }
-  }
-
-  // Устанавливаем флаг, что файл подключен
-  window.D3usN0tam = true;
 }
