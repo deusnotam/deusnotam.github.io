@@ -56,7 +56,7 @@ if (!window.D3usN0tam) {
     const currentDomain = window.location.hostname;
 
     // Проверяем, есть ли текущий домен в списке
-    const DeusSiteInfo = sites.find(site => {
+    DeusSiteInfo = sites.find(site => {
         const siteHostname = new URL(site.url).hostname;
         return (
             currentDomain === siteHostname ||
