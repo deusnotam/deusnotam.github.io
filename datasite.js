@@ -18,7 +18,7 @@ const options = {
     }
 };
 
-fetch('https://app.nocodb.com/api/v1/db/data/noco/p2kmbphsgvqs8kz/mpqof3e6f1ueozo/views/vwz1zne8sfxvhxco?offset=0&limit=25&where=', options)
+fetch('https://app.nocodb.com/api/v1/db/data/noco/p2kmbphsgvqs8kz/mpqof3e6f1ueozo/views/vwz1zne8sfxvhxco', options)
     .then(response => response.json())
     .then(data => {
         if (data && data.list && Array.isArray(data.list)) {
