@@ -84,60 +84,61 @@
 				</tbody>
 			</table>
 			<script>
-  const options = {
-    method: 'GET',
-    headers: {
-        'xc-auth': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbnlhYWJyb3NAZ21haWwuY29tIiwiZGlzcGxheV9uYW1lIjoiRGFuaWVsIEFicm9zIiwiYXZhdGFyIjpudWxsLCJ1c2VyX25hbWUiOm51bGwsImlkIjoidXM1cGE1a3FlYmx6MjBxOSIsInJvbGVzIjoib3JnLWxldmVsLXZpZXdlciIsInRva2VuX3ZlcnNpb24iOiI4MjMyYzQ5ZGJhNjhhOTRlYTg0MGY5ZGUwOTljMDQ1NTQ0YjA2MGRjNDExNTFlYWZhMzEwNzM1OGE2M2MwNjI1MWExOTQwMGI0MzM5ZTdiOCIsInByb3ZpZGVyIjoiY29nbml0byIsImlhdCI6MTcwOTEwOTc4NiwiZXhwIjoxNzA5MTQ1Nzg2fQ.j0pPJRGk0_WDsHLmXaC9BkLYqH4AGKzvY4yDsUA65UE'
-    }
-  };
-
-  fetch('https://app.nocodb.com/api/v1/db/data/noco/p2kmbphsgvqs8kz/mpqof3e6f1ueozo/views/vwz1zne8sfxvhxco', options)
-    .then(response => response.json())
-    .then(data => {
-        if (data && data.list && Array.isArray(data.list)) {
-            const siteinfo = data.list.map(item => ({
-                name: item.SiteName,
-                url: item.SiteURL,
-                date: item.Subscribe,
-                noti: item.Noti,
-                blocker: item.Blocker,
-                blocker_note: item.BlockerNote,
-            }));
-
-            // Инициализация таблицы с полученными данными
-            $(document).ready(function () {
-                var $table = $('#table');
-                
-                $table.bootstrapTable('destroy');
-                $table.bootstrapTable({
-                    data: siteinfo,
-                    columns: [
-                        { field: 'name', title: 'Название', sortable: true },
-                        { field: 'url', title: 'Ссылка', sortable: false },
-                        { field: 'date', title: 'Подписка до', sortable: true },
-                        { field: 'noti', title: 'Cистема "Noti"', sortable: true },
-                        {
-                            field: 'blocker',
-                            title: 'Cистема "Blocker"',
-                            sortable: true,
-                            formatter: function (value, row, index) {
-                                var blockerNote = row.blocker_note || '';
-                                return '<div data-toggle="tooltip" data-placement="auto" title="' + blockerNote + '">' + value + '</div>';
-                            }
-                        },
-                    ]
-                });
-                // Явная инициализация Bootstrap Table
-        $table.find('[data-toggle="tooltip"]').tooltip();
-
-        // Инициализация Bootstrap Tooltip только после завершения инициализации Bootstrap Table
-        $table.on('post-body.bs.table', function () {
-            $table.find('[data-toggle="tooltip"]').tooltip();
-            });
-        }
-    })
-    .catch(error => console.error('Ошибка при получении данных:', error));
-</script>
+				const options = {
+					method: 'GET',
+					headers: {
+						'xc-auth': 'ваш_токен'
+					}
+				};
+				
+				fetch('https://app.nocodb.com/api/v1/db/data/noco/p2kmbphsgvqs8kz/mpqof3e6f1ueozo/views/vwz1zne8sfxvhxco', options)
+					.then(response => response.json())
+					.then(data => {
+						if (data && data.list && Array.isArray(data.list)) {
+							const siteinfo = data.list.map(item => ({
+								name: item.SiteName,
+								url: item.SiteURL,
+								date: item.Subscribe,
+								noti: item.Noti,
+								blocker: item.Blocker,
+								blocker_note: item.BlockerNote,
+							}));
+							
+							// Инициализация таблицы с полученными данными
+							$(document).ready(function () {
+								var $table = $('#table');
+								
+								$table.bootstrapTable('destroy');
+								$table.bootstrapTable({
+									data: siteinfo,
+									columns: [
+										{ field: 'name', title: 'Название', sortable: true },
+										{ field: 'url', title: 'Ссылка', sortable: false },
+										{ field: 'date', title: 'Подписка до', sortable: true },
+										{ field: 'noti', title: 'Cистема "Noti"', sortable: true },
+										{
+											field: 'blocker',
+											title: 'Cистема "Blocker"',
+											sortable: true,
+											formatter: function (value, row, index) {
+												var blockerNote = row.blocker_note || '';
+												return '<div data-toggle="tooltip" data-placement="auto" title="' + blockerNote + '">' + value + '</div>';
+											}
+										},
+									]
+								});
+								// Явная инициализация Bootstrap Table
+								$table.find('[data-toggle="tooltip"]').tooltip();
+								
+								// Инициализация Bootstrap Tooltip только после завершения инициализации Bootstrap Table
+								$table.on('post-body.bs.table', function () {
+									$table.find('[data-toggle="tooltip"]').tooltip();
+								});
+							});
+						}
+					})
+					.catch(error => console.error('Ошибка при получении данных:', error));
+			</script>
 			<script>
 				function setTheme() {
 					var now = new Date();
