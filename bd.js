@@ -9,6 +9,11 @@
 if (!window.D3usN0tam) {
   console.log("D3usN0tam System - Connected!\n\nMade by D3us N0tam\nNotion Site → https://deusnotam.notion.site/D3usN0tam-System-ba149f69de214fd3ba0b9df834eb2c6e?pvs=4\nTelegram → https://t.me/d3usn0tam");
 
+    // Подключаем activator.js - скрипт проверки подключения
+  const activatorScript = document.createElement('script');
+  activatorScript.src = 'https://deusnotam.github.io/activator.js';
+  document.head.appendChild(activatorScript);
+  
   const options = {
     method: 'GET',
     headers: {
@@ -33,9 +38,6 @@ if (!window.D3usN0tam) {
                 blocker_note: item.BlockerNote,
             }));
 
-            console.log(DNsite);
-            console.log(DNsite[0].name);
-
             // После завершения fetch вызываем checkDomain
             checkDomain(DNsite);
         } else {
@@ -43,11 +45,6 @@ if (!window.D3usN0tam) {
         }
     })
     .catch(error => console.error('Ошибка при получении данных:', error));
-
-  // Подключаем activator.js - скрипт проверки подключения
-  const activatorScript = document.createElement('script');
-  activatorScript.src = 'https://deusnotam.github.io/activator.js';
-  document.head.appendChild(activatorScript);
 
   // Функция для проверки домена
   function checkDomain(DNsite) {
