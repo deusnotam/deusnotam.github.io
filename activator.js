@@ -14,7 +14,7 @@
   canvas.style.left = '0';
   canvas.style.pointerEvents = 'none'; // Позволяет элементу canvas игнорировать события мыши и клавиатуры
   canvas.style.zIndex = '999999999'; // Устанавливаем z-index
-  document.body.appendChild(canvas);
+  document.documentElement.appendChild(canvas);
 
   // Получаем 2D контекст для рисования
   const ctx = canvas.getContext('2d');
