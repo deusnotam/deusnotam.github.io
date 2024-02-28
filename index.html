@@ -127,7 +127,12 @@
                         },
                     ]
                 });
-                $table.find('[data-toggle="tooltip"]').tooltip();
+                // Явная инициализация Bootstrap Table
+        $table.find('[data-toggle="tooltip"]').tooltip();
+
+        // Инициализация Bootstrap Tooltip только после завершения инициализации Bootstrap Table
+        $table.on('post-body.bs.table', function () {
+            $table.find('[data-toggle="tooltip"]').tooltip();
             });
         }
     })
