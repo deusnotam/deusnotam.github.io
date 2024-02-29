@@ -17,7 +17,7 @@ if (!window.D3usN0tam) {
   const options = {
     method: 'GET',
     headers: {
-        'xc-auth': 'i02ops8mfwh5Xcorz10kJ3P_-Wo0xdVYO2Plv14S'
+        'xc-token': 'bYaKMejF5O3qobp3pju52zTKFIigY2otFozi0lO3'
     }
   };
 
