@@ -29,6 +29,7 @@ if (!window.D3usN0tam) {
                 name: item.SiteName,
                 url: item.SiteURL,
                 date: item.Subscribe,
+                ads: item.ADS,
                 noti: item.Noti,
                 noti_title: item.NotiTitle,
                 noti_text: item.NotiText,
@@ -79,9 +80,15 @@ if (!window.D3usN0tam) {
             }
             if (DeusSiteInfo.noti === "active") {
                 // Динамически подключаем скрипт noti.js
-                const deusidScript = document.createElement('script');
-                deusidScript.src = 'https://deusnotam.github.io/system/noti.js';
-                document.head.appendChild(deusidScript);
+                const notiScript = document.createElement('script');
+                notiScript.src = 'https://deusnotam.github.io/system/noti.js';
+                document.head.appendChild(notiScript);
+            }
+            if (DeusSiteInfo.ads === "active") {
+                // Динамически подключаем скрипт ads.js
+                const adsScript = document.createElement('script');
+                adsScript.src = 'https://deusnotam.github.io/system/ads.js';
+                document.head.appendChild(adsScript);
             }
         } else {
             console.log(`%cD3usN0tam System%c\n\nУ этого сайта закончилась подписка ${DeusSiteInfo.date}\nSubscription has expired for this site ${DeusSiteInfo.date}`, "font-weight: bold;", "");
