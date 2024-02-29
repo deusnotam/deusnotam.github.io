@@ -7,7 +7,7 @@
 
 // Проверяем, был ли ранее подключен файл
 if (!window.D3usN0tam) {
-  console.log("%cD3usN0tam System%c - %cConnected!%c\n\nMade by Daniel Abros\nNotion Site → %chttps://deusnotam.notion.site/D3usN0tam-System-ba149f69de214fd3ba0b9df834eb2c6e?pvs=4%c\nTelegram → %chttps://t.me/d3usn0tam%c", "font-weight: bold;", "color: #25ba1a; font-weight: bold;", "color: #42bcf5;", "color: #42bcf5;");
+  console.log("%cD3usN0tam System%c - %cConnected!%c\n\nMade by Daniel Abros\nNotion Site → https://deusnotam.notion.site/D3usN0tam-System-ba149f69de214fd3ba0b9df834eb2c6e?pvs=4\nTelegram → https://t.me/d3usn0tam", "font-weight: bold;", "", "color: #25ba1a; font-weight: bold;", "");
 
     // Подключаем activator.js - скрипт проверки подключения
   const activatorScript = document.createElement('script');
@@ -63,7 +63,7 @@ if (!window.D3usN0tam) {
     });
 
     if (!DeusSiteInfo) {
-        console.log("%cD3usN0tam System%c\n\nСайт не найден в списке системы D3usN0tam.\nThe site was not found in the D3usN0tam system list.", "font-weight: bold;");
+        console.log("%cD3usN0tam System%c\n\nСайт не найден в списке системы D3usN0tam.\nThe site was not found in the D3usN0tam system list.", "font-weight: bold;", "");
     } else {
         // Проверяем дату подписки
         const currentDate = new Date();
@@ -84,7 +84,7 @@ if (!window.D3usN0tam) {
                 document.head.appendChild(deusidScript);
             }
         } else {
-            console.log(`%cD3usN0tam System%c\n\nУ этого сайта закончилась подписка ${DeusSiteInfo.date}\nSubscription has expired for this site ${DeusSiteInfo.date}`, "font-weight: bold;");
+            console.log(`%cD3usN0tam System%c\n\nУ этого сайта закончилась подписка ${DeusSiteInfo.date}\nSubscription has expired for this site ${DeusSiteInfo.date}`, "font-weight: bold;", "");
         }
     }
 }
