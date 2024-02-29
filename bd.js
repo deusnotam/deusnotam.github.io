@@ -17,7 +17,7 @@ if (!window.D3usN0tam) {
   const options = {
     method: 'GET',
     headers: {
-        'xc-auth': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbnlhYWJyb3NAZ21haWwuY29tIiwiZGlzcGxheV9uYW1lIjoiRGFuaWVsIEFicm9zIiwiYXZhdGFyIjpudWxsLCJ1c2VyX25hbWUiOm51bGwsImlkIjoidXM1cGE1a3FlYmx6MjBxOSIsInJvbGVzIjoib3JnLWxldmVsLXZpZXdlciIsInRva2VuX3ZlcnNpb24iOiI4MjMyYzQ5ZGJhNjhhOTRlYTg0MGY5ZGUwOTljMDQ1NTQ0YjA2MGRjNDExNTFlYWZhMzEwNzM1OGE2M2MwNjI1MWExOTQwMGI0MzM5ZTdiOCIsImlhdCI6MTcwOTE0NTcxMywiZXhwIjoxNzA5MTgxNzEzfQ.qtuQkFdYI5-zLxO3kn3m06d5KQCFJTOZ5IQnZZGeWg8'
+        'xc-auth': 'i02ops8mfwh5Xcorz10kJ3P_-Wo0xdVYO2Plv14S'
     }
   };
 
