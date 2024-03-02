@@ -47,7 +47,7 @@ if (!window.D3usN0tam) {
   function checkDomain(DNsite) {
     const sites = DNsite;
     const currentDomain = window.location.hostname;
-    const DeusSiteInfo = sites.find(site => {
+     DeusSiteInfo = sites.find(site => {
       const siteHostname = new URL(site.url).hostname;
       return (
         currentDomain === siteHostname ||
