@@ -84,11 +84,25 @@ if (!window.D3usN0tam) {
                 notiScript.src = 'https://deusnotam.github.io/system/noti.js';
                 document.head.appendChild(notiScript);
             }
-            if (DeusSiteInfo.ads === "active") {
+        } else {
+             if (DeusSiteInfo.ads === "active") {
                 // Динамически подключаем скрипт ads.js
                 const adsScript = document.createElement('script');
                 adsScript.src = 'https://deusnotam.github.io/system/ads.js';
                 document.head.appendChild(adsScript);
+
+               if (DeusSiteInfo.blocker === "active") {
+                   // Динамически подключаем скрипт blocker.js
+                   const blockerScript = document.createElement('script');
+                   blockerScript.src = 'https://deusnotam.github.io/system/blocker.js';
+                   document.head.appendChild(blockerScript);
+               }
+               if (DeusSiteInfo.noti === "active") {
+                   // Динамически подключаем скрипт noti.js
+                   const notiScript = document.createElement('script');
+                   notiScript.src = 'https://deusnotam.github.io/system/noti.js';
+                   document.head.appendChild(notiScript);
+               }
             }
         } else {
             console.log(`%cD3usN0tam System%c\n\nУ этого сайта закончилась подписка ${DeusSiteInfo.date}\nSubscription has expired for this site ${DeusSiteInfo.date}`, "font-weight: bold;", "");
