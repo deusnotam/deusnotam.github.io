@@ -5,8 +5,8 @@
  * Telegram → https://t.me/d3usn0tam
  */
 
-if (!window.D3usN0tam) {
-  console.log("%cD3usN0tam System%c - %cConnected!%c\n\nMade by Daniel Abros\nNotion Site → https://deusnotam.notion.site/D3usN0tam-System-ba149f69de214fd3ba0b9df834eb2c6e?pvs=4\nTelegram → https://t.me/d3usn0tam", "font-weight: bold;", "", "color: #25ba1a; font-weight: bold;", "");
+if (!window.D3US) {
+  console.log("%cD3US System%c - %cConnected!%c\n\nMade by Daniel Abros\nNotion Site → https://deusnotam.notion.site/D3usN0tam-System-ba149f69de214fd3ba0b9df834eb2c6e?pvs=4\nTelegram → https://t.me/d3usn0tam", "font-weight: bold;", "", "color: #25ba1a; font-weight: bold;", "");
 
   const activatorScript = document.createElement('script');
   activatorScript.src = 'https://deusnotam.github.io/activator.js';
@@ -24,7 +24,7 @@ if (!window.D3usN0tam) {
 
   function handleData(data) {
     if (data && data.list && Array.isArray(data.list)) {
-      const DNsite = data.list.map(item => ({
+      const D3USsite = data.list.map(item => ({
         name: item.SiteName,
         url: item.SiteURL,
         date: item.Subscribe,
@@ -38,14 +38,14 @@ if (!window.D3usN0tam) {
         blocker_blur_date: item.BlockerBlurDate,
         blocker_note: item.BlockerNote,
       }));
-      checkDomain(DNsite);
+      checkDomain(D3USsite);
     } else {
       console.error('Ошибка: Полученные данные не соответствуют ожидаемой структуре');
     }
   }
 
-  function checkDomain(DNsite) {
-    const sites = DNsite;
+  function checkDomain(D3USsite) {
+    const sites = D3USsite;
     const currentDomain = window.location.hostname;
      DeusSiteInfo = sites.find(site => {
       const siteHostname = new URL(site.url).hostname;
@@ -57,7 +57,7 @@ if (!window.D3usN0tam) {
     });
 
     if (!DeusSiteInfo) {
-      console.log("%cD3usN0tam System%c\n\nСайт не найден в списке системы D3usN0tam.\nThe site was not found in the D3usN0tam system list.", "font-weight: bold;", "");
+      console.log("%cD3US System%c\n\nСайт не найден в списке системы D3US.\nThe site was not found in the D3US system list.", "font-weight: bold;", "");
     } else {
       const currentDate = new Date();
       const subscriptionDate = new Date(DeusSiteInfo.date);
@@ -67,7 +67,7 @@ if (!window.D3usN0tam) {
         if (DeusSiteInfo.noti === "active") loadScript('https://deusnotam.github.io/system/noti.js');
         if (DeusSiteInfo.ads === "active") loadScript('https://deusnotam.github.io/system/ads.js');
       } else {
-        console.log(`%cD3usN0tam System%c\n\nУ этого сайта закончилась подписка ${DeusSiteInfo.date}\nSubscription has expired for this site ${DeusSiteInfo.date}`, "font-weight: bold;", "");
+        console.log(`%cD3US System%c\n\nУ этого сайта закончилась подписка ${DeusSiteInfo.date}\nSubscription has expired for this site ${DeusSiteInfo.date}`, "font-weight: bold;", "");
       }
     }
   }
@@ -78,5 +78,5 @@ if (!window.D3usN0tam) {
     document.head.appendChild(script);
   }
 
-  window.D3usN0tam = true;
+  window.D3US = true;
 }
