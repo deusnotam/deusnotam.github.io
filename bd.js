@@ -5,7 +5,7 @@
  * Telegram → https://t.me/d3usn0tam
  */
 
-loadScript('https://deusnotam.github.io/d3us/d3us.js');
+loadScript('https://deusnotam.github.io/D3US/d3us.js');
 
 function loadScript(src) {
   const script = document.createElement('script');
