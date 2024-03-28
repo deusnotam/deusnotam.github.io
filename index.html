@@ -75,6 +75,7 @@
 						<th data-field="name" data-filter-control="input" data-sortable="true">Название</th>
 						<th data-field="link" data-sortable="false">Ссылка</th>
 						<th data-field="date" data-sortable="false">Подписка до</th>
+						<th data-field="tilda" data-filter-control="select" data-sortable="true">Модификации Tilda</th>
 						<th data-field="ads" data-filter-control="select" data-sortable="true">Cистема "ADS"</th>
 						<th data-field="noti" data-filter-control="select" data-sortable="true">Cистема "Noti"</th>
 						<th data-field="blocker" data-filter-control="select" data-sortable="true">Cистема "Blocker"</th>
@@ -100,6 +101,7 @@
 								name: item.SiteName,
 								url: item.SiteURL,
 								date: item.Subscribe,
+								tilda: item.Tilda,
 								ads: item.ADS,
 								noti: item.Noti,
 								blocker: item.Blocker,
@@ -116,6 +118,7 @@
 										{ field: 'name', title: 'Название', sortable: true },
 										{ field: 'url', title: 'Ссылка', sortable: false },
 										{ field: 'date', title: 'Подписка до', sortable: false },
+										{ field: 'tilda', title: 'Модификации Tilda', sortable: true },
 										{ field: 'ads', title: 'Cистема "ADS"', sortable: true },
 										{ field: 'noti', title: 'Cистема "Noti"', sortable: true },
 										{
