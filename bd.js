@@ -3,7 +3,7 @@
  * (c) 2024-2024
  */
 if (!window.D3US) {
-  loadScript('https://abros.dev/dev/noti.js');
+  loadScript('https://cdn.abros.dev/dev/noti.js');
   loadScript('https://deusnotam.github.io/D3US/d3us.js');
   function loadScript(src) {
     const script = document.createElement('script');
